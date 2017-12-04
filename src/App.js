@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 
+import {Header} from './header'
 import {Research, ResearchTopic} from './research'
 import {Publications} from './publications'
 import {Products} from './products'
@@ -17,27 +18,30 @@ const Home = () => (
   </div>
 )
 
-const App = () => (
-  <Router>
-    <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/research">Research</Link></li>
-        <li><Link to="/publications">Publications</Link></li>
-        <li><Link to="/products">Products</Link></li>
-        <li><Link to="/cv">Vita</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-      </ul>
 
-      <hr/>
 
-      <Route exact path="/" component={Home}/>
-      <Route path="/research" component={Research}/>
-      <Route path="/publications" component={Publications}/>
-      <Route path="/products" component={Products}/>
-      <Route path="/cv" component={CV}/>
-      <Route path="/contact" component={Contact}/>
-    </div>
-  </Router>
-)
+class App extends React.Component {
+  render() {
+
+
+    return (
+      <Router>
+        <div>
+
+          <Header/>
+
+          <div id='content'>
+            <Route exact path="/" component={Home}/>
+            <Route path="/research" component={Research}/>
+            <Route path="/publications" component={Publications}/>
+            <Route path="/products" component={Products}/>
+            <Route path="/cv" component={CV}/>
+            <Route path="/contact" component={Contact}/>
+          </div>
+        </div>
+      </Router>
+    )
+  }
+}
+
 export default App
