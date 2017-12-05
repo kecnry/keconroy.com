@@ -6,24 +6,15 @@ import {
 } from 'react-router-dom'
 
 import {Header} from './header'
+import {Home} from './home'
 import {Research, ResearchTopic} from './research'
 import {Publications} from './publications'
 import {Products} from './products'
 import {CV} from './cv'
 import {Contact} from './contact'
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
-
-
-
 class App extends React.Component {
   render() {
-
-
     return (
       <Router>
         <div>
