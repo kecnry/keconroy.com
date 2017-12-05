@@ -17,3 +17,26 @@ div #content {
 
 .headerRectangle::before {
 }
+
+.headerText {
+  position: fixed;
+  color: white;
+}
+
+.headerText h1 {
+  font-size: 64px;
+  font-family: Raleway,HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.headerText p {
+  font-size: 1.2em;
+  font-variant: small-caps;
+}
+
+.headerLinks {
+  position: fixed;
+  color: white;
+}
