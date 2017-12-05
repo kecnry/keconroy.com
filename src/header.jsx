@@ -78,6 +78,7 @@ export class Header extends React.Component {
 
     console.log(height1)
 
+    let transform1 = `translateX(${-125*translateXfactor}%) rotate(${rotateDeg}deg)`
     let transform2 = `translateX(${-100*translateXfactor}%) rotate(${rotateDeg}deg)`
     let transform3 = `translateX(${-75*translateXfactor}%) rotate(${rotateDeg}deg)`
     let transform4 = `translateX(${-50*translateXfactor}%) rotate(${rotateDeg}deg)`
@@ -88,7 +89,7 @@ export class Header extends React.Component {
     return (
       <div>
         <svg width="100%" height="100%" style={{position: 'fixed'}}>
-          <rect x={x1} y="0%" width="100%" height={height1} style={{fill: blue2}} />
+          <rect x={x1} y={y} width="25%" height="120%" style={{fill:blue2, transform:transform1}} className="headerRectangle" />
           <rect x={x2} y={y} width="25%" height="120%" style={{fill:gray2, transform:transform2}} className="headerRectangle" />
           <rect x={x3} y={y} width="25%" height="120%" style={{fill:blue3, transform:transform3}} className="headerRectangle" />
           <rect x={x4} y={y} width="25%" height="120%" style={{fill:gray3, transform:transform4}} className="headerRectangle" />

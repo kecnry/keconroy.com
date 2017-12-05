@@ -6,7 +6,6 @@ export class Home extends React.Component {
     return (
       <div>
         <h2>Home</h2>
-        <div style={{minHeight: '5000px'}}></div>
       </div>
     )
   }
