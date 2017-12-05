@@ -1,5 +1,18 @@
 
+html {
+  background-color: rgb(216,219,226);
+}
 
 div #content {
   padding-top: 60px;
+}
+
+.headerRectangle {
+  position: fixed;
+  stroke-width: 0px;
+  /*overflow: none;*/
+  transform-origin: bottom left;
+}
+
+.headerRectangle::before {
 }
