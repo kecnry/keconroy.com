@@ -5,6 +5,7 @@ html {
 
 div #content {
   padding-top: 60px;
+  min-height: 5000px;
 }
 
 .headerRectangle {
