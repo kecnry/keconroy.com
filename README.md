@@ -27,7 +27,7 @@ npm install
 to install local dependencies, and then:
 
 ```
-npm serve
+npm start
 ```
 
 to create a local webserver running the site.
