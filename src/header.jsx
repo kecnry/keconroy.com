@@ -29,7 +29,7 @@ export class Header extends React.Component {
 
   handleScroll = (event) => {
     this.setState({
-      scrollTop: event.srcElement.body.scrollTop
+      scrollTop: window.document.body.scrollTop
     });
 
   }
@@ -42,7 +42,7 @@ export class Header extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
 
     let scrollPerc = this.state.scrollTop * 2 / this.state.windowHeight
 
@@ -70,11 +70,11 @@ export class Header extends React.Component {
     return (
       <div>
         <svg width="100%" height="100%" style={{position: 'fixed'}}>
-          <rect x={x1} y={y} width="25%" height="140%" style={{fill:blue2, transform:transform1}} className="headerRectangle" />
-          <rect x={x2} y={y} width="25%" height="140%" style={{fill:gray2, transform:transform2}} className="headerRectangle" />
-          <rect x={x3} y={y} width="25%" height="140%" style={{fill:blue3, transform:transform3}} className="headerRectangle" />
-          <rect x={x4} y={y} width="25%" height="140%" style={{fill:gray3, transform:transform4}} className="headerRectangle" />
-          <rect x={x5} y={y} width="25%" height="140%" style={{fill:blue1, transform:transform5}} className="headerRectangle" />
+          <rect x={x1} y={y} width="25%" height="140%" style={{fill:blue2, transform:transform1, MozTransform:transform1}} className="headerRectangle" />
+          <rect x={x2} y={y} width="25%" height="140%" style={{fill:gray2, transform:transform2, MozTransform:transform2}} className="headerRectangle" />
+          <rect x={x3} y={y} width="25%" height="140%" style={{fill:blue3, transform:transform3, MozTransform:transform3}} className="headerRectangle" />
+          <rect x={x4} y={y} width="25%" height="140%" style={{fill:gray3, transform:transform4, MozTransform:transform4}} className="headerRectangle" />
+          <rect x={x5} y={y} width="25%" height="140%" style={{fill:blue1, transform:transform5, MozTransform:transform5}} className="headerRectangle" />
         </svg>
 
         <div className="headerText" style={{left:xText, top:yText}}>
