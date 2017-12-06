@@ -8,24 +8,6 @@ const gray1 = 'rgb(216,219,226)'
 const gray2 = 'rgb(72,76,85)'
 const gray3 = 'rgb(35,35,35)'
 
-class Navbar extends React.Component {
-  render() {
-    return (
-      <nav>
-        <ul>
-          <li><NavLink exact to="/">Home</NavLink></li>
-          <li><NavLink to="/research">Research</NavLink></li>
-          <li><NavLink to="/publications">Publications</NavLink></li>
-          <li><NavLink to="/products">Code &amp; Products</NavLink></li>
-          <li><NavLink to="/cv">Vita</NavLink></li>
-          <li><NavLink to="/contact">Contact</NavLink></li>
-        </ul>
-      </nav>
-    )
-  }
-}
-
-
 export class Header extends React.Component {
   constructor(props) {
     super(props);
