@@ -5,7 +5,7 @@ html {
 
 div #content {
   padding-top: 60px;
-  min-height: 5000px;
+  min-height: 3000px;
 }
 
 .headerRectangle {
@@ -21,12 +21,18 @@ div #content {
 .headerRectangle::before {
 }
 
-.headerText {
+.headerText, .headerImage, .headerLinks, .headerLogo {
   position: fixed;
   color: white;
 }
 
+.headerLogo img {
+  position: fixed;
+}
+
 .headerText h1 {
+  display: block;
+  text-align: center;
   font-size: 64px;
   font-family: Raleway,HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
@@ -36,12 +42,16 @@ div #content {
 
 .headerText p {
   font-size: 1.2em;
+  text-align: center;
   font-variant: small-caps;
 }
 
-.headerLinks {
+.headerImage img {
   position: fixed;
-  color: white;
+  display: block;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
 
 @media all and (max-width: 1024px) {

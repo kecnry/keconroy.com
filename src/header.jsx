@@ -44,22 +44,100 @@ export class Header extends React.Component {
   render() {
     // console.log(this.state)
 
-    let scrollPerc = this.state.scrollTop * 2 / this.state.windowHeight
+    let scrollPerc = this.state.scrollTop / this.state.windowHeight
 
     let x1 = `${0.0 * this.state.windowWidth}px`
     let x2 = `${0.2 * this.state.windowWidth}px`
     let x3 = `${0.4 * this.state.windowWidth}px`
     let x4 = `${0.6 * this.state.windowWidth}px`
     let x5 = `${0.8 * this.state.windowWidth}px`
-    let xText = `${0.5 * this.state.windowWidth}px`
 
-    let scrollYSticky = Math.min(scrollPerc, 0.75)
-    let y = `${-0.6 * this.state.windowHeight - scrollYSticky * this.state.windowHeight}px`
-    let yText = `${(0.25-scrollPerc) * this.state.windowHeight}px`
-    let yLinks = `${(0.8-scrollYSticky) * this.state.windowHeight}px`
+    var heightImagepx = 0.37 * this.state.windowHeight
+    var heightImage = `${heightImagepx}px`
+    var heightLogopx = 0.25*this.state.windowHeight
+    var heightLogo = `${heightLogopx}px`
 
-    let rotateDeg = Math.max(25 - scrollPerc * 2 * 25, 0)
-    let translateXfactor = Math.max(1 - scrollPerc * 2, 0)
+
+    if (scrollPerc < 1.0) {
+      // yRectangles from -0.6->-0.8 in scrollPerc 0->1
+      var yRectangles = `${this.state.windowHeight * (-0.6-0.2*scrollPerc)}px`
+      // alphaRectangles from 1->0.75 in scrollPerc 0->1
+      var alphaRectangles = `${1.0-0.25*scrollPerc}`
+
+      // yLogo fixed at 0.05
+      var yLogo = `${this.state.windowHeight * 0.05}px`
+      // xLogo from -1*logoWidth -> 0.45*windowWidth
+      var xLogo = `${-1*heightLogopx + 0.4 * this.state.windowWidth * scrollPerc}px`
+      // alphaLogo from 0->1 in scrollPerc 0->1
+      var alphaLogo = `${-2+3*scrollPerc}`
+
+      // yName fixed at 0.05
+      var yName = `${this.state.windowHeight * 0.05}px`
+      // yImage fixed at 0.20
+      var yImage = `${this.state.windowHeight * 0.20}px`
+      // clipImage
+      var clipImage = `rect(0px, 5000px, ${heightImagepx*(1-scrollPerc)}px, 0px)`
+      // alphaImage from 1->0.25 in scrollPerc 0->1
+      var alphaImage = `${1.0-0.75*scrollPerc}`
+      // yTagline from 0.60->0.18 in scrollPerc 0->1
+      var yTagline = `${this.state.windowHeight * (0.60-0.42*scrollPerc)}px`
+      // paddingXText from 0 (centered) -> 35%
+      var paddingXText = `${0+25*(scrollPerc)}%`
+      // yLinks from 0.8->0.6 in scrollPerc 0->1
+      var yLinks = `${this.state.windowHeight * (0.85-0.3*scrollPerc)}px`
+
+    } else if (scrollPerc < 1.25) {
+      // yRectangles from -0.8->-1.35 in scrollPerc 1->1.25
+      var yRectangles = `${this.state.windowHeight * (-0.8-2.2*(scrollPerc-1))}px`
+      // alphaRectangles from 0.75->0.5 in scrollPerc 1->0.25
+      var alphaRectangles = `${0.75-(scrollPerc-1)}`
+
+      // yLogo from 0.05 to -0.2 in scrollPerc 1->1.25
+      var yLogo = `${this.state.windowHeight * (0.05-1.25*(scrollPerc-1))}px`
+      // xLogo fixed
+      var xLogo = `${-1*heightLogopx + 0.4 * this.state.windowWidth}px`
+      // alphaLogo fixed at 1
+      var alphaLogo = `${1.0}`
+
+      // yName from 0.05->-0.2 in scrollPerc 1->1.25
+      var yName = `${this.state.windowHeight * (0.05-1.25*(scrollPerc-1))}px`
+      // yImage fixed at -1000px (hidden)
+      var yImage = `${-1000}px`
+      // yTagline from 0.05->-0.2 in scrollPerc 1->1.25
+      var yTagline = `${this.state.windowHeight * (0.18-1.25*(scrollPerc-1))}px`
+      // paddingXText fixed at 35%
+      var paddingXText = '25%'
+      // yLinks from 0.6->0.05 in scrollPerc 1->1.25
+      var yLinks = `${this.state.windowHeight * (0.56-2.2*(scrollPerc-1))}px`
+    } else {
+      // yRectangles fixed at -1.35
+      var yRectangles = `${this.state.windowHeight * -1.35}px`
+      // alphaRectangles
+      var alphaRectangles = `${0.5}`
+
+      // yLogo fixed at -1 logoHeight
+      var yLogo = `${-1*heightLogopx}px`
+      // xLogo fixed
+      var xLogo = `${-1*heightLogopx + 0.4 * this.state.windowWidth}px`
+      // alphaLogo fixed at 0
+      var alphaLogo = `${0.0}`
+
+      // yName fixed at -1 (hidden)
+      var yName = `${this.state.windowHeight * -1}px`
+      // yImage fixed at -1000px (hidden)
+      var yImage = `${-1000}px`
+      // yTagline fixed at -1 (hidden)
+      var yTagline = `${this.state.windowHeight * -1}px`
+      // paddingXText fixed at 35%
+      var paddingXText = '25%'
+      // yLinks fixed at 0.02
+      var yLinks = `${this.state.windowHeight * 0.02}px`
+    }
+
+    // rotateDeg from 25->0 in scrollPerc 0->1
+    let rotateDeg = Math.max(25 - scrollPerc * 25, 0)
+    // translateXfactor from 1->0 in scrollPerc 0->1
+    let translateXfactor = Math.max(1 - scrollPerc, 0)
 
     let transform1 = `translateX(${-125*translateXfactor}%) rotate(${rotateDeg}deg)`
     let transform2 = `translateX(${-100*translateXfactor}%) rotate(${rotateDeg}deg)`
@@ -67,18 +145,28 @@ export class Header extends React.Component {
     let transform4 = `translateX(${-50*translateXfactor}%) rotate(${rotateDeg}deg)`
     let transform5 = `translateX(${-25*translateXfactor}%) rotate(${rotateDeg}deg)`
 
+    // TODO: fix laggy animations by moving these things out of the React state and into refs:
+    // https://stackoverflow.com/questions/29725828/update-style-of-a-component-onscroll-in-react-js
     return (
       <div>
         <svg width="100%" height="100%" style={{position: 'fixed'}}>
-          <rect x={x1} y={y} width="25%" height="140%" style={{fill:blue2, transform:transform1, MozTransform:transform1}} className="headerRectangle" />
-          <rect x={x2} y={y} width="25%" height="140%" style={{fill:gray2, transform:transform2, MozTransform:transform2}} className="headerRectangle" />
-          <rect x={x3} y={y} width="25%" height="140%" style={{fill:blue3, transform:transform3, MozTransform:transform3}} className="headerRectangle" />
-          <rect x={x4} y={y} width="25%" height="140%" style={{fill:gray3, transform:transform4, MozTransform:transform4}} className="headerRectangle" />
-          <rect x={x5} y={y} width="25%" height="140%" style={{fill:blue1, transform:transform5, MozTransform:transform5}} className="headerRectangle" />
+          <rect x={x1} y={yRectangles} width="25%" height="140%" style={{fill:blue2, opacity:alphaRectangles, transform:transform1, MozTransform:transform1}} className="headerRectangle" />
+          <rect x={x2} y={yRectangles} width="25%" height="140%" style={{fill:gray2, opacity:alphaRectangles, transform:transform2, MozTransform:transform2}} className="headerRectangle" />
+          <rect x={x3} y={yRectangles} width="25%" height="140%" style={{fill:blue3, opacity:alphaRectangles, transform:transform3, MozTransform:transform3}} className="headerRectangle" />
+          <rect x={x4} y={yRectangles} width="25%" height="140%" style={{fill:gray3, opacity:alphaRectangles, transform:transform4, MozTransform:transform4}} className="headerRectangle" />
+          <rect x={x5} y={yRectangles} width="25%" height="140%" style={{fill:blue1, opacity:alphaRectangles, transform:transform5, MozTransform:transform5}} className="headerRectangle" />
         </svg>
 
-        <div className="headerText" style={{left:xText, top:yText}}>
+        <div className="headerLogo">
+          <img src='/images/kec_logo_w_gh.png' style={{height:heightLogo, left:xLogo, top: yLogo, opacity:alphaLogo}}/>
+        </div>
+        <div className="headerText" style={{right: 0, left: 0, paddingLeft: paddingXText, top: yName, marginRight: 'auto', marginLeft: 'auto'}}>
           <h1>Kyle E Conroy</h1>
+        </div>
+        <div className="headerImage" style={{right:0, left: 0, top: yImage, marginRight: 'auto', marginLeft: 'auto'}}>
+          <img src='/images/self.jpg' style={{height:heightImage, clip:clipImage, paddingLeft: paddingXText, opacity:alphaImage}}/>
+        </div>
+        <div className="headerText" style={{right: 0, left: 0, paddingLeft: paddingXText, top: yTagline, marginRight: 'auto', marginLeft: 'auto'}}>
           <p>Astronomy Graduate Student | Vanderbilt University</p>
         </div>
 
