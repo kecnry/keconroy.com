@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
+import EventListener, {withOptions} from 'react-event-listener'; // https://www.npmjs.com/package/react-event-listeners
 
 const blue1 = 'rgb(142,163,190)'
 const blue2 = 'rgb(64,78,104)'
@@ -12,165 +13,204 @@ export class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollTop: 0,
-      windowHeight: window.innerHeight,
-      windowWidth: window.innerWidth
     };
   }
   componentDidMount() {
-      window.addEventListener('scroll', this.handleScroll);
-      window.addEventListener('resize', this.handleResize);
-  }
+      // window.document.addEventListener('scroll', this.updateTransforms);
+      // window.document.addEventListener('resize', this.updateTransforms);
 
+      // make sure to set initial transform state
+      this.updateTransforms()
+  }
   componentWillUnmount() {
-      window.removeEventListener('scroll', this.handleScroll);
-      window.removeEventListener('resize', this.handleResize);
+      // window.document.removeEventListener('scroll', this.updateTransforms);
+      // window.document.removeEventListener('resize', this.updateTransforms);
   }
+  updateTransforms = () => {
+    let windowHeight = window.innerHeight
+    let windowWidth = window.innerWidth
+    let scrollPerc = window.document.body.scrollTop / windowHeight
+    let scrollPercSticky = Math.min(scrollPerc, 1)
 
-  handleScroll = (event) => {
-    this.setState({
-      scrollTop: window.document.body.scrollTop
-    });
+    let x1 = `${0.0 * windowWidth}px`
+    let x2 = `${0.2 * windowWidth}px`
+    let x3 = `${0.4 * windowWidth}px`
+    let x4 = `${0.6 * windowWidth}px`
+    let x5 = `${0.8 * windowWidth}px`
 
-  }
-
-  handleResize = (event) => {
-    this.setState({
-      windowHeight: window.innerHeight,
-      windowWidth: window.innerWidth
-    })
-  }
-
-  render() {
-    // console.log(this.state)
-
-    let scrollPerc = this.state.scrollTop / this.state.windowHeight
-
-    let x1 = `${0.0 * this.state.windowWidth}px`
-    let x2 = `${0.2 * this.state.windowWidth}px`
-    let x3 = `${0.4 * this.state.windowWidth}px`
-    let x4 = `${0.6 * this.state.windowWidth}px`
-    let x5 = `${0.8 * this.state.windowWidth}px`
-
-    var heightImagepx = 0.37 * this.state.windowHeight
+    var heightImagepx = 0.37 * windowHeight
     var heightImage = `${heightImagepx}px`
-    var heightLogopx = 0.25*this.state.windowHeight
+    var heightLogopx = 0.25 * windowHeight
     var heightLogo = `${heightLogopx}px`
 
 
     if (scrollPerc < 1.0) {
       // yRectangles from -0.6->-0.8 in scrollPerc 0->1
-      var yRectangles = `${this.state.windowHeight * (-0.6-0.2*scrollPerc)}px`
+      var yRectangles = `${windowHeight * (-0.6-0.2*scrollPerc)}px`
       // alphaRectangles from 1->0.75 in scrollPerc 0->1
       var alphaRectangles = `${1.0-0.25*scrollPerc}`
 
       // yLogo fixed at 0.05
-      var yLogo = `${this.state.windowHeight * 0.05}px`
+      var yLogo = `${windowHeight * 0.05}px`
       // xLogo from -1*logoWidth -> 0.45*windowWidth
-      var xLogo = `${-1*heightLogopx + 0.4 * this.state.windowWidth * scrollPerc}px`
+      var xLogo = `${-1*heightLogopx + 0.4 * windowWidth * scrollPerc}px`
       // alphaLogo from 0->1 in scrollPerc 0->1
       var alphaLogo = `${-2+3*scrollPerc}`
 
       // yName fixed at 0.05
-      var yName = `${this.state.windowHeight * 0.05}px`
+      var yName = `${windowHeight * 0.05}px`
       // yImage fixed at 0.20
-      var yImage = `${this.state.windowHeight * 0.20}px`
+      var yImage = `${windowHeight * 0.20}px`
       // clipImage
       var clipImage = `rect(0px, 5000px, ${heightImagepx*(1-scrollPerc)}px, 0px)`
       // alphaImage from 1->0.25 in scrollPerc 0->1
       var alphaImage = `${1.0-0.75*scrollPerc}`
       // yTagline from 0.60->0.18 in scrollPerc 0->1
-      var yTagline = `${this.state.windowHeight * (0.60-0.42*scrollPerc)}px`
+      var yTagline = `${windowHeight * (0.60-0.42*scrollPerc)}px`
       // paddingXText from 0 (centered) -> 35%
       var paddingXText = `${0+25*(scrollPerc)}%`
       // yLinks from 0.8->0.6 in scrollPerc 0->1
-      var yLinks = `${this.state.windowHeight * (0.85-0.3*scrollPerc)}px`
+      var yLinks = `${windowHeight * (0.85-0.3*scrollPerc)}px`
 
     } else if (scrollPerc < 1.25) {
       // yRectangles from -0.8->-1.35 in scrollPerc 1->1.25
-      var yRectangles = `${this.state.windowHeight * (-0.8-2.2*(scrollPerc-1))}px`
+      var yRectangles = `${windowHeight * (-0.8-2.2*(scrollPerc-1))}px`
       // alphaRectangles from 0.75->0.5 in scrollPerc 1->0.25
       var alphaRectangles = `${0.75-(scrollPerc-1)}`
 
       // yLogo from 0.05 to -0.2 in scrollPerc 1->1.25
-      var yLogo = `${this.state.windowHeight * (0.05-1.25*(scrollPerc-1))}px`
+      var yLogo = `${windowHeight * (0.05-1.25*(scrollPerc-1))}px`
       // xLogo fixed
-      var xLogo = `${-1*heightLogopx + 0.4 * this.state.windowWidth}px`
+      var xLogo = `${-1*heightLogopx + 0.4 * windowWidth}px`
       // alphaLogo fixed at 1
       var alphaLogo = `${1.0}`
 
       // yName from 0.05->-0.2 in scrollPerc 1->1.25
-      var yName = `${this.state.windowHeight * (0.05-1.25*(scrollPerc-1))}px`
+      var yName = `${windowHeight * (0.05-1.25*(scrollPerc-1))}px`
       // yImage fixed at -1000px (hidden)
       var yImage = `${-1000}px`
       // yTagline from 0.05->-0.2 in scrollPerc 1->1.25
-      var yTagline = `${this.state.windowHeight * (0.18-1.25*(scrollPerc-1))}px`
+      var yTagline = `${windowHeight * (0.18-1.25*(scrollPerc-1))}px`
       // paddingXText fixed at 35%
       var paddingXText = '25%'
       // yLinks from 0.6->0.05 in scrollPerc 1->1.25
-      var yLinks = `${this.state.windowHeight * (0.56-2.2*(scrollPerc-1))}px`
+      var yLinks = `${windowHeight * (0.56-2.2*(scrollPerc-1))}px`
     } else {
       // yRectangles fixed at -1.35
-      var yRectangles = `${this.state.windowHeight * -1.35}px`
+      var yRectangles = `${windowHeight * -1.35}px`
       // alphaRectangles
       var alphaRectangles = `${0.5}`
 
       // yLogo fixed at -1 logoHeight
       var yLogo = `${-1*heightLogopx}px`
       // xLogo fixed
-      var xLogo = `${-1*heightLogopx + 0.4 * this.state.windowWidth}px`
+      var xLogo = `${-1*heightLogopx + 0.4 * windowWidth}px`
       // alphaLogo fixed at 0
       var alphaLogo = `${0.0}`
 
       // yName fixed at -1 (hidden)
-      var yName = `${this.state.windowHeight * -1}px`
+      var yName = `${windowHeight * -1}px`
       // yImage fixed at -1000px (hidden)
       var yImage = `${-1000}px`
       // yTagline fixed at -1 (hidden)
-      var yTagline = `${this.state.windowHeight * -1}px`
+      var yTagline = `${windowHeight * -1}px`
       // paddingXText fixed at 35%
       var paddingXText = '25%'
       // yLinks fixed at 0.02
-      var yLinks = `${this.state.windowHeight * 0.02}px`
+      var yLinks = `${windowHeight * 0.02}px`
     }
 
     // rotateDeg from 25->0 in scrollPerc 0->1
     let rotateDeg = Math.max(25 - scrollPerc * 25, 0)
     // translateXfactor from 1->0 in scrollPerc 0->1
-    let translateXfactor = Math.max(1 - scrollPerc, 0)
+    // let translateXfactor = Math.max(1 - scrollPerc, 0)
+    let scaleXRectangles = 1 - 0.25*scrollPercSticky
 
-    let transform1 = `translateX(${-125*translateXfactor}%) rotate(${rotateDeg}deg)`
-    let transform2 = `translateX(${-100*translateXfactor}%) rotate(${rotateDeg}deg)`
-    let transform3 = `translateX(${-75*translateXfactor}%) rotate(${rotateDeg}deg)`
-    let transform4 = `translateX(${-50*translateXfactor}%) rotate(${rotateDeg}deg)`
-    let transform5 = `translateX(${-25*translateXfactor}%) rotate(${rotateDeg}deg)`
+    // let transform1 = `translateY(${yRectangles}) translateX(${-125*translateXfactor+0.0}%) rotate(${rotateDeg}deg)`
+    // let transform2 = `translateY(${yRectangles}) translateX(${-100*translateXfactor+0.2}%) rotate(${rotateDeg}deg)`
+    // let transform3 = `translateY(${yRectangles}) translateX(${-75*translateXfactor+0.4}%) rotate(${rotateDeg}deg)`
+    // let transform4 = `translateY(${yRectangles}) translateX(${-50*translateXfactor+0.6}%) rotate(${rotateDeg}deg)`
+    // let transform5 = `translateY(${yRectangles}) translateX(${-25*translateXfactor+0.8}%) rotate(${rotateDeg}deg)`
+    let transform1 = `translateY(${yRectangles}) translateX(${windowWidth*(-0.2+0.20*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+    let transform2 = `translateY(${yRectangles}) translateX(${windowWidth*(0.05+0.15*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+    let transform3 = `translateY(${yRectangles}) translateX(${windowWidth*(0.30+0.10*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+    let transform4 = `translateY(${yRectangles}) translateX(${windowWidth*(0.55+0.05*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+    let transform5 = `translateY(${yRectangles}) translateX(${windowWidth*(0.80+0.00*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
 
-    // TODO: fix laggy animations by moving these things out of the React state and into refs:
-    // https://stackoverflow.com/questions/29725828/update-style-of-a-component-onscroll-in-react-js
+    this.rectangle1.style.opacity = alphaRectangles
+    this.rectangle1.style.transform = transform1
+
+    this.rectangle2.style.opacity = alphaRectangles
+    this.rectangle2.style.transform = transform2
+
+    this.rectangle3.style.opacity = alphaRectangles
+    this.rectangle3.style.transform = transform3
+
+    this.rectangle4.style.opacity = alphaRectangles
+    this.rectangle4.style.transform = transform4
+
+    this.rectangle5.style.opacity = alphaRectangles
+    this.rectangle5.style.transform = transform5
+
+    this.headerLogo.style.height = heightLogo
+    this.headerLogo.style.left = xLogo
+    this.headerLogo.style.top = yLogo
+    this.headerLogo.style.opacity = alphaLogo
+
+    this.headerName.style.paddingLeft = paddingXText
+    this.headerName.style.top = yName
+
+    this.headerImageDiv.style.top = yImage
+    this.headerImage.style.height = heightImage
+    this.headerImage.style.clip = clipImage
+    this.headerImage.style.paddingLeft = paddingXText
+    this.headerImage.style.opacity = alphaImage
+
+    this.headerTagline.style.paddingLeft = paddingXText
+    this.headerTagline.style.top = yTagline
+  }
+
+  render() {
+    // console.log(this.state)
+
+    // we'll handle scrolling transformations by setting the ref and then
+    // updating the transform in the updateTransforms function.  Normally
+    // editing the DOM like this should probably be done by changing the
+    // state and handling in the render function, but that creates a laggy
+    // experience and inconsistency between browsers.  See discussion here:
+    // https://stackoverflow.com/a/35467176
+    // https://reactjs.org/docs/refs-and-the-dom.html
+
+
     return (
       <div>
+        <EventListener
+          target="window"
+          onResize={this.updateTransforms}
+          onScroll={withOptions(this.updateTransforms, {passive: true, capture: false})}
+        />
         <svg width="100%" height="100%" style={{position: 'fixed'}}>
-          <rect x={x1} y={yRectangles} width="25%" height="140%" style={{fill:blue2, opacity:alphaRectangles, transform:transform1, MozTransform:transform1}} className="headerRectangle" />
-          <rect x={x2} y={yRectangles} width="25%" height="140%" style={{fill:gray2, opacity:alphaRectangles, transform:transform2, MozTransform:transform2}} className="headerRectangle" />
-          <rect x={x3} y={yRectangles} width="25%" height="140%" style={{fill:blue3, opacity:alphaRectangles, transform:transform3, MozTransform:transform3}} className="headerRectangle" />
-          <rect x={x4} y={yRectangles} width="25%" height="140%" style={{fill:gray3, opacity:alphaRectangles, transform:transform4, MozTransform:transform4}} className="headerRectangle" />
-          <rect x={x5} y={yRectangles} width="25%" height="140%" style={{fill:blue1, opacity:alphaRectangles, transform:transform5, MozTransform:transform5}} className="headerRectangle" />
+          <rect ref={(ref) => this.rectangle1 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue2}}/>
+          <rect ref={(ref) => this.rectangle2 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:gray2}} />
+          <rect ref={(ref) => this.rectangle3 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue3}} />
+          <rect ref={(ref) => this.rectangle4 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:gray3}} />
+          <rect ref={(ref) => this.rectangle5 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue1}} />
         </svg>
 
-        <div className="headerLogo">
-          <img src='/images/kec_logo_w_gh.png' style={{height:heightLogo, left:xLogo, top: yLogo, opacity:alphaLogo}}/>
+        <div ref={(ref) => this.headerLogoDiv = ref} className="headerLogo">
+          <img ref={(ref) => this.headerLogo = ref} src='/images/kec_logo_w_gh.png'/>
         </div>
-        <div className="headerText" style={{right: 0, left: 0, paddingLeft: paddingXText, top: yName, marginRight: 'auto', marginLeft: 'auto'}}>
+        <div ref={(ref) => this.headerName = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
           <h1>Kyle E Conroy</h1>
         </div>
-        <div className="headerImage" style={{right:0, left: 0, top: yImage, marginRight: 'auto', marginLeft: 'auto'}}>
-          <img src='/images/self.jpg' style={{height:heightImage, clip:clipImage, paddingLeft: paddingXText, opacity:alphaImage}}/>
+        <div ref={(ref) => this.headerImageDiv = ref}className="headerImage" style={{right:0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+          <img ref={(ref) => this.headerImage = ref} src='/images/self.jpg' />
         </div>
-        <div className="headerText" style={{right: 0, left: 0, paddingLeft: paddingXText, top: yTagline, marginRight: 'auto', marginLeft: 'auto'}}>
+        <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
           <p>Astronomy Graduate Student | Vanderbilt University</p>
         </div>
 
-        <div className="headerLinks" style={{left:x1, top:yLinks, transform:transform1}}>
+        {/* <div className="headerLinks" style={{left:x1, top:yLinks, transform:transform1}}>
           <NavLink to="/">Home</NavLink>
         </div>
         <div className="headerLinks" style={{left:x2, top:yLinks, transform:transform2}}>
@@ -184,7 +224,7 @@ export class Header extends React.Component {
         </div>
         <div className="headerLinks" style={{left:x5, top:yLinks, transform:transform5}}>
           <NavLink to="/cv">Vita</NavLink>
-        </div>
+        </div> */}
 
 
       </div>
