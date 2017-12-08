@@ -207,13 +207,13 @@ export class Header extends React.Component {
         </svg>
 
         <div ref={(ref) => this.headerLogoDiv = ref} className="headerLogo">
-          <img ref={(ref) => this.headerLogo = ref} src='/images/kec_logo_w_gh.png'/>
+          <img ref={(ref) => this.headerLogo = ref} src='./images/kec_logo_w_gh.png'/>
         </div>
         <div ref={(ref) => this.headerName = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
           <h1>Kyle E Conroy</h1>
         </div>
         <div ref={(ref) => this.headerImageDiv = ref}className="headerImage" style={{right:0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-          <img ref={(ref) => this.headerImage = ref} src='/images/self.jpg' />
+          <img ref={(ref) => this.headerImage = ref} src='./images/self.jpg' />
         </div>
         <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
           <p>Astronomy Graduate Student | Vanderbilt University</p>
