@@ -67,6 +67,8 @@ export class Header extends React.Component {
       var alphaImage = `${1.0-0.75*scrollPerc}`
       // yTagline from 0.60->0.18 in scrollPerc 0->1
       var yTagline = `${windowHeight * (0.60-0.42*scrollPerc)}px`
+      // yIcons from 0.68->0.26 in scrollPerc 0->1
+      var yIcons = `${windowHeight * (0.68-0.42*scrollPerc)}px`
       // paddingXText from 0 (centered) -> 35%
       var paddingXText = `${0+25*(scrollPerc)}%`
       // yLinks from 0.8->0.6 in scrollPerc 0->1
@@ -89,8 +91,10 @@ export class Header extends React.Component {
       var yName = `${windowHeight * (0.05-1.25*(scrollPerc-1))}px`
       // yImage fixed at -1000px (hidden)
       var yImage = `${-1000}px`
-      // yTagline from 0.05->-0.2 in scrollPerc 1->1.25
+      // yTagline
       var yTagline = `${windowHeight * (0.18-1.25*(scrollPerc-1))}px`
+      // yIcons
+      var yIcons = `${windowHeight * (0.28-1.25*(scrollPerc-1))}px`
       // paddingXText fixed at 35%
       var paddingXText = '25%'
       // yLinks from 0.6->0.05 in scrollPerc 1->1.25
@@ -114,6 +118,8 @@ export class Header extends React.Component {
       var yImage = `${-1000}px`
       // yTagline fixed at -1 (hidden)
       var yTagline = `${windowHeight * -1}px`
+      // yIcons fixed at -1 (hidden)
+      var yIcons = `${windowHeight * -1}px`
       // paddingXText fixed at 35%
       var paddingXText = '25%'
       // yLinks fixed at 0.02
@@ -168,6 +174,9 @@ export class Header extends React.Component {
 
     this.headerTagline.style.paddingLeft = paddingXText
     this.headerTagline.style.top = yTagline
+
+    this.headerIconsDiv.style.top = yIcons
+    this.headerIconsDiv.style.paddingLeft = paddingXText
   }
 
   render() {
@@ -208,6 +217,14 @@ export class Header extends React.Component {
         </div>
         <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
           <p>Astronomy Graduate Student | Vanderbilt University</p>
+        </div>
+
+        <div ref={(ref) => this.headerIconsDiv = ref} className="headerIcons" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+          <a href="https://github.com/kecnry" target="_blank" title="GitHub" class="icon"><span class="fab fa-2x fa-github"></span></a>
+          <a href="https://scholar.google.com.au/citations?user=RT1pPfYAAAAJ" target="_blank" title="Google Scholar" class="icon"><span class="fas fa-2x fa-graduation-cap"></span></a>
+          <a href="mailto:kyle.conroy@vanderbilt.edu" title="Email" class="icon"><span class="fas fa-2x fa-envelope"></span></a>
+          <a href="https://www.linkedin.com/in/kyle-conroy-a2b1b337" target="_blank" title="Linked In" class="icon"><span class="fab fa-2x fa-linkedin"></span></a>
+          <a href="http://orcid.org/0000-0002-5442-8550" target="_blank" title="Orcid ID" class="icon"><span class="fas fa-2x fa-circle"></span></a>
         </div>
 
         {/* <div className="headerLinks" style={{left:x1, top:yLinks, transform:transform1}}>

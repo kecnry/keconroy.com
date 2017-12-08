@@ -21,7 +21,7 @@ div #content {
 .headerRectangle::before {
 }
 
-.headerText, .headerImage, .headerLinks, .headerLogo {
+.headerText, .headerImage, .headerIcons, .headerLinks, .headerLogo {
   position: fixed;
   color: white;
 }
@@ -33,7 +33,7 @@ div #content {
 .headerText h1 {
   display: block;
   text-align: center;
-  font-size: 64px;
+  font-size: 4.5em;
   font-family: Raleway,HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
   margin-bottom: 0px;
@@ -41,7 +41,7 @@ div #content {
 }
 
 .headerText p {
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-align: center;
   font-variant: small-caps;
 }
@@ -52,6 +52,20 @@ div #content {
   margin: 0 auto;
   left: 0;
   right: 0;
+}
+
+.headerIcons {
+  position: fixed;
+  display: block;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+a.icon {
+    color: #fff;
+    padding: 5px;
 }
 
 /*@media all and (max-width: 1024px) {
