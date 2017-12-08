@@ -94,7 +94,7 @@ export class Header extends React.Component {
       // yTagline
       var yTagline = `${windowHeight * (0.18-1.25*(scrollPerc-1))}px`
       // yIcons
-      var yIcons = `${windowHeight * (0.28-1.25*(scrollPerc-1))}px`
+      var yIcons = `${windowHeight * (0.26-1.25*(scrollPerc-1))}px`
       // paddingXText fixed at 35%
       var paddingXText = '25%'
       // yLinks from 0.6->0.05 in scrollPerc 1->1.25
