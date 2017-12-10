@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import {Header} from './header'
+import {Footer} from './footer'
 import {Home} from './home'
 import {Research, ResearchTopic} from './research'
 import {Publications} from './publications'
@@ -29,6 +30,8 @@ class App extends React.Component {
             <Route path="/cv" component={CV}/>
             <Route path="/contact" component={Contact}/>
           </div>
+
+          <Footer />
         </div>
       </Router>
     )
