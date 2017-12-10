@@ -45,10 +45,12 @@ export class Header extends React.Component {
 
 
     if (scrollPerc < 1.0) {
+      // clipBackground
+      var clipBackground = `rect(0px, 5000px, ${windowHeight*(0.8-0.2*scrollPerc)}px, 0px)`
       // yRectangles from -0.6->-0.8 in scrollPerc 0->1
       var yRectangles = `${windowHeight * (-0.6-0.2*scrollPerc)}px`
-      // alphaRectangles from 1->0.75 in scrollPerc 0->1
-      var alphaRectangles = `${1.0-0.25*scrollPerc}`
+      // alphaRectangles from 1->0.9 in scrollPerc 0->1
+      var alphaRectangles = `${1.0-0.1*scrollPerc}`
 
       // yLogo fixed at 0.05
       var yLogo = `${windowHeight * 0.05}px`
@@ -77,10 +79,12 @@ export class Header extends React.Component {
       var yContent = `${windowHeight * 1.7}px`
 
     } else if (scrollPerc < 1.25) {
+      // clipBackground
+      var clipBackground = `rect(0px, 5000px, ${windowHeight*(0.6-2.4*(scrollPerc-1))}px, 0px)`
       // yRectangles from -0.8->-1.35 in scrollPerc 1->1.25
       var yRectangles = `${windowHeight * (-0.8-2.2*(scrollPerc-1))}px`
-      // alphaRectangles from 0.75->0.5 in scrollPerc 1->0.25
-      var alphaRectangles = `${0.75-(scrollPerc-1)}`
+      // alphaRectangles from 0.9->0.65 in scrollPerc 1->0.25
+      var alphaRectangles = `${0.9-(scrollPerc-1)}`
 
       // yLogo from 0.05 to -0.2 in scrollPerc 1->1.25
       var yLogo = `${windowHeight * (0.05-1.25*(scrollPerc-1))}px`
@@ -104,10 +108,12 @@ export class Header extends React.Component {
       // yContent
       var yContent = `${windowHeight * (1.7-1.2*(scrollPerc-1))}px`
     } else {
+      // clipBackground
+      var clipBackground = `rect(0px, 5000px, ${windowHeight*(1-scrollPerc)}px, 0px)`
       // yRectangles fixed at -1.35
       var yRectangles = `${windowHeight * -1.35}px`
       // alphaRectangles
-      var alphaRectangles = `${0.5}`
+      var alphaRectangles = `${0.65}`
 
       // yLogo fixed at -1 logoHeight
       var yLogo = `${-1*heightLogopx}px`
@@ -148,6 +154,9 @@ export class Header extends React.Component {
     let transform3 = `translateY(${yRectangles}) translateX(${windowWidth*(0.30+0.10*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
     let transform4 = `translateY(${yRectangles}) translateX(${windowWidth*(0.55+0.05*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
     let transform5 = `translateY(${yRectangles}) translateX(${windowWidth*(0.80+0.00*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+
+    // this.headerBackground.style.height = heightBackground
+    this.headerBackground.style.clip = clipBackground
 
     this.rectangle1.style.opacity = alphaRectangles
     this.rectangle1.style.transform = transform1
@@ -208,34 +217,38 @@ export class Header extends React.Component {
           onResize={this.updateTransforms}
           onScroll={withOptions(this.updateTransforms, {passive: true, capture: false})}
         />
-        <svg width="100%" height="100%" style={{position: 'fixed'}}>
-          <rect ref={(ref) => this.rectangle1 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue2}}/>
-          <rect ref={(ref) => this.rectangle2 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:gray2}} />
-          <rect ref={(ref) => this.rectangle3 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue3}} />
-          <rect ref={(ref) => this.rectangle4 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:gray3}} />
-          <rect ref={(ref) => this.rectangle5 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue1}} />
-        </svg>
-
-        <div ref={(ref) => this.headerLogoDiv = ref} className="headerLogo">
-          <img ref={(ref) => this.headerLogo = ref} src='./images/kec_logo_w_gh.png'/>
-        </div>
-        <div ref={(ref) => this.headerName = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-          <h1>Kyle E Conroy</h1>
-        </div>
-        <div ref={(ref) => this.headerImageDiv = ref}className="headerImage" style={{right:0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-          <img ref={(ref) => this.headerImage = ref} src='./images/self.jpg' />
-        </div>
-        <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-          <p>Astronomy Graduate Student | Vanderbilt University</p>
+        <div ref={(ref) => this.headerBackground = ref} style={{position: 'fixed', width:'100%', height:'100%', backgroundSize:'cover', backgroundImage:'url(./images/smc.jpg)'}}>
         </div>
 
-        <div ref={(ref) => this.headerIconsDiv = ref} className="headerIcons" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-          <a href="https://github.com/kecnry" target="_blank" title="GitHub" class="icon"><span class="fab fa-2x fa-github"></span></a>
-          <a href="https://scholar.google.com.au/citations?user=RT1pPfYAAAAJ" target="_blank" title="Google Scholar" class="icon"><span class="fas fa-2x fa-graduation-cap"></span></a>
-          <a href="mailto:kyle.conroy@vanderbilt.edu" title="Email" class="icon"><span class="fas fa-2x fa-envelope"></span></a>
-          <a href="https://www.linkedin.com/in/kyle-conroy-a2b1b337" target="_blank" title="Linked In" class="icon"><span class="fab fa-2x fa-linkedin"></span></a>
-          <a href="http://orcid.org/0000-0002-5442-8550" target="_blank" title="Orcid ID" class="icon"><span class="fas fa-2x fa-circle"></span></a>
-        </div>
+          <svg width="100%" height="100%" style={{position: 'fixed'}}>
+            <rect ref={(ref) => this.rectangle1 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue2}}/>
+            <rect ref={(ref) => this.rectangle2 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:gray2}} />
+            <rect ref={(ref) => this.rectangle3 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue3}} />
+            <rect ref={(ref) => this.rectangle4 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:gray3}} />
+            <rect ref={(ref) => this.rectangle5 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue1}} />
+          </svg>
+
+          <div ref={(ref) => this.headerLogoDiv = ref} className="headerLogo">
+            <img ref={(ref) => this.headerLogo = ref} src='./images/kec_logo_w_gh.png'/>
+          </div>
+          <div ref={(ref) => this.headerName = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+            <h1>Kyle E Conroy</h1>
+          </div>
+          <div ref={(ref) => this.headerImageDiv = ref} className="headerImage" style={{right:0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+            <img ref={(ref) => this.headerImage = ref} src='./images/self.jpg' />
+          </div>
+          <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+            <p>Astronomy Graduate Student | Vanderbilt University</p>
+          </div>
+
+          <div ref={(ref) => this.headerIconsDiv = ref} className="headerIcons" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+            <a href="https://github.com/kecnry" target="_blank" title="GitHub" class="icon"><span class="fab fa-2x fa-github"></span></a>
+            <a href="https://scholar.google.com.au/citations?user=RT1pPfYAAAAJ" target="_blank" title="Google Scholar" class="icon"><span class="fas fa-2x fa-graduation-cap"></span></a>
+            <a href="mailto:kyle.conroy@vanderbilt.edu" title="Email" class="icon"><span class="fas fa-2x fa-envelope"></span></a>
+            <a href="https://www.linkedin.com/in/kyle-conroy-a2b1b337" target="_blank" title="Linked In" class="icon"><span class="fab fa-2x fa-linkedin"></span></a>
+            <a href="http://orcid.org/0000-0002-5442-8550" target="_blank" title="Orcid ID" class="icon"><span class="fas fa-2x fa-circle"></span></a>
+          </div>
+
 
         {/* <div className="headerLinks" style={{left:x1, top:yLinks, transform:transform1}}>
           <NavLink to="/">Home</NavLink>
