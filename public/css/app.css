@@ -8,7 +8,8 @@ div #main {
 }
 
 div #content {
-  padding-top: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
   min-height: 1000px;
 }
 
