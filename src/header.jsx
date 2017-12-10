@@ -40,10 +40,14 @@ export class Header extends React.Component {
       // window.document.removeEventListener('scroll', this.updateTransforms);
       // window.document.removeEventListener('resize', this.updateTransforms);
   }
+  getScrollPerc = () => {
+    return window.document.body.scrollTop / window.innerHeight
+  }
   updateTransforms = () => {
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
-    let scrollPerc = window.document.body.scrollTop / windowHeight
+
+    let scrollPerc = this.getScrollPerc()
     let scrollPercSticky = Math.min(scrollPerc, 1)
 
     let x1 = `${0.0 * windowWidth}px`
@@ -121,6 +125,7 @@ export class Header extends React.Component {
       var yLinks = `${windowHeight * (0.56-2.2*(scrollPerc-1))}px`
       // yContent
       var yContent = `${windowHeight * (1.7-1.2*(scrollPerc-1))}px`
+
     } else {
       // clipBackground
       var clipBackground = `rect(0px, 5000px, ${windowHeight*(1-scrollPerc)}px, 0px)`
@@ -150,6 +155,7 @@ export class Header extends React.Component {
       var yLinks = `${windowHeight * 0.02}px`
       // yContent
       var yContent = `${windowHeight * 1.4}px`
+
     }
 
     // rotateDeg from 25->0 in scrollPerc 0->1
@@ -210,6 +216,8 @@ export class Header extends React.Component {
     if (this.props.app.contentDiv) {
       this.props.app.contentDiv.style.paddingTop = yContent
     }
+
+    // this.headerSVG.style.display = 'none'
   }
 
   render() {
@@ -234,30 +242,32 @@ export class Header extends React.Component {
         <div ref={(ref) => this.headerBackground = ref} style={{position: 'fixed', width:'100%', height:'100%', backgroundSize:'cover', backgroundImage:'url(./images/smc.jpg)'}}>
         </div>
 
-          <svg width="100%" height="100%" style={{position: 'fixed'}}>
-            <rect ref={(ref) => this.rectangle1 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue2}}/>
-            <rect ref={(ref) => this.rectangle2 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:gray2}} />
-            <rect ref={(ref) => this.rectangle3 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue3}} />
-            <rect ref={(ref) => this.rectangle4 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:gray3}} />
-            <rect ref={(ref) => this.rectangle5 = ref} width="27%" height="140%" className="headerRectangle" style={{fill:blue1}} />
-          </svg>
+        {/* if we set the height to 100% then that will block all links on the page.  So instead, we set the height to 5%,
+        overflate the heights of all svg objects by a factor of 20, and set overflow to visible */}
+        <svg ref={(ref) => this.headerSVG = ref} width="100%" height="5%" style={{position: 'fixed', overflow: 'visible'}}>
+          <rect ref={(ref) => this.rectangle1 = ref} width="27%" height="2800%" className="headerRectangle" style={{fill:blue2}}/>
+          <rect ref={(ref) => this.rectangle2 = ref} width="27%" height="2800%" className="headerRectangle" style={{fill:gray2}} />
+          <rect ref={(ref) => this.rectangle3 = ref} width="27%" height="2800%" className="headerRectangle" style={{fill:blue3}} />
+          <rect ref={(ref) => this.rectangle4 = ref} width="27%" height="2800%" className="headerRectangle" style={{fill:gray3}} />
+          <rect ref={(ref) => this.rectangle5 = ref} width="27%" height="2800%" className="headerRectangle" style={{fill:blue1}} />
+        </svg>
 
-          <div ref={(ref) => this.headerLogoDiv = ref} className="headerLogo">
-            <img ref={(ref) => this.headerLogo = ref} src='./images/kec_logo_w_gh.png'/>
-          </div>
-          <div ref={(ref) => this.headerName = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-            <h1>Kyle E Conroy</h1>
-          </div>
-          <div ref={(ref) => this.headerImageDiv = ref} className="headerImage" style={{right:0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-            <img ref={(ref) => this.headerImage = ref} src='./images/self.jpg' />
-          </div>
-          <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-            <p>Astronomy Graduate Student | Vanderbilt University</p>
-          </div>
+        <div ref={(ref) => this.headerLogoDiv = ref} className="headerLogo">
+          <img ref={(ref) => this.headerLogo = ref} src='./images/kec_logo_w_gh.png'/>
+        </div>
+        <div ref={(ref) => this.headerName = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+          <h1>Kyle E Conroy</h1>
+        </div>
+        <div ref={(ref) => this.headerImageDiv = ref} className="headerImage" style={{right:0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+          <img ref={(ref) => this.headerImage = ref} src='./images/self.jpg' />
+        </div>
+        <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+          <p>Astronomy Graduate Student | Vanderbilt University</p>
+        </div>
 
-          <div ref={(ref) => this.headerIconsDiv = ref} className="headerIcons" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-            <LinkIcons />
-          </div>
+        <div ref={(ref) => this.headerIconsDiv = ref} className="headerIcons" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
+          <LinkIcons />
+        </div>
 
 
         {/* <div className="headerLinks" style={{left:x1, top:yLinks, transform:transform1}}>
