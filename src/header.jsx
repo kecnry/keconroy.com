@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
-import EventListener, {withOptions} from 'react-event-listener'; // https://www.npmjs.com/package/react-event-listeners
+import EventListener, {withOptions} from 'react-event-listener'; // https://www.npmjs.com/package/react-event-listener
 
 const blue1 = 'rgb(142,163,190)'
 const blue2 = 'rgb(64,78,104)'
@@ -73,6 +73,8 @@ export class Header extends React.Component {
       var paddingXText = `${0+25*(scrollPerc)}%`
       // yLinks from 0.8->0.6 in scrollPerc 0->1
       var yLinks = `${windowHeight * (0.85-0.3*scrollPerc)}px`
+      // yContent
+      var yContent = `${windowHeight * 1.7}px`
 
     } else if (scrollPerc < 1.25) {
       // yRectangles from -0.8->-1.35 in scrollPerc 1->1.25
@@ -99,6 +101,8 @@ export class Header extends React.Component {
       var paddingXText = '25%'
       // yLinks from 0.6->0.05 in scrollPerc 1->1.25
       var yLinks = `${windowHeight * (0.56-2.2*(scrollPerc-1))}px`
+      // yContent
+      var yContent = `${windowHeight * (1.7-1.2*(scrollPerc-1))}px`
     } else {
       // yRectangles fixed at -1.35
       var yRectangles = `${windowHeight * -1.35}px`
@@ -124,6 +128,8 @@ export class Header extends React.Component {
       var paddingXText = '25%'
       // yLinks fixed at 0.02
       var yLinks = `${windowHeight * 0.02}px`
+      // yContent
+      var yContent = `${windowHeight * 1.4}px`
     }
 
     // rotateDeg from 25->0 in scrollPerc 0->1
@@ -177,6 +183,10 @@ export class Header extends React.Component {
 
     this.headerIconsDiv.style.top = yIcons
     this.headerIconsDiv.style.paddingLeft = paddingXText
+
+    if (this.props.app.contentDiv) {
+      this.props.app.contentDiv.style.paddingTop = yContent
+    }
   }
 
   render() {

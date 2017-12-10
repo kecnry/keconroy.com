@@ -19,9 +19,9 @@ class App extends React.Component {
       <Router>
         <div>
 
-          <Header/>
+          <Header app={this}/>
 
-          <div id='content'>
+          <div ref={(ref) => this.contentDiv = ref} id='content'>
             <Route exact path="/" component={Home}/>
             <Route path="/research" component={Research}/>
             <Route path="/publications" component={Publications}/>
