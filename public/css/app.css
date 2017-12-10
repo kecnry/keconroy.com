@@ -3,6 +3,10 @@ html {
   background-color: rgb(216,219,226);
 }
 
+div #main {
+  font-family: 'Raleway', sans-serif;
+}
+
 div #content {
   padding-top: 60px;
   min-height: 1000px;
@@ -34,14 +38,13 @@ div #content {
   display: block;
   text-align: center;
   font-size: 4.5em;
-  font-family: Raleway,HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 400;
   margin-bottom: 0px;
   margin-left: 0px;
 }
 
 .headerText p {
-  font-size: 1.4em;
+  font-size: 1.3em;
   text-align: center;
   font-variant: small-caps;
 }
