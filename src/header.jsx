@@ -50,11 +50,12 @@ export class Header extends React.Component {
     let scrollPerc = this.getScrollPerc()
     let scrollPercSticky = Math.min(scrollPerc, 1)
 
-    let x1 = `${0.0 * windowWidth}px`
-    let x2 = `${0.2 * windowWidth}px`
-    let x3 = `${0.4 * windowWidth}px`
-    let x4 = `${0.6 * windowWidth}px`
-    let x5 = `${0.8 * windowWidth}px`
+    let widthLink = 0.2*windowWidth
+    let xLink1 = `${0.0 * windowWidth}px`
+    let xLink2 = `${0.2 * windowWidth}px`
+    let xLink3 = `${0.4 * windowWidth}px`
+    let xLink4 = `${0.6 * windowWidth}px`
+    let xLink5 = `${0.8 * windowWidth}px`
 
     var heightImagepx = 0.37 * windowHeight
     var heightImage = `${heightImagepx}px`
@@ -176,18 +177,12 @@ export class Header extends React.Component {
     // let translateXfactor = Math.max(1 - scrollPerc, 0)
     let scaleXRectangles = 1 - 0.25*scrollPercSticky
 
-    // let transform1 = `translateY(${yRectangles}) translateX(${-125*translateXfactor+0.0}%) rotate(${rotateDeg}deg)`
-    // let transform2 = `translateY(${yRectangles}) translateX(${-100*translateXfactor+0.2}%) rotate(${rotateDeg}deg)`
-    // let transform3 = `translateY(${yRectangles}) translateX(${-75*translateXfactor+0.4}%) rotate(${rotateDeg}deg)`
-    // let transform4 = `translateY(${yRectangles}) translateX(${-50*translateXfactor+0.6}%) rotate(${rotateDeg}deg)`
-    // let transform5 = `translateY(${yRectangles}) translateX(${-25*translateXfactor+0.8}%) rotate(${rotateDeg}deg)`
     let transform1 = `translateY(${yRectangles}) translateX(${windowWidth*(-0.2+0.20*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
     let transform2 = `translateY(${yRectangles}) translateX(${windowWidth*(0.05+0.15*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
     let transform3 = `translateY(${yRectangles}) translateX(${windowWidth*(0.30+0.10*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
     let transform4 = `translateY(${yRectangles}) translateX(${windowWidth*(0.55+0.05*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
     let transform5 = `translateY(${yRectangles}) translateX(${windowWidth*(0.80+0.00*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
 
-    // this.headerBackground.style.height = heightBackground
     this.headerBackground.style.clip = clipBackground
 
     this.rectangle1.style.opacity = alphaRectangles
@@ -229,11 +224,33 @@ export class Header extends React.Component {
     this.headerQuote.style.left = xQuote
     this.headerQuote.style.opacity = alphaLogo
 
+    let transformLink1 = `translateY(${yLinks}) translateX(${windowWidth*(-0.05+0.12*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+    let transformLink2 = `translateY(${yLinks}) translateX(${windowWidth*(-0.04+0.10*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+    let transformLink3 = `translateY(${yLinks}) translateX(${windowWidth*(-0.0+0.08*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+    let transformLink4 = `translateY(${yLinks}) translateX(${windowWidth*(0.03+0.04*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+    let transformLink5 = `translateY(${yLinks}) translateX(${windowWidth*(0.10+0.00*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+
+    this.headerLink1.style.left = xLink1
+    // this.headerLink1.child.style.paddingLeft = `${widthLink/2}px`
+    // this.headerLink1.child.style.paddingRight = `${widthLink/2}px`
+    this.headerLink1.style.transform = transformLink1
+
+    this.headerLink2.style.left = xLink2
+    this.headerLink2.style.transform = transformLink2
+
+    this.headerLink3.style.left = xLink3
+    this.headerLink3.style.transform = transformLink3
+
+    this.headerLink4.style.left = xLink4
+    this.headerLink4.style.transform = transformLink4
+
+    this.headerLink5.style.left = xLink5
+    this.headerLink5.style.transform = transformLink5
+
     if (this.props.app.contentDiv) {
       this.props.app.contentDiv.style.paddingTop = yContent
     }
 
-    // this.headerSVG.style.display = 'none'
   }
 
   render() {
@@ -290,21 +307,21 @@ export class Header extends React.Component {
         </div>
 
 
-        {/* <div className="headerLinks" style={{left:x1, top:yLinks, transform:transform1}}>
+        <div ref={(ref) => this.headerLink1 = ref} className="headerLinks">
           <NavLink to="/">Home</NavLink>
         </div>
-        <div className="headerLinks" style={{left:x2, top:yLinks, transform:transform2}}>
+        <div ref={(ref) => this.headerLink2 = ref} className="headerLinks">
           <NavLink to="/research">Research</NavLink>
         </div>
-        <div className="headerLinks" style={{left:x3, top:yLinks, transform:transform3}}>
+        <div ref={(ref) => this.headerLink3 = ref} className="headerLinks">
           <NavLink to="/publications">Publications</NavLink>
         </div>
-        <div className="headerLinks" style={{left:x4, top:yLinks, transform:transform4}}>
+        <div ref={(ref) => this.headerLink4 = ref} className="headerLinks">
           <NavLink to="/products">Code &amp; Products</NavLink>
         </div>
-        <div className="headerLinks" style={{left:x5, top:yLinks, transform:transform5}}>
+        <div ref={(ref) => this.headerLink5 = ref} className="headerLinks">
           <NavLink to="/cv">Vita</NavLink>
-        </div> */}
+        </div>
 
 
       </div>

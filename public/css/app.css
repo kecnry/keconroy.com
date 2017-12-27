@@ -82,6 +82,15 @@ div #content {
   overflow-x: hidden;
 }
 
+.headerLinks > a {
+  color: white;
+  text-decoration: none;
+  /*padding-left: 50px;*/
+  /*padding-right: 50px;*/
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 a.icon {
     color: #fff;
     padding: 10px;
