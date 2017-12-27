@@ -26,7 +26,7 @@ div #content {
 .headerRectangle::before {
 }
 
-.headerText, .headerImage, .headerIcons, .headerLinks, .headerLogo {
+.headerText, .headerImage, .headerIcons, .headerQuote, .headerLinks, .headerLogo {
   position: fixed;
   color: white;
 }
@@ -67,9 +67,24 @@ div #content {
   text-align: center;
 }
 
+.headerQuote {
+  position: fixed;
+  margin: 0 auto;
+  padding: 5px;
+  /*left: 0;*/
+  /*right: 0;*/
+  text-align: center;
+  width: 600px;
+  line-height: 1.6;
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: -.1rem;
+  overflow-x: hidden;
+}
+
 a.icon {
     color: #fff;
-    padding: 5px;
+    padding: 10px;
 }
 
 /*@media all and (max-width: 1024px) {

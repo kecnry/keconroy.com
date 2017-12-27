@@ -89,6 +89,10 @@ export class Header extends React.Component {
       var yTagline = `${windowHeight * (0.60-0.42*scrollPerc)}px`
       // yIcons from 0.68->0.26 in scrollPerc 0->1
       var yIcons = `${windowHeight * (0.68-0.42*scrollPerc)}px`
+      // yQuote
+      var yQuote = `${windowHeight * 0.38}px`
+      // xQuote
+      var xQuote = `${windowWidth * (2-1.54*scrollPerc)}px`
       // paddingXText from 0 (centered) -> 35%
       var paddingXText = `${0+25*(scrollPerc)}%`
       // yLinks from 0.8->0.6 in scrollPerc 0->1
@@ -119,6 +123,10 @@ export class Header extends React.Component {
       var yTagline = `${windowHeight * (0.18-1.25*(scrollPerc-1))}px`
       // yIcons
       var yIcons = `${windowHeight * (0.26-1.25*(scrollPerc-1))}px`
+      // yQuote
+      var yQuote = `${windowHeight * (0.38-2.0*(scrollPerc-1))}px`
+      // xQuote
+      var xQuote = `${windowWidth * 0.46}px`
       // paddingXText fixed at 35%
       var paddingXText = '25%'
       // yLinks from 0.6->0.05 in scrollPerc 1->1.25
@@ -149,6 +157,10 @@ export class Header extends React.Component {
       var yTagline = `${windowHeight * -1}px`
       // yIcons fixed at -1 (hidden)
       var yIcons = `${windowHeight * -1}px`
+      // yQuote fixed at -1 (hidden)
+      var yQuote = `${windowHeight * -1}px`
+      // xQuote
+      var xQuote = `${windowWidth * 0.46}px`
       // paddingXText fixed at 35%
       var paddingXText = '25%'
       // yLinks fixed at 0.02
@@ -213,6 +225,10 @@ export class Header extends React.Component {
     this.headerIconsDiv.style.top = yIcons
     this.headerIconsDiv.style.paddingLeft = paddingXText
 
+    this.headerQuote.style.top = yQuote
+    this.headerQuote.style.left = xQuote
+    this.headerQuote.style.opacity = alphaLogo
+
     if (this.props.app.contentDiv) {
       this.props.app.contentDiv.style.paddingTop = yContent
     }
@@ -267,6 +283,10 @@ export class Header extends React.Component {
 
         <div ref={(ref) => this.headerIconsDiv = ref} className="headerIcons" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
           <LinkIcons />
+        </div>
+
+        <div ref={(ref) => this.headerQuote = ref} className="headerQuote">
+          <p style={{background: "rgba(24,25,19,.8)", borderRadius: "10px", padding: "5px"}}>"We are a way for the cosmos to know itself - Carl Sagan"</p>
         </div>
 
 
