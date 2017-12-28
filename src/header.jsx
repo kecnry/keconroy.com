@@ -2,6 +2,8 @@ import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import EventListener, {withOptions} from 'react-event-listener'; // https://www.npmjs.com/package/react-event-listener
 
+var smoothScroll = require('smoothscroll'); // https://github.com/alicelieutier/smoothScroll
+
 const blue1 = 'rgb(142,163,190)'
 const blue2 = 'rgb(64,78,104)'
 const blue3 = 'rgb(33,44,64)'
@@ -42,6 +44,27 @@ export class Header extends React.Component {
   }
   getScrollPerc = () => {
     return window.document.body.scrollTop / window.innerHeight
+  }
+  scrollHome = () => {
+    let windowHeight = window.innerHeight
+    let scrollPerc = this.getScrollPerc()
+
+    if (scrollPerc > 1.25) {
+      window.document.body.scrollTop = windowHeight * 1.25
+    }
+
+    smoothScroll(windowHeight * 1.0, 1200)
+  }
+  scrollNavbar = () => {
+    let windowHeight = window.innerHeight
+    let scrollPerc = this.getScrollPerc()
+    if (scrollPerc < 1.0) {
+      smoothScroll(windowHeight * 1.0, 1200)
+    } else if (scrollPerc < 1.25){
+      smoothScroll(windowHeight * 1.25, 1200)
+    } else {
+      window.document.body.scrollTop = windowHeight * 1.25
+    }
   }
   updateTransforms = () => {
     let windowHeight = window.innerHeight
@@ -308,19 +331,19 @@ export class Header extends React.Component {
 
 
         <div ref={(ref) => this.headerLink1 = ref} className="headerLinks">
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" onClick={this.scrollHome}>Home</NavLink>
         </div>
         <div ref={(ref) => this.headerLink2 = ref} className="headerLinks">
-          <NavLink to="/research">Research</NavLink>
+          <NavLink to="/research" onClick={this.scrollNavbar}>Research</NavLink>
         </div>
         <div ref={(ref) => this.headerLink3 = ref} className="headerLinks">
-          <NavLink to="/publications">Publications</NavLink>
+          <NavLink to="/publications" onClick={this.scrollNavbar}>Publications</NavLink>
         </div>
         <div ref={(ref) => this.headerLink4 = ref} className="headerLinks">
-          <NavLink to="/products">Code &amp; Products</NavLink>
+          <NavLink to="/products" onClick={this.scrollNavbar}>Code &amp; Products</NavLink>
         </div>
         <div ref={(ref) => this.headerLink5 = ref} className="headerLinks">
-          <NavLink to="/cv">Vita</NavLink>
+          <NavLink to="/cv" onClick={this.scrollNavbar}>Vita</NavLink>
         </div>
 
 
