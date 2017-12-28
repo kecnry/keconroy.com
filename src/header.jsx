@@ -13,11 +13,11 @@ export class LinkIcons extends React.Component {
   render () {
     return (
       <div>
-        <a href="https://github.com/kecnry" target="_blank" title="GitHub" class="icon"><span class="fab fa-2x fa-github"></span></a>
-        <a href="https://scholar.google.com.au/citations?user=RT1pPfYAAAAJ" target="_blank" title="Google Scholar" class="icon"><span class="fas fa-2x fa-graduation-cap"></span></a>
-        <a href="mailto:kyle.conroy@vanderbilt.edu" title="Email" class="icon"><span class="fas fa-2x fa-envelope"></span></a>
-        <a href="https://www.linkedin.com/in/kyle-conroy-a2b1b337" target="_blank" title="Linked In" class="icon"><span class="fab fa-2x fa-linkedin"></span></a>
-        <a href="http://orcid.org/0000-0002-5442-8550" target="_blank" title="Orcid ID" class="icon"><span class="fas fa-2x fa-circle"></span></a>
+        <a href="https://github.com/kecnry" target="_blank" title="GitHub" className="icon"><span className="fab fa-2x fa-github"></span></a>
+        <a href="https://scholar.google.com.au/citations?user=RT1pPfYAAAAJ" target="_blank" title="Google Scholar" className="icon"><span className="fas fa-2x fa-graduation-cap"></span></a>
+        <a href="mailto:kyle.conroy@vanderbilt.edu" title="Email" className="icon"><span className="fas fa-2x fa-envelope"></span></a>
+        <a href="https://www.linkedin.com/in/kyle-conroy-a2b1b337" target="_blank" title="Linked In" className="icon"><span className="fab fa-2x fa-linkedin"></span></a>
+        <a href="http://orcid.org/0000-0002-5442-8550" target="_blank" title="Orcid ID" className="icon"><span className="fas fa-2x fa-circle"></span></a>
       </div>
     )
   }
