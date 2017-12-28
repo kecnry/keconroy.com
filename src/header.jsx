@@ -331,7 +331,7 @@ export class Header extends React.Component {
 
 
         <div ref={(ref) => this.headerLink1 = ref} className="headerLinks">
-          <NavLink to="/" onClick={this.scrollHome}>Home</NavLink>
+          <NavLink exact to="/" onClick={this.scrollHome}>Home</NavLink>
         </div>
         <div ref={(ref) => this.headerLink2 = ref} className="headerLinks">
           <NavLink to="/research" onClick={this.scrollNavbar}>Research</NavLink>

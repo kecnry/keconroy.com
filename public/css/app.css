@@ -91,6 +91,10 @@ div #content {
   padding-bottom: 10px;
 }
 
+.headerLinks > a.active {
+  font-weight: bold;
+}
+
 a.icon {
     color: #fff;
     padding: 10px;
