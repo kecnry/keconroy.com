@@ -326,7 +326,7 @@ export class Header extends React.Component {
         </div>
 
         <div ref={(ref) => this.headerQuote = ref} className="headerQuote">
-          <p style={{background: "rgba(24,25,19,.8)", borderRadius: "10px", padding: "5px"}}>"We are a way for the cosmos to know itself - Carl Sagan"</p>
+          <p style={{background: "rgba(24,25,19,.8)", borderRadius: "10px", padding: "5px"}}>"We are a way for the cosmos to know itself" - Carl Sagan</p>
         </div>
 
 
