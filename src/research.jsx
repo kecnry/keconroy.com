@@ -1,6 +1,8 @@
 import React from 'react'
 import {Route, Link} from 'react-router-dom'
 
+import {MainTab} from './common'
+
 export const ResearchTopic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>

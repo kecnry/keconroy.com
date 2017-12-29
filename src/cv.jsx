@@ -1,7 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-export class CV extends React.Component {
+import {MainTab} from './common'
+
+export class CV extends MainTab {
   render() {
     return (
       <div>
