@@ -100,6 +100,29 @@ a.icon {
     padding: 10px;
 }
 
+.filterRow {
+  padding: 10px;
+}
+
+a.filterButton {
+  text-decoration: none;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 5px;
+  color: #fff;
+  background-color: rgb(64, 78, 104);
+  border-color: rgb(64, 78, 104);
+  height: 35px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a.filterButton.active {
+  background-color: rgb(142, 163, 190);
+}
+
 /*@media all and (max-width: 1024px) {
   .headerRectangle, .headerLinks {
     transform: none !important;

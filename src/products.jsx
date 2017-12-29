@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, Route} from 'react-router-dom'
+import {NavLink, Link, Route} from 'react-router-dom'
 
 import {MainTab, MainFilterTab, FilterEntry, FilterButton} from './common'
 
@@ -72,8 +72,12 @@ class ProductsFilter extends MainFilterTab {
       <div>
         <h2>Products</h2>
 
-        Project: {projects.map((p) => (<Link to={`/products/${p}/${type}`}>{p}</Link>))}
-        Type: {types.map((t) => (<Link to={`/products/${project}/${t}`}>{t}</Link>))}
+        <div className="filterRow">
+          Project: {projects.map((p) => (<NavLink to={`/products/${p}/${type}`} className='filterButton'>{p}</NavLink>))}
+        </div>
+        <div className="filterRow">
+          Type: {types.map((t) => (<NavLink to={`/products/${project}/${t}`} className='filterButton'>{t}</NavLink>))}
+        </div>
 
         {productDicts.map((p, i) => (makeProduct(p, false, this.getFilterFromURL(), '/products')))}
 

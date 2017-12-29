@@ -59,25 +59,3 @@ export class FilterEntry extends React.Component {
     return true
   }
 }
-
-export class FilterButton extends React.Component {
-  toggle = () => {
-    let filter = this.props.parent.state.filter
-    // if (filter[this.props.category] == this.props.name) {
-      // filter[this.props.category] = null
-    // } else {
-    filter[this.props.category] = this.props.name
-    // }
-    this.props.parent.setState({filter: filter})
-  }
-  render () {
-    if (this.props.name==null) {
-      var name = 'all'
-    } else {
-      var name = this.props.name
-    }
-    return (
-      <button onClick={this.toggle}>{name}</button>
-    )
-  }
-}

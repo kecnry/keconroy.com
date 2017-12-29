@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, Route} from 'react-router-dom'
+import {NavLink, Link, Route} from 'react-router-dom'
 
 import {MainTab, MainFilterTab, FilterEntry, FilterButton} from './common'
 
@@ -57,11 +57,15 @@ class PublicationsFilter extends MainFilterTab {
       <div>
         <h2>Publications</h2>
 
-        Project: {projects.map((p) => (<Link to={`/publications/${p}/${type}/${nauthor}`}>{p}</Link>))}
-
-        Type: {types.map((t) => (<Link to={`/publications/${project}/${t}/${nauthor}`}>{t}</Link>))}
-
-        Author: {nauthors.map((a) => (<Link to={`/publications/${project}/${type}/${a}`}>{a}</Link>))}
+        <div className="filterRow">
+          Project: {projects.map((p) => (<NavLink to={`/publications/${p}/${type}/${nauthor}`} className='filterButton'>{p}</NavLink>))}
+        </div>
+        <div className="filterRow">
+          Type: {types.map((t) => (<NavLink to={`/publications/${project}/${t}/${nauthor}`} className='filterButton'>{t}</NavLink>))}
+        </div>
+        <div className="filterRow">
+          Author: {nauthors.map((a) => (<NavLink to={`/publications/${project}/${type}/${a}`} className='filterButton'>{a}</NavLink>))}
+        </div>
 
         {publicationDicts.map((p, i) => (makePublication(p, false, this.getFilterFromURL(), '/publications')))}
 
