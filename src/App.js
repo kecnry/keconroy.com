@@ -22,11 +22,11 @@ class App extends React.Component {
           <Header app={this}/>
 
           <div ref={(ref) => this.contentDiv = ref} id='content'>
-            <Route exact path="/" component={Home}/>
-            <Route path="/research" component={Research}/>
-            <Route path="/publications" component={Publications}/>
-            <Route path="/products" component={Products}/>
-            <Route path="/cv" component={CV}/>
+            <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}/>
+            <Route path={process.env.PUBLIC_URL + '/research'} component={Research}/>
+            <Route path={process.env.PUBLIC_URL + '/publications'} component={Publications}/>
+            <Route path={process.env.PUBLIC_URL + '/products'} component={Products}/>
+            <Route path={process.env.PUBLIC_URL + '/cv'} component={CV}/>
           </div>
 
           <Footer />
