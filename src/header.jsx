@@ -372,7 +372,7 @@ export class Header extends React.Component {
 
           </div>
 
-          <div className="headerText" style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "10px"}}>
+          <div className="headerText" onClick={this.openNav} style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "10px"}}>
             <h1 style={{fontSize: '3em', marginTop: '10px'}}>Kyle E Conroy</h1>
           </div>
 
