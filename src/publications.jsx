@@ -99,6 +99,59 @@ export class Publications extends React.Component {
 // place NEWER entries on TOP of the list
 export var publicationDicts = [
 {
+  title: 'The Effects of Barycentric and Asymmetric Transverse Velocities on Eclipse and Transit Times',
+  authors: 'Conroy, Kyle E., Prsa, A., Horvat, M., Stassun, K.G.',
+  year: 2018,
+  journal: 'ApJ',
+  volume: 854,
+  page: 163,
+  selected: true,
+  project: ['etvs', 'triples'],
+  projectSelected: ['etvs'],
+  type: 'journal',
+  nauthor: '1st',
+  adsLink: 'http://adsabs.harvard.edu/abs/2018ApJ...854..163C',
+  pdf: '2018Conroy+.pdf'
+}, {
+  title: 'The Effect of Transverse Motion on Eclipse and Transit Times',
+  authors: 'Conroy, Kyle; Prša, Andrej; Horvat, Martin; Stassun, Keivan G.',
+  year: 2018,
+  journal: 'AAS',
+  volume: 231,
+  page: 244.25,
+  selected: false,
+  project: ['etvs', 'triples'],
+  projectSelected: [],
+  type: 'poster',
+  nauthor: '1st',
+  adsLink: 'http://adsabs.harvard.edu/abs/2018AAS...23124425C'
+}, {
+  title: 'Interfacing modeling suite Physics Of Eclipsing Binaries 2.0 with a Virtual Reality Platform',
+  authors: 'Harriett, Edward; Conroy, Kyle; Prša, Andrej; Klassner, Frank',
+  year: 2018,
+  journal: 'AAS',
+  volume: 231,
+  page: 244.07,
+  selected: false,
+  project: ['other'],
+  projectSelected: [],
+  type: 'poster',
+  nauthor: 'nth',
+  adsLink: 'http://adsabs.harvard.edu/abs/2018AAS...23124407H'
+}, {
+  title: 'Digitizing Villanova University\'s Eclipsing Binary Card Catalogue',
+  authors: 'Guzman, Giannina; Dalton, Briana; Conroy, Kyle; Prsa, Andrej',
+  year: 2018,
+  journal: 'AAS',
+  volume: 231,
+  page: 151.03,
+  selected: false,
+  project: ['other'],
+  projectsSelected: [],
+  type: 'poster',
+  nauthor: 'nth',
+  adsLink: 'http://adsabs.harvard.edu/abs/2018AAS...23115103G'
+}, {
   title: 'A Bright Short Period M-M Eclipsing Binary from the KELT Survey: Magnetic Activity and the Mass-Radius Relationship for M-dwarfs',
   authors: 'Lubin, Jack B., Rodriguez, Joseph E., et al.',
   year: 2017,
