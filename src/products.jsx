@@ -8,25 +8,25 @@ export class Product extends FilterEntry {
   render() {
     if (this.isVisible()) {
       if (this.props.content && !this.props.expanded) {
-        var expandedLink = <Link to={this.props.contentLink}>read more</Link>
+        var expandedLink = <Link to={this.props.contentLink} style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-ellipsis-h"></span> read more</Link>
       } else {
         var expandedLink = null
       }
 
       if (this.props.sourceLink) {
-        var sourceLink = <a href={this.props.sourceLink}>source-code</a>
+        var sourceLink = <a href={this.props.sourceLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-code"></span> source-code</a>
       } else {
         var sourceLink = null
       }
 
       if (this.props.liveLink) {
-        var liveLink = <a href={this.props.liveLink}>website</a>
+        var liveLink = <a href={this.props.liveLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-link"></span> website</a>
       } else {
         var liveLink = null
       }
 
       if (this.props.dataLink) {
-        var dataLink = <a href={this.props.dataLink}>data</a>
+        var dataLink = <a href={this.props.dataLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-database"></span> data</a>
       } else {
         var dataLink = null
       }
@@ -38,9 +38,10 @@ export class Product extends FilterEntry {
       }
 
       return (
-        <div>
-          <p><b>{this.props.title}</b> {expandedLink}{sourceLink}{liveLink}{dataLink}</p>
+        <div style={{paddingBottom: '15px'}}>
+          <p><b>{this.props.title}</b></p>
           <p>{this.props.description}</p>
+          <p>{expandedLink} {sourceLink} {liveLink} {dataLink}</p>
           {content}
         </div>
       )
@@ -69,13 +70,13 @@ class ProductsFilter extends MainFilterTab {
     }
 
     return (
-      <div>
+      <div style={{textAlign: 'center'}}>
         <h2>Products</h2>
 
-        <div className="filterRow">
+        <div className="filterRow" style={{paddingBottom: '15px'}}>
           Project: {projects.map((p) => (<NavLink to={`/products/${p}/${type}`} className='filterButton'>{p}</NavLink>))}
         </div>
-        <div className="filterRow">
+        <div className="filterRow" style={{paddingBottom: '50px'}}>
           Type: {types.map((t) => (<NavLink to={`/products/${project}/${t}`} className='filterButton'>{t}</NavLink>))}
         </div>
 
