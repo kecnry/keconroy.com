@@ -9,7 +9,7 @@ export class MainTab extends React.Component {
     let windowWidth = window.innerWidth
     let scrollPerc = window.document.body.scrollTop / window.innerHeight
 
-    if (windowWidth < 1024 || windowHeight < 800) {
+    if (windowWidth < 1024 || windowHeight < 600) {
       // don't scroll on mobile
       return
     }

@@ -52,7 +52,7 @@ export class Header extends React.Component {
     let windowWidth = window.innerWidth
     let scrollPerc = this.getScrollPerc()
 
-    if (windowWidth < 1024 || windowHeight < 800) {
+    if (windowWidth < 1024 || windowHeight < 600) {
       // don't scroll on mobile
       return
     }
@@ -68,7 +68,7 @@ export class Header extends React.Component {
     let windowWidth = window.innerWidth
     let scrollPerc = this.getScrollPerc()
 
-    if (windowWidth < 1024 || windowHeight < 800) {
+    if (windowWidth < 1024 || windowHeight < 600) {
       // don't scroll on mobile
       return
     }
@@ -80,6 +80,14 @@ export class Header extends React.Component {
     } else {
       window.document.body.scrollTop = windowHeight * 1.25
     }
+  }
+  openNav = () => {
+    console.log("openNav")
+    this.navigationOverlay.style.height = '100%'
+  }
+  closeNav = () => {
+    console.log("closeNav")
+    this.navigationOverlay.style.height = '0'
   }
   updateTransforms = () => {
     let windowHeight = window.innerHeight
@@ -100,7 +108,7 @@ export class Header extends React.Component {
     var heightLogopx = 0.25 * windowHeight
     var heightLogo = `${heightLogopx}px`
 
-    if (windowWidth < 1024 || windowHeight < 800) {
+    if (windowWidth < 1024 || windowHeight < 600) {
       // hide scrolling elements, show static header instead
       this.headerInteractive.style.display = 'none'
       this.headerStatic.style.display = 'block'
@@ -345,8 +353,27 @@ export class Header extends React.Component {
           {/* <div ref={(ref) => this.headerStaticLogoLeft = ref} className="headerLogo">
             <img src={`${process.env.PUBLIC_URL}/images/kec_logo_w_gh.png`} style={{position: "relative", height: "100px", paddingTop: "100px", paddingLeft: "50px"}}/>
           </div> */}
+          <div className="headerStaticNavbar" onClick={this.openNav} style={{cursor: 'pointer', position: "relative", right: 0, left: 0, height: '40px', marginRight: 'auto', marginLeft: 'auto', marginTop: '50px'}}>
+            {/* <img src={`${process.env.PUBLIC_URL}/images/kec_logo_w_gh.png`} style={{height: "40px"}}/> */}
+            <span class="fas fa-bars fa-2x" style={{padding: '10px', color: 'white'}}></span>
+          </div>
+
+          <div ref={(ref) => this.navigationOverlay = ref} className="overlay">
+
+            <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav}>&times;</a>
+
+            <div class="overlay-content">
+              <NavLink exact to="/" onClick={this.closeNav}>Home</NavLink>
+              <NavLink to="/research" onClick={this.closeNav}>Research</NavLink>
+              <NavLink to="/publications" onClick={this.closeNav}>Publications</NavLink>
+              <NavLink to="/products" onClick={this.closeNav}>Code &amp; Products</NavLink>
+              <NavLink to="/cv" onClick={this.closeNav}>Vita</NavLink>
+            </div>
+
+          </div>
+
           <div className="headerText" style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "10px"}}>
-            <h1>Kyle E Conroy</h1>
+            <h1 style={{fontSize: '3em', marginTop: '10px'}}>Kyle E Conroy</h1>
           </div>
 
           {/* <div ref={(ref) => this.headerStaticLogoCenter = ref} className="headerLogo">
@@ -364,13 +391,13 @@ export class Header extends React.Component {
             <LinkIcons />
           </div>
 
-          <ul style={{width: "100%", listStyle: "none", textAlign: "center"}}>
+          {/* <ul style={{width: "100%", listStyle: "none", textAlign: "center"}}>
             <li style={{display: "inline-block", width: "20%"}}><NavLink exact to="/" onClick={this.scrollHome}>Home</NavLink></li>
             <li style={{display: "inline-block", width: "20%"}}><NavLink to="/research" onClick={this.scrollNavbar}>Research</NavLink></li>
             <li style={{display: "inline-block", width: "20%"}}><NavLink to="/publications" onClick={this.scrollNavbar}>Publications</NavLink></li>
             <li style={{display: "inline-block", width: "20%"}}><NavLink to="/products" onClick={this.scrollNavbar}>Code &amp; Products</NavLink></li>
             <li style={{display: "inline-block", width: "20%"}}><NavLink to="/cv" onClick={this.scrollNavbar}>Vita</NavLink></li>
-          </ul>
+          </ul> */}
 
         </div>
 
