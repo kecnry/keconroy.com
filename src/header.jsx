@@ -355,14 +355,14 @@ export class Header extends React.Component {
           </div> */}
           <div className="headerStaticNavbar" onClick={this.openNav} style={{cursor: 'pointer', position: "relative", right: 0, left: 0, height: '40px', marginRight: 'auto', marginLeft: 'auto', marginTop: '50px'}}>
             {/* <img src={`${process.env.PUBLIC_URL}/images/kec_logo_w_gh.png`} style={{height: "40px"}}/> */}
-            <span class="fas fa-bars fa-2x" style={{padding: '10px', color: 'white'}}></span>
+            <span className="fas fa-bars fa-2x" style={{padding: '10px', color: 'white'}}></span>
           </div>
 
           <div ref={(ref) => this.navigationOverlay = ref} className="overlay">
 
-            <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav}>&times;</a>
+            <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
 
-            <div class="overlay-content">
+            <div className="overlay-content">
               <NavLink exact to="/" onClick={this.closeNav}>Home</NavLink>
               <NavLink to="/research" onClick={this.closeNav}>Research</NavLink>
               <NavLink to="/publications" onClick={this.closeNav}>Publications</NavLink>

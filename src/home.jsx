@@ -7,6 +7,8 @@ export class Home extends React.Component {
       <div>
         <h2>Home</h2>
 
+        <p><b>THIS PAGE IS A WORK IN PROGRESS AND WILL EVENTUALLY REPLACE <a href="http://keconroy.com">keconroy.com</a></b></p>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum nisl velit, ac dapibus eros porta suscipit. Aliquam sed sem in diam efficitur vestibulum. Aenean vitae interdum eros. Nam eget est mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec quam nisl, mollis fringilla turpis a, vestibulum tristique tortor. Integer ut libero eu elit molestie eleifend et non tortor. Donec sed magna ut mauris malesuada mollis eu at felis.</p>
 
         <p>Ut tristique ornare augue, sed fermentum magna pellentesque vel. Maecenas egestas augue nec felis euismod, rutrum venenatis purus condimentum. Sed eleifend eros eget sodales porta. Sed commodo ante eget ex eleifend, sit amet aliquam nisl tincidunt. Nam urna augue, mattis non mauris ut, aliquet egestas mi. Donec euismod sapien suscipit gravida eleifend. Maecenas condimentum lectus id dolor efficitur, at viverra ante congue. Pellentesque at tempor justo, et sagittis dolor. Duis non eros ac magna rhoncus finibus. Cras varius varius orci, quis ultrices tellus pharetra id.</p>

@@ -13,19 +13,19 @@ class Publication extends FilterEntry {
       }
 
       if (this.props.adsLink) {
-        var adsLink = <a href={this.props.adsLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span class="ai ai-ads"></span> ADS</a>
+        var adsLink = <a href={this.props.adsLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="ai ai-ads"></span> ADS</a>
       } else {
         var adsLink = null
       }
 
       if (this.props.pdf) {
-        var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/`+this.props.pdf} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span class="far fa-file-pdf"></span> PDF</a>
+        var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/`+this.props.pdf} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="far fa-file-pdf"></span> PDF</a>
       } else {
         var pdfLink = null
       }
 
       if (this.props.doi) {
-        var doiLink = <a href={'http://doi.org/'+this.props.doi} target='_blank' style={{padding: '2px', textDecoration: 'none'}}><span class="ai ai-doi"></span> publisher</a>
+        var doiLink = <a href={'http://doi.org/'+this.props.doi} target='_blank' style={{padding: '2px', textDecoration: 'none'}}><span className="ai ai-doi"></span> publisher</a>
       } else {
         var doiLink = null
       }
