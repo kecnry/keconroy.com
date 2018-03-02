@@ -102,7 +102,7 @@ a.icon {
 
 .filterRow {
   padding: 10px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 a.filterButton {
