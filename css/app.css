@@ -26,7 +26,7 @@ div #content {
 .headerRectangle::before {
 }
 
-.headerText, .headerImage, .headerIcons, .headerLinks, .headerLogo {
+.headerText, .headerImage, .headerIcons, .headerQuote, .headerLinks, .headerLogo {
   position: fixed;
   color: white;
 }
@@ -67,9 +67,60 @@ div #content {
   text-align: center;
 }
 
+.headerQuote {
+  position: fixed;
+  margin: 0 auto;
+  padding: 5px;
+  /*left: 0;*/
+  /*right: 0;*/
+  text-align: center;
+  width: 600px;
+  line-height: 1.6;
+  font-size: 1.5em;
+  font-weight: 400;
+  letter-spacing: -.1rem;
+  overflow-x: hidden;
+}
+
+.headerLinks > a {
+  color: white;
+  text-decoration: none;
+  /*padding-left: 50px;*/
+  /*padding-right: 50px;*/
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.headerLinks > a.active {
+  font-weight: bold;
+}
+
 a.icon {
     color: #fff;
-    padding: 5px;
+    padding: 10px;
+}
+
+.filterRow {
+  padding: 10px;
+}
+
+a.filterButton {
+  text-decoration: none;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: 5px;
+  color: #fff;
+  background-color: rgb(64, 78, 104);
+  border-color: rgb(64, 78, 104);
+  height: 35px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a.filterButton.active {
+  background-color: rgb(142, 163, 190);
 }
 
 /*@media all and (max-width: 1024px) {
