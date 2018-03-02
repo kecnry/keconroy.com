@@ -6,7 +6,14 @@ var smoothScroll = require('smoothscroll'); // https://github.com/alicelieutier/
 export class MainTab extends React.Component {
   componentDidMount = () => {
     let windowHeight = window.innerHeight
+    let windowWidth = window.innerWidth
     let scrollPerc = window.document.body.scrollTop / window.innerHeight
+
+    if (windowWidth < 1024 || windowHeight < 800) {
+      // don't scroll on mobile
+      return
+    }
+
     if (scrollPerc < 1.0) {
       smoothScroll(windowHeight * 1.0, 1200)
     } else if (scrollPerc < 1.25){
