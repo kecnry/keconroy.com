@@ -13,15 +13,28 @@ class Publication extends FilterEntry {
       }
 
       if (this.props.adsLink) {
-        var adsLink = <a href={this.props.adsLink}>ADS</a>
+        var adsLink = <a href={this.props.adsLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span class="ai ai-ads"></span> ADS</a>
       } else {
         var adsLink = null
       }
 
+      if (this.props.pdf) {
+        var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/`+this.props.pdf} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span class="far fa-file-pdf"></span> PDF</a>
+      } else {
+        var pdfLink = null
+      }
+
+      if (this.props.doi) {
+        var doiLink = <a href={'http://doi.org/'+this.props.doi} target='_blank' style={{padding: '2px', textDecoration: 'none'}}><span class="ai ai-doi"></span> publisher</a>
+      } else {
+        var doiLink = null
+      }
+
       return (
-        <div>
-          <p><b>{this.props.title}</b> {adsLink}</p>
+        <div style={{paddingBottom: '15px'}}>
+          <p><b>{this.props.title}</b></p>
           <p>{this.props.authors} {this.props.year}, <b>{this.props.journal}</b>, {this.props.volume}, {this.props.page}</p>
+          <p>{adsLink} {doiLink} {pdfLink}</p>
         </div>
       )
     } else {
@@ -54,16 +67,16 @@ class PublicationsFilter extends MainFilterTab {
 
 
     return (
-      <div>
+      <div style={{textAlign: 'center'}}>
         <h2>Publications</h2>
 
-        <div className="filterRow">
+        <div className="filterRow" style={{paddingBottom: '15px'}}>
           Project: {projects.map((p) => (<NavLink to={`/publications/${p}/${type}/${nauthor}`} className='filterButton'>{p}</NavLink>))}
         </div>
-        <div className="filterRow">
+        <div className="filterRow" style={{paddingBottom: '15px'}}>
           Type: {types.map((t) => (<NavLink to={`/publications/${project}/${t}/${nauthor}`} className='filterButton'>{t}</NavLink>))}
         </div>
-        <div className="filterRow">
+        <div className="filterRow" style={{paddingBottom: '50px'}}>
           Author: {nauthors.map((a) => (<NavLink to={`/publications/${project}/${type}/${a}`} className='filterButton'>{a}</NavLink>))}
         </div>
 
@@ -111,6 +124,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: '1st',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2018ApJ...854..163C',
+  doi: '10.3847/1538-4357/aaa3ea',
   pdf: '2018Conroy+.pdf'
 }, {
   title: 'The Effect of Transverse Motion on Eclipse and Transit Times',
@@ -163,7 +177,8 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2017ApJ...844..134L'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2017ApJ...844..134L',
+  doi: '10.3847/1538-4357/aa7947'
 }, {
   title: 'Heat Redistribution and Misaligned Orbit Models in PHOEBE',
   authors: 'Horvat, M., Prsa, A., Conroy, K. E.',
@@ -203,6 +218,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: 'nth',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016ApJS..227...29P',
+  doi: '10.3847/1538-4365/227/2/29',
   pdf: '2016Prsa+.pdf'
 }, {
   title: 'Discovery and Characterization of Eclipsing Binary Stars and Transiting Planets in Young Benchmark Clusters: The Pleiades and Hyades',
@@ -229,7 +245,8 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151..112D'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151..112D',
+  doi: '10.3847/0004-6256/151/5/112'
 }, {
   title: 'Kepler Eclipsing Binary Stars. VIII. Identification of False Positive Eclipsing Binaries and Re-extraction of New Light Curves',
   authors: 'Abdul-Masih, M., Prsa, A., Conroy, K., et al.',
@@ -243,6 +260,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: 'nth',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151..101A',
+  doi: '10.3847/0004-6256/151/4/101',
   pdf: '2016Abdul-Masih+.pdf',
 }, {
   title: 'An Extreme Analogue of &epsilon; Aurigae: An M-giant Eclipsed Every 69 Years by a Large Opaque Disk Surrounding a Small Hot Source',
@@ -256,7 +274,8 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151..123R'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151..123R',
+  doi: '10.3847/0004-6256/151/5/123'
 }, {
   title: 'Kepler Eclipsing Binary Stars. VII. The Catalog of Eclipsing Binaries Found in the Entire Kepler Data-Set',
   authors: 'Kirk, B., Conroy, K., Prsa, A., et al.',
@@ -270,6 +289,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: 'nth',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151...68K',
+  doi: '10.3847/0004-6256/151/3/68',
   pdf: '2016Kirk+.pdf'
 }, {
   title: 'HII 2407: An Eclipsing Binary Revealed By K2 Observations of the Pleiades',
@@ -283,7 +303,8 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015ApJ...814...62D'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015ApJ...814...62D',
+  doi: '10.1088/0004-637X/814/1/62'
 }, {
   title: 'Kepler Eclipsing Binary Stars. VI. Identification of eclipsing binaries in the K2 Campaign 0 data set',
   authors: 'LaCourse, D. M., Jek, K. J., Jacobs, T. L., et al.',
@@ -296,7 +317,8 @@ export var publicationDicts = [
   projectSelected: ['keplerebs'],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015MNRAS.452.3561L'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015MNRAS.452.3561L',
+  doi: '10.1093/mnras/stv1475'
 }, {
   title: 'A Detailed Study of the Variable Stars in Five Galactic Globular Clusters: IC4499, NGC4833, NGC6171 (M107), NGC6402 (M14), and NGC6584',
   authors: 'Murphy, B. W., Darragh, A., Hettinger, P., et al.',
@@ -375,6 +397,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: '1st',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2014PASP..126..914C',
+  doi: '10.1086/678953',
   pdf: '2014bConroy+.pdf'
 }, {
   title: 'Kepler Eclipsing Binary Stars. IV. Precise Eclipse Times for Close Binaries and Identification of Candidate Three-body Systems',
@@ -389,6 +412,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: '1st',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2014AJ....147...45C',
+  doi: '10.1088/0004-6256/147/2/45',
   pdf: '2014aConroy+.pdf'
 }, {
   title: 'A Triple Eclipsing System as a Test Case for Close Binary Formation Through Kozai Cycles',
@@ -441,7 +465,8 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'oral',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013EAS....64..285H'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013EAS....64..285H',
+  doi: '10.1093/mnras/stt886'
 }, {
   title: 'PHOEBE 2.0 - Where no model has gone before',
   authors: 'Degroote, P., Conroy, K., Hambleton, K., et al.',
@@ -572,6 +597,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: 'nth',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2011AJ....142..160S',
+  doi: '10.1088/0004-6256/142/5/160',
   pdf: '2011Slawson+.pdf'
 }, {
   title: 'Kepler Eclipsing Binary Stars. I. Catalog and Principal Characterization of 1879 Eclipsing Binaries in the First Data Release',
@@ -586,6 +612,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: 'nth',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2011AJ....141...83P',
+  doi: '10.1088/0004-6256/141/3/83',
   pdf: '2011Prsa+.pdf'
 }, {
   title: 'Variable Stars in the Globular Cluster M14',
@@ -621,6 +648,8 @@ export function makePublication(dict, expanded, filter, url) {
   // object by taking the filter and base URL
   return (<Publication title={dict.title}
                        adsLink={dict.adsLink}
+                       doi={dict.doi}
+                       pdf={dict.pdf}
                        authors={dict.authors}
                        year={dict.year}
                        journal={dict.journal}
