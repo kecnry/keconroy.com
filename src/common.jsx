@@ -11,6 +11,7 @@ export class MainTab extends React.Component {
 
     if (windowWidth < 1024 || windowHeight < 600) {
       // don't scroll on mobile
+      window.document.body.scrollTop = 0
       return
     }
 
