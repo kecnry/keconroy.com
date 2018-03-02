@@ -1,7 +1,7 @@
 {
   "name": "keconroy.com",
   "version": "0.1.0",
-  "homepage": "https://kecnry.github.io/keconroy.com-react",
+  "homepage": "https://kecnry.com",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
