@@ -138,7 +138,8 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2018AAS...23124425C'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2018AAS...23124425C',
+  pdf: 'aas_2018_jan.pdf'
 }, {
   title: 'Interfacing modeling suite Physics Of Eclipsing Binaries 2.0 with a Virtual Reality Platform',
   authors: 'Harriett, Edward; Conroy, Kyle; Prša, Andrej; Klassner, Frank',
@@ -204,7 +205,8 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2017AAS...22934422C'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2017AAS...22934422C',
+  pdf: 'aas_2017_jan.pdf'
 }, {
   title: 'Physics Of Eclipsing Binaries. II. Toward the Increased Model Fidelity',
   authors: 'Prsa, A., Conroy, Kyle E., Horvat, Martin, et al.',
@@ -381,7 +383,7 @@ export var publicationDicts = [
   selected: false,
   project: ['triples'],
   projectSelected: [],
-  type: 'poster',
+  type: 'oral',
   nauthor: '1st',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015AAS...22541506C'
 }, {
@@ -424,9 +426,10 @@ export var publicationDicts = [
   selected: false,
   project: ['triples'],
   projectSelected: [],
-  type: 'oral',
+  type: 'poster',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2014AAS...22315520C'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2014AAS...22315520C',
+  pdf: 'aas_2014_jan.pdf'
 }, {
   title: 'KIC 4544587: an eccentric, short-period binary system with δ Sct pulsations and tidally excited modes',
   authors: 'Hambleton, K. M., Kurtz, D. W., Prsa, A., et al.',
@@ -639,7 +642,8 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2010AAS...21541936C'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2010AAS...21541936C',
+  pdf: 'aas_2010_jan.pdf'
 }
 ]
 
