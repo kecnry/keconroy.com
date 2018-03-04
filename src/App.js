@@ -11,6 +11,7 @@ import {Home} from './home'
 import {Research, ResearchTopic} from './research'
 import {Publications} from './publications'
 import {Products} from './products'
+import {NotFound} from './errors'
 import {CV} from './cv'
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
             <Route path={process.env.PUBLIC_URL + '/publications'} component={Publications}/>
             <Route path={process.env.PUBLIC_URL + '/products'} component={Products}/>
             <Route path={process.env.PUBLIC_URL + '/cv'} component={CV}/>
+            <Route path="*" component={NotFound} />
           </div>
 
           <Footer />
