@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import EventListener, {withOptions} from 'react-event-listener'; // https://www.npmjs.com/package/react-event-listener
-import MediaQuery from 'react-responsive'; // https://github.com/contra/react-responsive
 
 var smoothScroll = require('smoothscroll'); // https://github.com/alicelieutier/smoothScroll
 

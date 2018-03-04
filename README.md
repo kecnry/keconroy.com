@@ -35,16 +35,23 @@ to create a local webserver running the site.
 
 ## Deploying
 
-In the root directory, issue:
+Install surge (may need sudo):
 
 ```
-npm run deploy
+npm install -g surge
 ```
 
-will need to provide github username and password (api token) 2-3 times.  This
-will build the website and commit and push to the `gh-pages` branch.  It may take
-a few minutes before those changes then go live.
+In the root directory, build:
 
+```
+npm run build
+```
+
+Upload to surge:
+```
+cd build
+surge
+```
 
 ## React
 
