@@ -587,7 +587,8 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2012JSARA...5...34C'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2012JSARA...5...34C',
+  pdf: '2012Conroy+.pdf'
 }, {
   title: 'Kepler Eclipsing Binary Stars. II. 2165 Eclipsing Binaries in the Second Data Release',
   authors: 'Slawson, R. W., Prsa, A., Welsh, W. F., et al.',
