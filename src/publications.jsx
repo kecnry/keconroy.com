@@ -359,7 +359,8 @@ export var publicationDicts = [
   projectSelected: ['triples'],
   type: 'journal',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015IBVS.6138....1C'
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015IBVS.6138....1C',
+  pdf: '2015Conroy+.pdf'
 }, {
   title: 'VizieR Online Data Catalog: Kepler eclipsing binary stars. V. (Conroy+, 2014)',
   authors: 'Conroy, K. E., Prsa, A., Stassun, K. G., et al.',
