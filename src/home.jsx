@@ -1,11 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+import {CVInfo} from './cv'
+
 export class Home extends React.Component {
   render() {
     return (
       <div>
-        <h2>Home</h2>
+        <CVInfo/>
 
         <p><b>THIS PAGE IS A WORK IN PROGRESS AND WILL EVENTUALLY REPLACE <a href="http://keconroy.com">keconroy.com</a></b></p>
 

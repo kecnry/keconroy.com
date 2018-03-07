@@ -13,19 +13,19 @@ class Publication extends FilterEntry {
       }
 
       if (this.props.adsLink) {
-        var adsLink = <a href={this.props.adsLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="ai ai-ads"></span> ADS</a>
+        var adsLink = <a href={this.props.adsLink} target="_blank" style={{padding: '2px'}}><span className="ai ai-ads"></span> ADS</a>
       } else {
         var adsLink = null
       }
 
       if (this.props.pdf) {
-        var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/`+this.props.pdf} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="far fa-file-pdf"></span> PDF</a>
+        var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/`+this.props.pdf} target="_blank" style={{padding: '2px'}}><span className="far fa-file-pdf"></span> PDF</a>
       } else {
         var pdfLink = null
       }
 
       if (this.props.publisherLink) {
-        var publisherLink = <a href={this.props.publisherLink} target='_blank' style={{padding: '2px', textDecoration: 'none'}}><span className="ai ai-doi"></span> publisher</a>
+        var publisherLink = <a href={this.props.publisherLink} target='_blank' style={{padding: '2px'}}><span className="ai ai-doi"></span> publisher</a>
       } else {
         var publisherLink = null
       }
@@ -49,9 +49,10 @@ class PublicationsFilter extends MainFilterTab {
     let types = ['all', 'journal', 'oral', 'poster']
     let nauthors = ['all', '1st', 'nth']
 
-    var project = this.props.match.params.project
-    var type = this.props.match.params.type
-    var nauthor = this.props.match.params.nauthor
+    var project = this.props.match.params.project || 'all'
+    var type = this.props.match.params.type || 'all'
+    var nauthor = this.props.match.params.nauthor || 'all'
+    var selected = this.props.match.params.selected || false
 
     if (!project) {
       project = 'all'
@@ -133,7 +134,7 @@ export var publicationDicts = [
   journal: 'AAS',
   volume: 231,
   page: 244.25,
-  selected: false,
+  selected: true,
   project: ['etvs', 'triples'],
   projectSelected: [],
   type: 'poster',
@@ -200,7 +201,7 @@ export var publicationDicts = [
   journal: 'AAS',
   volume: 229,
   page: 344.22,
-  selected: false,
+  selected: true,
   project: ['phoebe', 'triples'],
   projectSelected: [],
   type: 'poster',
@@ -341,7 +342,7 @@ export var publicationDicts = [
   journal: 'ASPC',
   volume: 496,
   page: '99C',
-  selected: false,
+  selected: true,
   project: ['triples'],
   projectSelected: ['triples'],
   type: 'oral',
@@ -382,7 +383,7 @@ export var publicationDicts = [
   journal: 'AAS',
   volume: 225,
   page: 415.06,
-  selected: false,
+  selected: true,
   project: ['triples'],
   projectSelected: [],
   type: 'oral',
@@ -425,7 +426,7 @@ export var publicationDicts = [
   journal: 'AAS',
   volume: 223,
   page: 155.20,
-  selected: false,
+  selected: true,
   project: ['triples'],
   projectSelected: [],
   type: 'poster',
@@ -453,7 +454,7 @@ export var publicationDicts = [
   journal: 'EAS',
   volume: 64,
   page: '295C',
-  selected: false,
+  selected: true,
   project: ['phoebe'],
   projectSelected: ['phoebe'],
   type: 'oral',
@@ -551,7 +552,7 @@ export var publicationDicts = [
   journal: 'AAS',
   volume: 220,
   page: 406.03,
-  selected: false,
+  selected: true,
   project: ['keplerebs', 'etvs'],
   projectSelected: [],
   type: 'oral',
@@ -670,6 +671,7 @@ export function makePublication(dict, expanded, filter, url) {
                        journal={dict.journal}
                        volume={dict.volume}
                        page={dict.page}
+                       selected={dict.selected}
                        project={dict.project}
                        projectSelected={dict.projectSelected}
                        type={dict.type}

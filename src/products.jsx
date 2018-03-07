@@ -117,6 +117,7 @@ export var productDicts = [
    sourceLink: "https://github.com/kecnry/spectra_sort_webpage",
    liveLink: "https://kecnry.github.io/spectra_sort_webpage",
    description: "teaching tool for interactive sorting of stellar spectra",
+   selected: false,
    project: [],
    type: ["code"],
  },{
@@ -124,6 +125,7 @@ export var productDicts = [
    sourceLink: "https://github.com/kecnry/autofig",
    description: "Python module to handle high-level plotting and animating functionality",
    content: <p>Content about this specific code/product (autofig)</p>,
+   selected: true,
    project: [],
    type: ["code"],
  },{
@@ -131,6 +133,7 @@ export var productDicts = [
    sourceLink: "https://github.com/kecnry/nparray",
    description: "Python module to create and manipulate numpy arrays in memory (ie. arange and linspace)",
    content: <p>Content about this specific code/product (nparray)</p>,
+   selected: true,
    project: [],
    type: ["code"],
  },{
@@ -138,18 +141,21 @@ export var productDicts = [
    sourceLink: "https://github.com/kecnry/mpltracker",
    description: "Python module which tracks all commands sent through matplotlib and stores the figure to a file that can be reopened in interactive mode",
    content: <p>Content about this specific code/product (mpltracker)</p>,
+   selected: false,
    project: [],
    type: ["code"],
  },{
    title: "rc-submit",
    sourceLink: "https://github.com/kecnry/rc-submit",
    description: "Python module (work-in-progress) first started during Vanderbilt's AstroHacks and continued at AAS Hack Day 2015 which aims to help in the creation and management of Amazon AWS virtual clusters",
+   selected: false,
    project: [],
    type: ["code"],
  },{
    title: "PHOEBE Website",
    liveLink: "http://phoebe-project.org",
    description: "The PHOEBE website hosts documentation and tutorials for PHOEBE",
+   selected: false,
    project: ["phoebe"],
    type: ["website"],
  },{
@@ -157,18 +163,21 @@ export var productDicts = [
    sourceLink: "https://github.com/phoebe-project/phoebe2",
    liveLink: "http://phoebe-project.org",
    description: "PHOEBE 2.0 is a complete rewrite of the popular eclipsing binary modeling suite (PHOEBE 1.0), now including support for much higher-precision, new physics, new observable types, and a Python module interface.",
+   selected: true,
    project: ["phoebe"],
    type: ["code"],
  },{
    title: "Kepler EBs ETV Data",
    dataLink: "http://vizier.cfa.harvard.edu/viz-bin/VizieR?-source=J/PASP/126/914",
    description: "Vizier release of the timing of every eclipse for every short-period binary in the Kepler data-set",
+   selected: false,
    project: ["keplerebs", "etvs"],
    type: ["data"],
  },{
    title: "Kepler EBs Website",
    liveLink: "http://keplerebs.villanova.edu",
    description: "The Kepler EBs website hosts a searchable catalog of all EBs in the Kepler field and all computed parameters and plots. Also includes a member section which allows members of the working group to make changes to entries and leave both public and private comments.",
+   selected: true,
    project: ["keplerebs"],
    type: ["website"],
  }
@@ -186,6 +195,7 @@ export function makeProduct(dict, expanded, filter, url) {
                    contentLink={`${url}/${dict.title}`}
                    description={dict.description}
                    content={dict.content}
+                   selected={dict.selected}
                    project={dict.project}
                    type={dict.type}
                    filter={filter}

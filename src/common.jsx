@@ -58,6 +58,8 @@ export class FilterEntry extends React.Component {
         continue
       } else if (v===entryValue) {
         continue
+      } else if (v===true && entryValue != true) {
+        return false
       } else if (entryValue.indexOf(v) >= 0) {
         continue
       } else {
