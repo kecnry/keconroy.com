@@ -3,6 +3,18 @@ import {Link} from 'react-router-dom'
 
 var smoothScroll = require('smoothscroll'); // https://github.com/alicelieutier/smoothScroll
 
+
+export const blue1 = 'rgb(76,95,119)'
+export const blue2 = 'rgb(59,75,103)'
+export const blue3 = 'rgb(33,44,64)'
+export const blue3overlay = 'rgba(33,44,64,0.7)'
+export const gray1 = 'rgb(216,219,226)'
+export const gray2 = 'rgb(50,56,70)'
+export const gray3 = 'rgb(35,35,35)'
+export const gray3overlay = 'rgba(35,35,35,0.95)'
+export const graybg = 'rgb(216,219,226)';
+
+
 export class MainTab extends React.Component {
   componentDidMount = () => {
     let windowHeight = window.innerHeight
@@ -67,5 +79,24 @@ export class FilterEntry extends React.Component {
       }
     }
     return true
+  }
+}
+
+export class Section extends React.Component {
+  render() {
+    if (this.props.dark) {
+      var color = 'rgb(230,230,230)'
+      var contentPane = 'content-pane dark'
+    } else {
+      var color = 'black'
+      var contentPane = 'content-pane light'
+    }
+    return (
+      <div className='section' style={{backgroundColor: this.props.color, color: color}}>
+        <div className={contentPane}>
+          {this.props.children}
+        </div>
+      </div>
+    )
   }
 }

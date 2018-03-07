@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink, Link, Route} from 'react-router-dom'
 
-import {MainTab, MainFilterTab, FilterEntry, FilterButton} from './common'
+import {MainTab, MainFilterTab, FilterEntry, FilterButton, Section} from './common'
 
 
 export class Product extends FilterEntry {
@@ -101,11 +101,11 @@ class ProductsEntry extends MainTab {
 export class Products extends React.Component {
   render() {
     return (
-      <div>
+      <Section>
         <Route exact path={`${this.props.match.url}`} component={ProductsFilter}/>
         <Route exact path={`${this.props.match.url}/:project/:type`} component={ProductsFilter}/>
         <Route exact path={`${this.props.match.url}/:title`} component={ProductsEntry}/>
-      </div>
+      </Section>
     )
   }
 }

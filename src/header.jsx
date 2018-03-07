@@ -2,16 +2,10 @@ import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import EventListener, {withOptions} from 'react-event-listener'; // https://www.npmjs.com/package/react-event-listener
 
+import {blue1, blue2, blue3, blue3overlay, gray1, gray2, gray3, gray3overlay} from './common'
+
 var smoothScroll = require('smoothscroll'); // https://github.com/alicelieutier/smoothScroll
 
-const blue1 = 'rgb(76,95,119)'
-const blue2 = 'rgb(59,75,103)'
-const blue3 = 'rgb(33,44,64)'
-const blue3overlay = 'rgba(33,44,64,0.7)'
-const gray1 = 'rgb(216,219,226)'
-const gray2 = 'rgb(50,56,70)'
-const gray3 = 'rgb(35,35,35)'
-const gray3overlay = 'rgba(35,35,35,0.95)'
 
 export class LinkIcons extends React.Component {
   render () {

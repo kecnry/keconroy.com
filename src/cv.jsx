@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import {MainTab} from './common'
+import {MainTab, Section} from './common'
+import {blue1, blue2, blue3, blue3overlay, gray1, gray2, gray3, gray3overlay} from './common'
 import {publicationDicts, makePublication} from './publications'
 import {productDicts, makeProduct} from './products'
 
@@ -12,19 +13,19 @@ export class CV extends MainTab {
         <h2>Curriculum Vita</h2>
 
         <CVInfo includePDF={true}/>
-        <CVEducation/>
+        <CVEducation color={blue2} dark={true}/>
         <CVTeaching/>
-        <CVResearch/>
+        <CVResearch color={blue2} dark={true}/>
         <CVObserving/>
 
-        <CVSelectPubs/>
+        <CVSelectPubs color={blue2} dark={true}/>
         <CVOralPubs/>
-        <CVPosterPubs/>
+        <CVPosterPubs color={blue2} dark={true}/>
         <CVProducts/>
 
-        <CVProfDevelopment/>
+        <CVProfDevelopment color={blue2} dark={true}/>
         <CVMemberships/>
-        <CVAwards/>
+        <CVAwards color={blue2} dark={true}/>
       </div>
     )
   }
@@ -39,7 +40,7 @@ export class CVInfo extends React.Component {
     }
 
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         {/* <h1>Kyle Conroy</h1> */}
         <p>
           Department of Physics and Astronomy<br/>
@@ -50,7 +51,7 @@ export class CVInfo extends React.Component {
 
         {pdfLink}
 
-      </div>
+      </Section>
     )
   }
 }
@@ -58,7 +59,7 @@ export class CVInfo extends React.Component {
 export class CVEducation extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Education</h2>
         <table>
           <tbody>
@@ -73,7 +74,7 @@ export class CVEducation extends React.Component {
           </tbody>
         </table>
 
-      </div>
+      </Section>
     )
   }
 }
@@ -81,7 +82,7 @@ export class CVEducation extends React.Component {
 export class CVTeaching extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Teaching Positions</h2>
 
         <table>
@@ -109,7 +110,7 @@ export class CVTeaching extends React.Component {
           </tbody>
         </table>
 
-      </div>
+      </Section>
     )
   }
 }
@@ -117,7 +118,7 @@ export class CVTeaching extends React.Component {
 export class CVResearch extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Research Positions</h2>
 
         <table>
@@ -149,7 +150,7 @@ export class CVResearch extends React.Component {
           </tbody>
         </table>
 
-      </div>
+      </Section>
     )
   }
 }
@@ -157,7 +158,7 @@ export class CVResearch extends React.Component {
 export class CVObserving extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Observing Experience</h2>
 
         <table>
@@ -177,7 +178,7 @@ export class CVObserving extends React.Component {
           </tbody>
         </table>
 
-      </div>
+      </Section>
     )
   }
 }
@@ -185,14 +186,14 @@ export class CVObserving extends React.Component {
 export class CVSelectPubs extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Selected Publications</h2>
 
         {publicationDicts.map((p, i) => (makePublication(p, false, {type: 'journal', selected: true}, '/publications')))}
 
         <p>see all <Link to="/publications/all/journal/all">Journal Publications</Link></p>
 
-      </div>
+      </Section>
     )
   }
 }
@@ -200,14 +201,14 @@ export class CVSelectPubs extends React.Component {
 export class CVOralPubs extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Selected Oral Presentations</h2>
 
         {publicationDicts.map((p, i) => (makePublication(p, false, {type: 'oral', selected: true}, '/publications')))}
 
         <p>see all <Link to="/publications/all/oral/all">Oral Publications</Link></p>
 
-      </div>
+      </Section>
     )
   }
 }
@@ -215,14 +216,14 @@ export class CVOralPubs extends React.Component {
 export class CVPosterPubs extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Selected Poster Presentations</h2>
 
         {publicationDicts.map((p, i) => (makePublication(p, false, {type: 'poster', selected: true}, '/publications')))}
 
         <p>see all <Link to="/publications/all/poster/all">Poster Publications</Link></p>
 
-      </div>
+      </Section>
     )
   }
 }
@@ -230,13 +231,13 @@ export class CVPosterPubs extends React.Component {
 export class CVProducts extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Code &amp; Products</h2>
 
         {productDicts.map((p, i) => (makeProduct(p, false, {selected: true}, '/products')))}
 
         <p>see all <Link to="/products">Code &amp; Products</Link></p>
-      </div>
+      </Section>
     )
   }
 }
@@ -246,7 +247,7 @@ export class CVProducts extends React.Component {
 export class CVProfDevelopment extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Professional Development</h2>
 
         <table>
@@ -266,7 +267,7 @@ export class CVProfDevelopment extends React.Component {
           </tbody>
         </table>
 
-      </div>
+      </Section>
     )
   }
 }
@@ -274,7 +275,7 @@ export class CVProfDevelopment extends React.Component {
 export class CVMemberships extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Memberships</h2>
 
         <table>
@@ -294,7 +295,7 @@ export class CVMemberships extends React.Component {
           </tbody>
         </table>
 
-      </div>
+      </Section>
     )
   }
 }
@@ -302,7 +303,7 @@ export class CVMemberships extends React.Component {
 export class CVAwards extends React.Component {
   render() {
     return (
-      <div className='content-pane'>
+      <Section color={this.props.color} dark={this.props.dark}>
         <h2>Fellowsips &amp; Awards</h2>
         <table>
           <tbody>
@@ -329,7 +330,7 @@ export class CVAwards extends React.Component {
           </tbody>
         </table>
 
-      </div>
+      </Section>
     )
   }
 }

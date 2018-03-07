@@ -3,21 +3,39 @@ html {
   background-color: rgb(216,219,226);
 }
 
+a:hover {
+  cursor: pointer;
+}
+
+a, a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+.dark a, .dark a:visited {
+  color: rgb(138,138,255);
+  text-decoration: none;
+}
+
 div #main {
   font-family: 'Raleway', sans-serif;
 }
 
 div #content {
+  padding: 0;
+}
+
+div .section {
+  background-color: rgb(216,219,226);
   padding-left: 5%;
   padding-right: 5%;
-  min-height: 1000px;
 }
 
 div .content-pane {
   text-align: center;
   padding: 0;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding-bottom: 50px;
+  padding-top: 25px;
   width: 80%;
   margin: 0 auto;
   position: relative;
@@ -104,10 +122,6 @@ div .content-pane {
 
 .headerLinks > a.active {
   font-weight: bold;
-}
-
-a {
-  text-decoration: none;
 }
 
 a.icon {

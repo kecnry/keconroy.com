@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route, Link} from 'react-router-dom'
 
-import {MainTab} from './common'
+import {MainTab, Section} from './common'
 
 export const ResearchTopic = ({ match }) => (
   <div>
@@ -10,9 +10,9 @@ export const ResearchTopic = ({ match }) => (
 )
 
 export const Research = ({ match }) => (
-  <div>
+  <Section>
     <h2>Research</h2>
-    <ul>
+    <ul style={{listStyle: 'none'}}>
       <li>
         <Link to={`${match.url}/phoebe`}>
           PHOEBE
@@ -39,5 +39,5 @@ export const Research = ({ match }) => (
     <Route exact path={match.url} render={() => (
       <h3>Please select a research topic.</h3>
     )}/>
-  </div>
+  </Section>
 )
