@@ -4,12 +4,14 @@ import EventListener, {withOptions} from 'react-event-listener'; // https://www.
 
 var smoothScroll = require('smoothscroll'); // https://github.com/alicelieutier/smoothScroll
 
-const blue1 = 'rgb(142,163,190)'
-const blue2 = 'rgb(64,78,104)'
+const blue1 = 'rgb(76,95,119)'
+const blue2 = 'rgb(59,75,103)'
 const blue3 = 'rgb(33,44,64)'
+const blue3overlay = 'rgba(33,44,64,0.7)'
 const gray1 = 'rgb(216,219,226)'
-const gray2 = 'rgb(72,76,85)'
+const gray2 = 'rgb(50,56,70)'
 const gray3 = 'rgb(35,35,35)'
+const gray3overlay = 'rgba(35,35,35,0.95)'
 
 export class LinkIcons extends React.Component {
   render () {
@@ -337,7 +339,8 @@ export class Header extends React.Component {
           onResize={this.updateTransforms}
           onScroll={withOptions(this.updateTransforms, {passive: true, capture: false})}
         />
-        <div ref={(ref) => this.headerStatic = ref} style={{backgroundColor:blue3, height: "50%", marginTop: "-50px"}}>
+        <div ref={(ref) => this.headerStatic = ref} style={{backgroundSize:'cover', backgroundImage:`url(${process.env.PUBLIC_URL}/images/smc.jpg)`, height: "300px", marginTop: "-50px"}}>
+          <div style={{backgroundColor: blue3overlay, position: 'absolute', left: 0, width: '100%', height: '300px'}}></div>
           {/* <div style={{position: 'fixed', width:'100%', height:'100%', backgroundSize:'cover', backgroundImage:`url(${process.env.PUBLIC_URL}/images/smc.jpg)`}}>
           </div> */}
 
@@ -357,7 +360,7 @@ export class Header extends React.Component {
             <span className="fas fa-bars fa-2x" style={{padding: '10px', color: 'white'}}></span>
           </div>
 
-          <div ref={(ref) => this.navigationOverlay = ref} className="overlay">
+          <div ref={(ref) => this.navigationOverlay = ref} className="overlay" style={{backgroundColor: gray3overlay}}>
 
             <a href="javascript:void(0)" className="closebtn" onClick={this.closeNav}>&times;</a>
 
