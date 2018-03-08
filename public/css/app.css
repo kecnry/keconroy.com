@@ -154,6 +154,17 @@ a.filterButton.active {
   background-color: rgb(142, 163, 190);
 }
 
+a.navButton {
+  text-decoration: none;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: 5px;
+  border-color: black;
+  border: 1px solid;
+  height: 80px;
+  text-align: center;
+}
+
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
     height: 0;

@@ -119,6 +119,7 @@ export var productDicts = [
    description: "teaching tool for interactive sorting of stellar spectra",
    selected: false,
    project: [],
+   projectSelected: [],
    type: ["code"],
  },{
    title: "autofig",
@@ -127,6 +128,7 @@ export var productDicts = [
    content: <p>More information on autofig coming soon...</p>,
    selected: true,
    project: [],
+   projectSelected: [],
    type: ["code"],
  },{
    title: "nparray",
@@ -135,6 +137,7 @@ export var productDicts = [
    content: <p>More information on nparray coming soon...</p>,
    selected: true,
    project: [],
+   projectSelected: [],
    type: ["code"],
  },{
    title: "mpltracker",
@@ -143,6 +146,7 @@ export var productDicts = [
    content: <p>More information on mpltracker coming soon...</p>,
    selected: false,
    project: [],
+   projectSelected: [],
    type: ["code"],
  },{
    title: "rc-submit",
@@ -150,6 +154,7 @@ export var productDicts = [
    description: "Python module (work-in-progress) first started during Vanderbilt's AstroHacks and continued at AAS Hack Day 2015 which aims to help in the creation and management of Amazon AWS virtual clusters",
    selected: false,
    project: [],
+   projectSelected: [],
    type: ["code"],
  },{
    title: "PHOEBE Website",
@@ -157,6 +162,7 @@ export var productDicts = [
    description: "The PHOEBE website hosts documentation and tutorials for PHOEBE",
    selected: false,
    project: ["phoebe"],
+   projectSelected: ['phoebe'],
    type: ["website"],
  },{
    title: "PHOEBE 2",
@@ -165,6 +171,7 @@ export var productDicts = [
    description: "PHOEBE 2.0 is a complete rewrite of the popular eclipsing binary modeling suite (PHOEBE 1.0), now including support for much higher-precision, new physics, new observable types, and a Python module interface.",
    selected: true,
    project: ["phoebe"],
+   projectSelected: ['phoebe'],
    type: ["code"],
  },{
    title: "Kepler EBs ETV Data",
@@ -172,6 +179,7 @@ export var productDicts = [
    description: "Vizier release of the timing of every eclipse for every short-period binary in the Kepler data-set",
    selected: false,
    project: ["keplerebs", "etvs"],
+   projectSelected: ['keplerebs', 'etvs'],
    type: ["data"],
  },{
    title: "Kepler EBs Website",
@@ -179,6 +187,7 @@ export var productDicts = [
    description: "The Kepler EBs website hosts a searchable catalog of all EBs in the Kepler field and all computed parameters and plots. Also includes a member section which allows members of the working group to make changes to entries and leave both public and private comments.",
    selected: true,
    project: ["keplerebs"],
+   projectSelected: ['keplerEBs'],
    type: ["website"],
  }
 ]
@@ -197,6 +206,7 @@ export function makeProduct(dict, expanded, filter, url) {
                    content={dict.content}
                    selected={dict.selected}
                    project={dict.project}
+                   projectSelected={dict.projectSelected}
                    type={dict.type}
                    filter={filter}
                    expanded={expanded}

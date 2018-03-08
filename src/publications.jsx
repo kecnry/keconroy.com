@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink, Link, Route} from 'react-router-dom'
 
-import {MainTab, MainFilterTab, FilterEntry, FilterButton, Section} from './common'
+import {MainTab, MainFilterTab, FilterEntry, Section} from './common'
 
 class Publication extends FilterEntry {
   render() {
@@ -163,7 +163,7 @@ export var publicationDicts = [
   page: 151.03,
   selected: false,
   project: ['other'],
-  projectsSelected: [],
+  projectSelected: [],
   type: 'poster',
   nauthor: 'nth',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2018AAS...23115103G'
@@ -461,7 +461,6 @@ export var publicationDicts = [
   nauthor: '1st',
   adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013EAS....64..295C',
   publisherLink: 'http://doi.org/10.1051/eas/1364040',
-
 }, {
   title: 'Physics of Eclipsing Binaries: Heartbeat Stars and Tidally Induced Pulsations',
   authors: 'Hambleton, K., Degroote, P., Conroy, K., et al.',

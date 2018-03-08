@@ -188,10 +188,11 @@ export class CVSelectPubs extends React.Component {
     return (
       <Section color={this.props.color} dark={this.props.dark}>
         <h2>Selected Publications</h2>
+        <div style={{paddingBottom: '40px'}}>
+          <p>see all <Link to="/publications/all/journal/all">Journal Publications</Link></p>
+        </div>
 
         {publicationDicts.map((p, i) => (makePublication(p, false, {type: 'journal', selected: true}, '/publications')))}
-
-        <p>see all <Link to="/publications/all/journal/all">Journal Publications</Link></p>
 
       </Section>
     )
@@ -203,10 +204,11 @@ export class CVOralPubs extends React.Component {
     return (
       <Section color={this.props.color} dark={this.props.dark}>
         <h2>Selected Oral Presentations</h2>
+        <div style={{paddingBottom: '40px'}}>
+          <p>see all <Link to="/publications/all/oral/all">Oral Publications</Link></p>
+        </div>
 
         {publicationDicts.map((p, i) => (makePublication(p, false, {type: 'oral', selected: true}, '/publications')))}
-
-        <p>see all <Link to="/publications/all/oral/all">Oral Publications</Link></p>
 
       </Section>
     )
@@ -218,10 +220,11 @@ export class CVPosterPubs extends React.Component {
     return (
       <Section color={this.props.color} dark={this.props.dark}>
         <h2>Selected Poster Presentations</h2>
+        <div style={{paddingBottom: '40px'}}>
+          <p>see all <Link to="/publications/all/poster/all">Poster Publications</Link></p>
+        </div>
 
         {publicationDicts.map((p, i) => (makePublication(p, false, {type: 'poster', selected: true}, '/publications')))}
-
-        <p>see all <Link to="/publications/all/poster/all">Poster Publications</Link></p>
 
       </Section>
     )
@@ -233,10 +236,12 @@ export class CVProducts extends React.Component {
     return (
       <Section color={this.props.color} dark={this.props.dark}>
         <h2>Code &amp; Products</h2>
+        <div style={{paddingBottom: '40px'}}>
+          <p>see all <Link to="/products">Code &amp; Products</Link></p>
+        </div>
 
         {productDicts.map((p, i) => (makeProduct(p, false, {selected: true}, '/products')))}
 
-        <p>see all <Link to="/products">Code &amp; Products</Link></p>
       </Section>
     )
   }

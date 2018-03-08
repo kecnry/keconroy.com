@@ -9,7 +9,7 @@ import {
 import {Header} from './header'
 import {Footer} from './footer'
 import {Home} from './home'
-import {Research, ResearchTopic} from './research'
+import {Research} from './research'
 import {Publications} from './publications'
 import {Products} from './products'
 import {NotFound} from './errors'

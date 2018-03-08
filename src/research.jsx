@@ -2,42 +2,253 @@ import React from 'react'
 import {Route, Link} from 'react-router-dom'
 
 import {MainTab, Section} from './common'
+import {blue1, blue2, blue3, blue3overlay, gray1, gray2, gray3, gray3overlay} from './common'
+import {publicationDicts, makePublication} from './publications'
+import {productDicts, makeProduct} from './products'
 
-export const ResearchTopic = ({ match }) => (
-  <div>
-    <h3>{match.params.topicId}</h3>
-  </div>
-)
+export class ResearchOverview extends React.Component {
+  render() {
+    var project = this.props.project
+    var title = researchDicts[project]['title']
+    var overview = researchDicts[project]['overview']
+    return (
+      <Section color={this.props.color} dark={this.props.dark}>
+        <h1>{title}</h1>
 
-export const Research = ({ match }) => (
-  <Section>
-    <h2>Research</h2>
-    <ul style={{listStyle: 'none'}}>
-      <li>
-        <Link to={`${match.url}/phoebe`}>
-          PHOEBE
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/triples`}>
-          Triple Systems
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/etvs`}>
-          ETVs
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/keplerebs`}>
-          Kepler EBs
-        </Link>
-      </li>
-    </ul>
+        {overview}
 
-    <Route path={`${match.url}/:topicId`} component={ResearchTopic}/>
-    <Route exact path={match.url} render={() => (
-      <h3>Please select a research topic.</h3>
-    )}/>
-  </Section>
-)
+        <div className="row" style={{paddingTop: "20px"}}>
+          <div className="one-third column">
+            <Link to={`/research/${project}`} className='button'>Read More</Link>
+          </div>
+          <div className="one-third column">
+            <Link to={`/publications/${project}/all/all`} className='button'>Publications</Link>
+          </div>
+          <div className="one-third column">
+            <Link to={`/products/${project}/all`} className='button'>Products</Link>
+          </div>
+        </div>
+      </Section>
+    )
+  }
+}
+
+export class ResearchTopic extends MainTab {
+  render() {
+    var project = this.props.match.params.project
+    var title = researchDicts[project]['title']
+    var content = researchDicts[project]['content']
+    return (
+      <div>
+        <Section>
+          <h1>{title}</h1>
+
+          {content}
+
+        </Section>
+
+        <Section color={blue2} dark={true}>
+          <h2>{title} Publications</h2>
+          <div style={{paddingBottom: '40px'}}>
+            <Link to={`/publications/${project}/all/all`}>see all {title} publications</Link>
+          </div>
+          {publicationDicts.map((p, i) => (makePublication(p, false, {projectSelected: project}, '/publications')))}
+        </Section>
+
+        <Section>
+          <h2>{this.props.title} Products</h2>
+          <div style={{paddingBottom: '40px'}}>
+            <Link to={`/products/${project}/all`}>see all {title} products</Link>
+          </div>
+          {productDicts.map((p, i) => (makeProduct(p, false, {projectSelected: project}, '/products')))}
+        </Section>
+      </div>
+    )
+  }
+}
+
+export class ResearchOverviews extends MainTab {
+  render() {
+    return (
+      <div>
+          <ResearchOverview project='phoebe'/>
+          <ResearchOverview project='triples' color={blue2} dark={true}/>
+          <ResearchOverview project='etvs'/>
+          <ResearchOverview project='keplerebs' color={blue2} dark={true}/>
+      </div>
+    )
+  }
+}
+
+export class Research extends React.Component {
+  render() {
+    return (
+      <div>
+        <Route exact path={`${this.props.match.url}`} component={ResearchOverviews}/>
+        <Route exact path={`${this.props.match.url}/:project`} component={ResearchTopic}/>
+      </div>
+    )
+  }
+}
+
+export var researchDicts = {
+  'phoebe': {
+    'title': 'PHOEBE',
+    'overview': <div className="row">
+                  <div className="one-third column">
+                    <img src="http://phoebe-project.org/static/images/logo_blue.svg" height="250"/>
+                  </div>
+
+                  <div className="two-thirds column">
+                    <p>
+                      <a href="http://phoebe-project.org" target="_blank" rel="noopener noreferrer" >PHOEBE</a> is an eclipsing binary modeling suite that reproduces and fits light curves and radial velocity curves of eclipsing systems.
+                    </p>
+                    <p>
+                      As a part of the PHOEBE <a href="http://phoebe-project.org/help/devel/" target="_blank" rel="noopener noreferrer" >development team</a>, we have developed and released the completely reimagined PHOEBE 2.0 bringing the ability to model data in the new era of ultra-precise photometry.  We are also in the process of developing several future releases which will include the support for new physics (including support for systems with more than two stars) and new observables.
+                    </p>
+                  </div>
+                </div>,
+    'content': <div className="container">
+                <div className="row">
+                  <div className="one-third column">
+                    <img src="http://phoebe-project.org/static/images/logo_blue.svg" height="250"/>
+                  </div>
+
+                  <div className="two-thirds column">
+                    <p>
+                      <a href="http://phoebe-project.org" target="_blank" rel="noopener noreferrer" >PHOEBE</a> is an eclipsing binary modeling suite that reproduces and fits light curves and radial velocity curves of eclipsing systems.
+                    </p>
+                    <p>
+                      As a part of the PHOEBE <a href="http://phoebe-project.org/help/devel/" target="_blank" rel="noopener noreferrer" >development team</a>, we are developing a completely reimagined version of PHOEBE.  We just released the official 2.0 release and are planning to release subsequent versions as we release new features (heat redistribution, triples, contact binaries, fitting, pulsations, etc).  PHOEBE 2.0 provides a new framework that will allow for implementing new physics on top of a very robust model, bringing the ability to model data in the new era of ultra-precise observations.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="row">
+                    <p>
+                      PHOEBE is written mostly in C with a Python frontend and is available via our <a href="http://github.com/phoebe-project/phoebe2" target="_blank" rel="noopener noreferrer" >github repository</a>.  We have designed the Python frontend to provide as much flexibility to the user as possible, including automatic unit conversions and allowing for multiple parameterizations of via our <i>constraints</i> framework.
+                    </p>
+                    <p>
+                      Our goal in building PHOEBE is to build the most robust and accurate model possible, even when at the cost of significant computational time.  However, we have designed the frontend in such a way that PHOEBE's backend is swappable with other existing codes.  The plan here is to allow data to be fitted roughly at first with codes that make more assumptions, and are therefore more efficient.  After the solution begins to converge, it is then trivial to switch to the full, robust model provided by the PHOEBE 2.0 backend.
+                    </p>
+                    <p>
+                      In addition to writing the entire frontend, my focus in PHOEBE has been to design and develop a new <i>hybrid method</i> for handling stellar systems with more than two components.  Particularly in the case of <a id="ember577" href="/research/triples" className="ember-view">triple systems</a> with a tight inner-binary, it is important to include both dynamical effects (ie. not simply nested keplerian orbits) as well as stellar distortion (ie. not just spherical or rotating stars).  Our method accounts for both of these effects and allows for precisely modeling both the stellar and orbital parameters of these complex systems.
+                    </p>
+                </div>
+              </div>
+  },
+  'triples': {
+    'title': 'Stellar Triples',
+    'overview': <div className="row">
+                  <div className="two-thirds column">
+                    <p>
+                      Eclipsing triple stellar systems allow us to determine the parameters of the individual stellar components with even more precision than eclipsing binaries.
+                    </p>
+                    <p>
+                      Triple star systems, whether inferred through eclipse timing variations or through actual eclipse events, help constrain the multiplicity occurence rates (ie how many stars are single vs double vs triple vs higher-order).  Triple stars also provide the ability to study dynamical interactions which could give us hints towards the planetary interactions that could have happened in the early stages of our Solar System's development.
+                    </p>
+                  </div>
+
+                  <div className="one-third column">
+                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/triples_splash.jpg`} style={{maxWidth: "100%"}}/>
+                  </div>
+                </div>,
+    'content': <div className="container">
+                <div className="row">
+                  <div className="two-thirds column">
+                    <p>
+                      Eclipsing triple stellar systems allow us to determine the parameters of the individual stellar components with even more precision than eclipsing binaries.
+                    </p>
+                    <p>
+                      Triple star systems, whether inferred through <Link to="/research/etvs">eclipse timing variations</Link> or through actual eclipse events, help constrain the multiplicity occurence rates (ie. how many stars are single vs double vs triple vs higher-order).  Triple stars also provide the ability to study dynamical interactions which could give us hints towards the planetary interactions that could have happened in the early stages of our Solar System's development.
+                    </p>
+                  </div>
+
+                  <div className="one-third column">
+                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/triples_splash.jpg`} style={{maxWidth: "100%"}}/>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <p>
+                    As soon as we have completed the work on implementing stellar triples within <Link to="/research/phoebe">PHOEBE</Link>, we plan to apply our code to fit several very promising triple systems discovered within the <Link to="/research/keplerebs">Kepler EBs</Link> dataset.  Several of these systems consist of a third star around a tight inner-binary and by modeling the orientation of the orbits within these systems we hope to test the predictions of Kozai Cycles and Tidal Friction as a mechanism for tight binary formation.
+                  </p>
+                  <p><b>MORE COMING SOON...</b></p>
+                </div>
+
+              </div>
+  },
+  'etvs': {
+    'title': 'Eclipse Timing Variations',
+    'overview': <div className="row">
+                <div className="two-thirds column">
+                  <p>
+                    By precisely measuring the timings of individual eclipses, we can infer behaviour in the eclipsing binary - including the presence of additional bodies in the system, either planets or stars.
+                  </p>
+                  <p>
+                  	By detecting potential components that aren't eclipsing or transiting, we can probe additional parameter space that other detections cannot and begin to constrain theories for formation mechanisms for stellar and planetary systems.
+                  </p>
+                </div>
+
+                <div className="one-third column">
+                  <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/etv_splash.png`} style={{maxWidth: "100%"}}/>
+                </div>
+              </div>,
+    'content': <div className="container">
+                <div className="row">
+                  <div className="two-thirds column">
+                    <p>
+                      By precisely measuring the timings of individual eclipses, we can infer behaviour in the eclipsing binary - including the presence of additional bodies in the system, either planets or stars.
+                    </p>
+                    <p>
+                      By detecting potential components that aren't eclipsing or transiting, we can probe additional parameter space that other detections cannot and begin to constrain theories for formation mechanisms for stellar and planetary systems.
+                    </p>
+                  </div>
+
+                  <div className="one-third column">
+                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/etv_splash.png`} style={{maxWidth: "100%"}}/>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <p><b>MORE COMING SOON...</b></p>
+                </div>
+
+              </div>
+
+  },
+  'keplerebs': {
+    'title': 'Kepler EBs',
+    'overview': <div className="row">
+                  <div className="one-third column">
+                    <img src={`${process.env.PUBLIC_URL}/images/kepler.png`} style={{maxWidth: "100%", maxHeight: "200px"}}/>
+                  </div>
+
+                  <div className="two-thirds column">
+                    <p>
+          			       The <a href="http://kepler.nasa.gov/" target="_blank" rel="noopener noreferrer">Kepler mission</a> provided a perfect opportunity to get unprecendented precision data for a large number of EBs. We identified, classified, and obtained solution estimates for over <a href="http://keplerebs.villanova.edu" target="_blank" rel="noopener noreferrer">2500 EBs</a> in the Kepler data. As the mission continues and the baseline gets longer, we not only continue to identify more long-period binaries but we also continue to individually study and model the most interesting EBs in the catalog.
+                    </p>
+                  </div>
+                </div>,
+    'content': <div className="container">
+                <div className="row">
+                  <div className="one-third column">
+                    <img src={`${process.env.PUBLIC_URL}/images/kepler.png`} style={{maxWidth: "100%", maxHeight: "200px"}}/>
+                  </div>
+
+                  <div className="two-thirds column">
+                    <p>
+
+                       The <a href="http://kepler.nasa.gov/" target="_blank" rel="noopener noreferrer">Kepler mission</a> provided a perfect opportunity to get unprecendented precision data for a large number of EBs. We identified, classified, and obtained solution estimates for over <a href="http://keplerebs.villanova.edu" target="_blank" rel="noopener noreferrer">2500 EBs</a> in the Kepler data. As the mission continues and the baseline gets longer, we not only continue to identify more long-period binaries but we also continue to individually study and model the most interesting EBs in the catalog.
+
+                    </p>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <p><b>MORE COMING SOON...</b></p>
+                </div>
+
+              </div>
+  }
+}

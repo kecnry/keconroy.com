@@ -17,6 +17,7 @@ export const graybg = 'rgb(216,219,226)';
 
 export class MainTab extends React.Component {
   componentDidMount = () => {
+    // console.log("MainTab componentDidMount")
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
     let scrollPerc = window.document.body.scrollTop / window.innerHeight
@@ -64,7 +65,7 @@ export class FilterEntry extends React.Component {
 
     for (let [k,v] of Object.entries(filter)) {
       let entryValue = this.props[k]
-      // console.log("*** filter: "+k+"="+v+" entryValue="+entryValue)
+      // console.log("*** filter: "+k+"="+v+" entryValue="+entryValue+" entryTitle="+this.props['title'])
       // console.log(this.props)
       if (v===null || v==='all') {
         continue
