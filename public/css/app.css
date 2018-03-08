@@ -12,6 +12,10 @@ a, a:visited {
   text-decoration: none;
 }
 
+.button {
+  color: blue;
+}
+
 .dark a, .dark a:visited {
   color: rgb(138,138,255);
   text-decoration: none;
