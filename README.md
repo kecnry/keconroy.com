@@ -1,11 +1,8 @@
 This is the source-code for my personal website: [keconroy.com](http://www.keconroy.com).
 
-**NOTE** this is currently a work-in-progress to migrate my existing ember-based
-site to React.
-
 ## License
 
-Note that the source-code for this website is released under the [GPL 3 License](./LICENSE), but the copyright on included content (i.e. photos, images, text, etc) are retained.  If you fork or take a portion of the code, please remove all material.
+Note that the source-code for this website is released under the [GPL 3 License](./LICENSE), but the copyright on included content (i.e. photos, images, pdfs, text, etc) are retained.  If you fork or take a portion of the code, please remove all material.
 
 
 ## Dependencies
@@ -47,9 +44,12 @@ will need to provide github username and password (api token) 2-3 times.  This
 will build the website and commit and push to the `gh-pages` branch.  It may take
 a few minutes before those changes then go live.
 
+
+To serve to a separate URL, edit the entry in [CNAME](./public/CNAME), the value of homepage in [package.json](./package.json), and follow the [github instructions](https://help.github.com/articles/using-a-custom-domain-with-github-pages/) to use a custom domain for pointing the DNS to github pages. 
+
 ### Surge
 
-(surge currently does not serve pdf files)
+(NOTE: surge currently does not serve pdf files)
 
 Install surge (may need sudo):
 
@@ -68,6 +68,8 @@ Upload to surge:
 cd build
 surge
 ```
+
+See surge DNS instructions.
 
 ## React
 
