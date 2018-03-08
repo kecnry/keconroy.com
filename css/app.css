@@ -3,14 +3,44 @@ html {
   background-color: rgb(216,219,226);
 }
 
+a:hover {
+  cursor: pointer;
+}
+
+a, a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+.dark a, .dark a:visited {
+  color: rgb(138,138,255);
+  text-decoration: none;
+}
+
 div #main {
   font-family: 'Raleway', sans-serif;
 }
 
 div #content {
+  padding: 0;
+  min-height: 1000px;
+}
+
+div .section {
+  background-color: rgb(216,219,226);
   padding-left: 5%;
   padding-right: 5%;
-  min-height: 1000px;
+}
+
+div .content-pane {
+  text-align: center;
+  padding: 0;
+  padding-bottom: 50px;
+  padding-top: 25px;
+  width: 80%;
+  margin: 0 auto;
+  /*position: relative;*/
+  max-width: 960px;
 }
 
 .headerRectangle {
@@ -124,6 +154,17 @@ a.filterButton.active {
   background-color: rgb(142, 163, 190);
 }
 
+a.navButton {
+  text-decoration: none;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: 5px;
+  border-color: black;
+  border: 1px solid;
+  height: 80px;
+  text-align: center;
+}
+
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
     height: 0;
@@ -174,3 +215,22 @@ a.filterButton.active {
     transform: none !important;
   }
 }*/
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+tr {
+  border-bottom: black 1px solid;
+}
+
+.dark tr {
+  border-bottom: rgb(230,230,230) 1px solid;
+}
+
+td {
+  padding: 12px 15px;
+}
