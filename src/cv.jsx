@@ -34,7 +34,7 @@ export class CV extends MainTab {
 export class CVInfo extends React.Component {
   render() {
     if (this.props.includePDF) {
-      var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/KyleConroy_CV.pdf`} target="_blank" style={{padding: '2px'}}><span className="far fa-file-pdf"></span> PDF version</a>
+      var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/KyleConroy_CV.pdf`} target="_blank" rel="noopener noreferrer"  style={{padding: '2px'}}><span className="far fa-file-pdf"></span> PDF version</a>
     } else {
       var pdfLink = null
     }
@@ -165,7 +165,7 @@ export class CVObserving extends React.Component {
           <tbody>
             <tr>
               <td>May 2015</td>
-              <td>Arranged world-wide photometric <a href="http://adsabs.harvard.edu/abs/2015IBVS.6138....1C" target="_blank">follow-up campaign for triple eclipse event of KIC 2835289</a></td>
+              <td>Arranged world-wide photometric <a href="http://adsabs.harvard.edu/abs/2015IBVS.6138....1C" target="_blank" rel="noopener noreferrer" >follow-up campaign for triple eclipse event of KIC 2835289</a></td>
             </tr>
             <tr>
               <td>Summer 2012</td>
@@ -254,7 +254,7 @@ export class CVProfDevelopment extends React.Component {
           <tbody>
             <tr>
               <td>May 2015</td>
-              <td>Arranged world-wide photometric <a href="http://adsabs.harvard.edu/abs/2015IBVS.6138....1C" target="_blank">follow-up campaign for triple eclipse event of KIC 2835289</a></td>
+              <td>Arranged world-wide photometric <a href="http://adsabs.harvard.edu/abs/2015IBVS.6138....1C" target="_blank" rel="noopener noreferrer" >follow-up campaign for triple eclipse event of KIC 2835289</a></td>
             </tr>
             <tr>
               <td>Summer 2012</td>
@@ -282,11 +282,11 @@ export class CVMemberships extends React.Component {
           <tbody>
             <tr>
               <td>2011 - Present</td>
-              <td>Kepler Eclipsing Binary Working Group | <a href="http://keplerebs.villanova.edu/members" target="_blank">Member</a></td>
+              <td>Kepler Eclipsing Binary Working Group | <a href="http://keplerebs.villanova.edu/members" target="_blank" rel="noopener noreferrer" >Member</a></td>
             </tr>
             <tr>
               <td>2010 - Present</td>
-              <td>American Astronomical Society | <a href="https://aas.org/directory/member_details?id=36332" target="_blank">Junior Member</a></td>
+              <td>American Astronomical Society | <a href="https://aas.org/directory/member_details?id=36332" target="_blank" rel="noopener noreferrer" >Junior Member</a></td>
             </tr>
             <tr>
               <td>2010 - Present</td>
@@ -309,7 +309,7 @@ export class CVAwards extends React.Component {
           <tbody>
             <tr>
               <td>2015 - Present</td>
-              <td>NASA Earth and Space Science Graduate Fellowship (<a href="http://nspires.nasaprs.com/external/solicitations/summary.do?method=init&amp;solId=%7BB6CDCEA6-8EDD-A48A-FAF8-E588F66661C3%7D&amp;path=open" target="_blank">NESSF</a>) Recipient</td>
+              <td>NASA Earth and Space Science Graduate Fellowship (<a href="http://nspires.nasaprs.com/external/solicitations/summary.do?method=init&amp;solId=%7BB6CDCEA6-8EDD-A48A-FAF8-E588F66661C3%7D&amp;path=open" target="_blank" rel="noopener noreferrer" >NESSF</a>) Recipient</td>
             </tr>
             <tr>
               <td>May 2011</td>
@@ -321,11 +321,11 @@ export class CVAwards extends React.Component {
             </tr>
             <tr>
               <td>April 2010</td>
-              <td>Barry M Goldwater <a href="https://goldwater.scholarsapply.org/hm-2010.php" target="_blank">Honorable Mention</a></td>
+              <td>Barry M Goldwater <a href="https://goldwater.scholarsapply.org/hm-2010.php" target="_blank" rel="noopener noreferrer" >Honorable Mention</a></td>
             </tr>
             <tr>
               <td>Oct 2008 - Dec 2009</td>
-              <td>NASA International Year of Astronomy <a href="http://www.nasa.gov/home/hqnews/2008/nov/HQ_08-282_IYA_Ambassadors.html" target="_blank">Student Ambassador</a> for Pennsylvania</td>
+              <td>NASA International Year of Astronomy <a href="http://www.nasa.gov/home/hqnews/2008/nov/HQ_08-282_IYA_Ambassadors.html" target="_blank" rel="noopener noreferrer" >Student Ambassador</a> for Pennsylvania</td>
             </tr>
           </tbody>
         </table>

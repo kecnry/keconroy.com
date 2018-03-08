@@ -11,11 +11,11 @@ export class LinkIcons extends React.Component {
   render () {
     return (
       <div>
-        <a href="https://github.com/kecnry" target="_blank" title="GitHub" className="icon"><span className="fab fa-2x fa-github"></span></a>
-        <a href="https://ui.adsabs.harvard.edu/#search/q=orcid%3A0000-0002-5442-8550&sort=citation_count%20desc%2C%20bibcode%20desc" target="_blank" title="ADS" className="icon"><span className="ai ai-2x ai-ads-square"></span></a>
-        <a href="https://scholar.google.com.au/citations?user=RT1pPfYAAAAJ" target="_blank" title="Google Scholar" className="icon"><span className="ai ai-2x ai-google-scholar-square"></span></a>
-        <a href="https://www.linkedin.com/in/kyle-conroy-a2b1b337" target="_blank" title="Linked In" className="icon"><span className="fab fa-2x fa-linkedin"></span></a>
-        <a href="http://orcid.org/0000-0002-5442-8550" target="_blank" title="Orcid ID" className="icon"><span className="ai ai-2x ai-orcid"></span></a>
+        <a href="https://github.com/kecnry" target="_blank" rel="noopener noreferrer"  title="GitHub" className="icon"><span className="fab fa-2x fa-github"></span></a>
+        <a href="https://ui.adsabs.harvard.edu/#search/q=orcid%3A0000-0002-5442-8550&sort=citation_count%20desc%2C%20bibcode%20desc" target="_blank" rel="noopener noreferrer"  title="ADS" className="icon"><span className="ai ai-2x ai-ads-square"></span></a>
+        <a href="https://scholar.google.com.au/citations?user=RT1pPfYAAAAJ" target="_blank" rel="noopener noreferrer"  title="Google Scholar" className="icon"><span className="ai ai-2x ai-google-scholar-square"></span></a>
+        <a href="https://www.linkedin.com/in/kyle-conroy-a2b1b337" target="_blank" rel="noopener noreferrer"  title="Linked In" className="icon"><span className="fab fa-2x fa-linkedin"></span></a>
+        <a href="http://orcid.org/0000-0002-5442-8550" target="_blank" rel="noopener noreferrer"  title="Orcid ID" className="icon"><span className="ai ai-2x ai-orcid"></span></a>
 
       </div>
     )

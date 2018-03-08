@@ -14,19 +14,19 @@ export class Product extends FilterEntry {
       }
 
       if (this.props.sourceLink) {
-        var sourceLink = <a href={this.props.sourceLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-code"></span> source-code</a>
+        var sourceLink = <a href={this.props.sourceLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-code"></span> source-code</a>
       } else {
         var sourceLink = null
       }
 
       if (this.props.liveLink) {
-        var liveLink = <a href={this.props.liveLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-link"></span> website</a>
+        var liveLink = <a href={this.props.liveLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-link"></span> website</a>
       } else {
         var liveLink = null
       }
 
       if (this.props.dataLink) {
-        var dataLink = <a href={this.props.dataLink} target="_blank" style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-database"></span> data</a>
+        var dataLink = <a href={this.props.dataLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-database"></span> data</a>
       } else {
         var dataLink = null
       }
