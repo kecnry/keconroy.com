@@ -1,15 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import {Section} from './common'
+import {MainTab, Section} from './common'
 import {CVInfo} from './cv'
 import {ResearchOverview} from './research'
 import {blue1, blue2, blue3, blue3overlay, gray1, gray2, gray3, gray3overlay} from './common'
 import {publicationDicts, makePublication} from './publications'
 import {productDicts, makeProduct} from './products'
 
-export class Home extends React.Component {
+export class Home extends MainTab {
   render() {
+    this.isHome = true // to prevent auto-scrolling the header
     return (
       <div>
         {/* <CVInfo/> */}

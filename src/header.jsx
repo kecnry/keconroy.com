@@ -29,15 +29,10 @@ export class Header extends React.Component {
     };
   }
   componentDidMount() {
-      // window.document.addEventListener('scroll', this.updateTransforms);
-      // window.document.addEventListener('resize', this.updateTransforms);
-
       // make sure to set initial transform state
       this.updateTransforms()
   }
   componentWillUnmount() {
-      // window.document.removeEventListener('scroll', this.updateTransforms);
-      // window.document.removeEventListener('resize', this.updateTransforms);
   }
   getScrollPerc = () => {
     return window.document.body.scrollTop / window.innerHeight

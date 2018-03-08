@@ -16,18 +16,27 @@ export const graybg = 'rgb(216,219,226)';
 
 
 export class MainTab extends React.Component {
+  scrollTo = (y) => {
+    window.document.body.scrollTop = y
+    window.document.documentElement.scrollTop = y
+    window.pagYOffset = y
+    window.scrollY = y
+  }
   componentDidMount = () => {
     // console.log("MainTab componentDidMount")
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
     let scrollPerc = window.document.body.scrollTop / window.innerHeight
 
+    if (this.isHome) {
+      this.scrollTo(1)
+      this.scrollTo(0)
+      return
+    }
+
     if (windowWidth < 1024 || windowHeight < 600) {
       // don't scroll on mobile
-      window.document.body.scrollTop = 0
-      window.document.documentElement.scrollTop = 0
-      window.pagYOffset = 0
-      window.scrollY = 0
+      this.scrollTo(0)
       return
     }
 
@@ -36,7 +45,7 @@ export class MainTab extends React.Component {
     } else if (scrollPerc < 1.25){
       smoothScroll(windowHeight * 1.25, 1200)
     } else {
-      window.document.body.scrollTop = windowHeight * 1.25
+      this.scrollTo(windowHeight * 1.25)
     }
   }
 }
