@@ -10,7 +10,7 @@ export class CV extends MainTab {
   render() {
     return (
       <div style={{textAlign: 'center'}}>
-        <h2>Curriculum Vita</h2>
+        <h2>Curriculum Vitae</h2>
 
         <CVInfo includePDF={true}/>
         <CVEducation color={blue2} dark={true}/>
@@ -88,7 +88,11 @@ export class CVTeaching extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td>Jan 2014, June 2015</td>
+              <td>Spring 2018, 2012</td>
+              <td>Teaching Assistant | Villanova University<br/>Graded and helped teach the senior-level capstone course: 'Modeling Analysis'</td>
+            </tr>
+            <tr>
+              <td>June 2015, Jan 2014</td>
               <td>Internship Sponsor | Vanderbilt University<br/>Hosted high-school students for 6-week internships</td>
             </tr>
             <tr>
@@ -98,10 +102,6 @@ export class CVTeaching extends React.Component {
             <tr>
               <td>Aug 2013 - June 2014</td>
               <td>Graduate Teaching Assistant | Vanderbilt University<br/>Intro Nighttime Astronomy Lab - helped create labs and taught a lab-section</td>
-            </tr>
-            <tr>
-              <td>Spring 2012</td>
-              <td>Teaching Assistant | Villanova University<br/>Graded and helped teach the senior-level capstone course: 'Modeling Analysis'</td>
             </tr>
             <tr>
               <td>Fall 2008 - 2010</td>

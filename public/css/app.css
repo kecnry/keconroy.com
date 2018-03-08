@@ -214,7 +214,10 @@ table {
 
 tr {
   border-bottom: black 1px solid;
+}
 
+.dark tr {
+  border-bottom: rgb(230,230,230) 1px solid;
 }
 
 td {

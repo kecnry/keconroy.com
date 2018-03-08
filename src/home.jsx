@@ -9,7 +9,7 @@ export class Home extends React.Component {
   render() {
     return (
       <div>
-        <CVInfo/>
+        {/* <CVInfo/> */}
 
         <Section>
           <p><b>THIS PAGE IS A WORK IN PROGRESS AND WILL EVENTUALLY REPLACE <a href="http://keconroy.com">keconroy.com</a></b></p>
