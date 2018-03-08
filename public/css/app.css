@@ -23,6 +23,7 @@ div #main {
 
 div #content {
   padding: 0;
+  min-height: 1000px;
 }
 
 div .section {
@@ -38,7 +39,7 @@ div .content-pane {
   padding-top: 25px;
   width: 80%;
   margin: 0 auto;
-  position: relative;
+  /*position: relative;*/
   max-width: 960px;
 }
 
