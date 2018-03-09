@@ -6,6 +6,8 @@ import {
   Link
 } from 'react-router-dom'
 
+import 'babel-polyfill' // https://medium.com/@andrewzey/google-seo-with-create-react-app-fixing-the-hidden-gotcha-c164063106d
+
 import {Header} from './header'
 import {Footer} from './footer'
 import {Home} from './home'
