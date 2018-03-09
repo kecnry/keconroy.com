@@ -113,6 +113,14 @@ export class Products extends React.Component {
 // place NEWER entries on TOP of the list
 export var productDicts = [
  {
+   title: "keconroy.com",
+   sourceLink: "https://github.com/kecnry/keconroy.com",
+   description: "personal website (this website), written in ReactJS",
+   selected: false,
+   project: [],
+   projectSelected: [],
+   type: ["website"]
+ }, {
    title: "spectra sorting interactive webpage",
    sourceLink: "https://github.com/kecnry/spectra_sort_webpage",
    liveLink: "https://kecnry.github.io/spectra_sort_webpage",
