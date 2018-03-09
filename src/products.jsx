@@ -32,7 +32,7 @@ export class Product extends FilterEntry {
       }
 
       if (this.props.expanded) {
-        var content = this.props.content
+        var content = <div style={{paddingTop: '50px'}}>{this.props.content}</div>
       } else {
         var content = null
       }
@@ -133,7 +133,27 @@ export var productDicts = [
    title: "autofig",
    sourceLink: "https://github.com/kecnry/autofig",
    description: "Python module to handle high-level plotting and animating functionality",
-   content: <p>More information on autofig coming soon...</p>,
+   content:
+    <div className='row'>
+      <div className='one-third column'>
+        <img src={`${process.env.PUBLIC_URL}/images/autofig.gif`} style={{maxWidth: "100%"}}/>
+      </div>
+      <div className='two-thirds column'>
+        <p>
+          <a href="https://github.com/kecnry/autofig" target='_blank' rel="noopener noreferrer">autofig</a> is a python module that allows for creating advanced <a href="http://matplotlib.org" target='_blank' rel="noopener noreferrer">matplotlib</a> figures through a high-level interface.  The general goal is to get common boiler-plate code hidden behind the scences in an intuitive and self-consistent syntax while still allowing access the the underlying matplotlib objects for full customization.  Autofig aims to provide the following:
+          <ul style={{textAlign: 'left'}}>
+            <li>a unified calling structure to matplotlib's plot, scatter, errorbar, LineCollection, and PolyCollection in both 2D and 3D projections. So if you decide you want to add errorbars or colorscaling to an existing plot call, you don't need to change the entire calling structure anymore.</li>
+            <li>basic "3D" support within 2D figures (by providing the z-coordinate, the z-orders will automatically be set).</li>
+            <li>a high-level wrapper to animate an existing plot over some independent-variable (i.e. time), with effects including highlight and uncover.</li>
+            <li>intelligent options for axes limits within animations.</li>
+            <li>intelligent defaults for subplot creation based on conflicts in units/labels.</li>
+          </ul>
+
+          See the <a href="https://github.com/kecnry/autofig#installation" target="_blank" rel="noopener noreferrer">README</a> for installation instructions, tutorials, and full gallery of examples.
+
+        </p>
+      </div>
+    </div>,
    selected: true,
    project: [],
    projectSelected: [],
@@ -142,7 +162,17 @@ export var productDicts = [
    title: "nparray",
    sourceLink: "https://github.com/kecnry/nparray",
    description: "Python module to create and manipulate numpy arrays in memory (ie. arange and linspace)",
-   content: <p>More information on nparray coming soon...</p>,
+   content:
+     <div className='row'>
+       <div className='column'>
+         <p>
+           <a href="https://github.com/kecnry/nparray" target='_blank' rel="noopener noreferrer">nparray</a> is a python module providing a high-level interface to handling and converting between various <a href="http://numpy.org" target="_blank" rel="noopener noreferrer">numpy</a> arrays, including: arange, linspace, and geomspace (among others).
+
+           See the <a href="https://github.com/kecnry/nparray#nparray" target="_blank" rel="noopener noreferrer">README</a> for installation instructions and tutorials.
+
+         </p>
+       </div>
+     </div>,
    selected: true,
    project: [],
    projectSelected: [],
@@ -151,7 +181,7 @@ export var productDicts = [
    title: "mpltracker",
    sourceLink: "https://github.com/kecnry/mpltracker",
    description: "Python module which tracks all commands sent through matplotlib and stores the figure to a file that can be reopened in interactive mode",
-   content: <p>More information on mpltracker coming soon...</p>,
+   // content: <p>More information on mpltracker coming soon...</p>,
    selected: false,
    project: [],
    projectSelected: [],
