@@ -64,8 +64,8 @@ export class CVEducation extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td><em>Current</em><br/>Spring 2018</td>
-              <td>PhD candidate in Physics and Astronomy | <b>Vanderbilt University</b><br/>Nashville, TN | Advisors: Keivan Stassun &amp; Andrej Prša</td>
+              <td>Spring 2018</td>
+              <td>PhD in Physics | <b>Vanderbilt University</b><br/>Nashville, TN | Advisors: Keivan Stassun &amp; Andrej Prša</td>
             </tr>
             <tr>
               <td>May 2011</td>

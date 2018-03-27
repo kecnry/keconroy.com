@@ -375,7 +375,7 @@ export class Header extends React.Component {
             <img src={`${process.env.PUBLIC_URL}/images/self.jpg`} />
           </div> */}
           <div className="headerText" style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "0px"}}>
-            <p>Astronomy Graduate Student | Vanderbilt University</p>
+            <p>Physics PhD | Vanderbilt University</p>
           </div>
 
           <div className="headerIcons" style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "5px", paddingBottom: "20px"}}>
@@ -417,7 +417,7 @@ export class Header extends React.Component {
             <img ref={(ref) => this.headerImage = ref} src={`${process.env.PUBLIC_URL}/images/self.jpg`} />
           </div>
           <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-            <p>Astronomy Graduate Student | Vanderbilt University</p>
+            <p>Physics PhD | Vanderbilt University</p>
           </div>
 
           <div ref={(ref) => this.headerIconsDiv = ref} className="headerIcons" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
