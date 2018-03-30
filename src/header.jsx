@@ -35,7 +35,8 @@ export class Header extends React.Component {
   componentWillUnmount() {
   }
   getScrollPerc = () => {
-    return window.document.body.scrollTop / window.innerHeight
+    var scrollTop = window.document.body.scrollTop || document.documentElement.scrollTop
+    return scrollTop / window.innerHeight
   }
   scrollHome = () => {
     let windowHeight = window.innerHeight
