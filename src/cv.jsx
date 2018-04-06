@@ -21,11 +21,12 @@ export class CV extends MainTab {
         <CVSelectPubs color={blue2} dark={true}/>
         <CVOralPubs/>
         <CVPosterPubs color={blue2} dark={true}/>
-        <CVProducts/>
+        <CVInvitedTalks/>
+        <CVProducts color={blue2} dark={true}/>
 
-        <CVProfDevelopment color={blue2} dark={true}/>
-        <CVMemberships/>
-        <CVAwards color={blue2} dark={true}/>
+        <CVProfDevelopment/>
+        <CVMemberships color={blue2} dark={true}/>
+        <CVAwards/>
       </div>
     )
   }
@@ -247,7 +248,24 @@ export class CVProducts extends React.Component {
   }
 }
 
+export class CVInvitedTalks extends React.Component {
+  render() {
+    return (
+      <Section color={this.props.color} dark={this.props.dark}>
+        <h2>Invited Talks</h2>
 
+        <table>
+          <tbody>
+            <tr>
+              <td>March 2018</td>
+              <td><a href="https://www.cfa.harvard.edu/events/stars-planets-seminar?field_seminar_series_value=spring18" target="_blank" rel="noopener noreferrer">Stars &amp; Planets Seminar</a> | Center for Astrophysics, Harvard University</td>
+            </tr>
+          </tbody>
+        </table>
+      </Section>
+    )
+  }
+}
 
 export class CVProfDevelopment extends React.Component {
   render() {
