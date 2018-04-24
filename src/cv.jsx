@@ -44,10 +44,10 @@ export class CVInfo extends React.Component {
       <Section color={this.props.color} dark={this.props.dark}>
         {/* <h1>Kyle Conroy</h1> */}
         <p>
-          Department of Physics and Astronomy<br/>
-          Vanderbilt University<br/>
-          VU Station B 1807, Nashville TN 37235<br/>
-          <a href='mailto:kyle.conroy@vanderbilt.edu'>kyle.conroy [at] vanderbilt.edu</a>
+          Department of Astrophysics &amp; Planetary Sciences<br/>
+          Villanova University<br/>
+          800 E Lancaster Ave, Villanova PA 19085<br/>
+          <a href='mailto:kyle.conroy@villanova.edu'>kyle.conroy [at] villanova.edu</a>
         </p>
 
         {pdfLink}
@@ -66,11 +66,11 @@ export class CVEducation extends React.Component {
           <tbody>
             <tr>
               <td>Spring 2018</td>
-              <td>PhD in Physics | <b>Vanderbilt University</b><br/>Nashville, TN | Advisors: Keivan Stassun &amp; Andrej Prša</td>
+              <td>PhD in Physics | <b>Vanderbilt University</b>,Nashville, TN<br/>Advisors: Keivan Stassun &amp; Andrej Prša<br/>Disseration: <a href={`${process.env.PUBLIC_URL}/pdf/2018Conroy_dissertation.pdf`} target="_blank" rel="noopener noreferrer">Astrophysics of Stellar Multiple Systems</a></td>
             </tr>
             <tr>
               <td>May 2011</td>
-              <td>BS in Astronomy and Astrophysics | <b>Villanova University</b><br/>Villanova, PA | Research Advisor: Andrej Prša | Minor: Physics</td>
+              <td>BS in Astronomy and Astrophysics | <b>Villanova University</b> Villanova, PA<br/>Research Advisor: Andrej Prša | Minor: Physics</td>
             </tr>
           </tbody>
         </table>
@@ -258,7 +258,15 @@ export class CVInvitedTalks extends React.Component {
           <tbody>
             <tr>
               <td>March 2018</td>
-              <td><a href="https://www.cfa.harvard.edu/events/stars-planets-seminar?field_seminar_series_value=spring18" target="_blank" rel="noopener noreferrer">Stars &amp; Planets Seminar</a> | Center for Astrophysics, Harvard University</td>
+              <td>Invited Speaker | <a href="https://www.cfa.harvard.edu/events/stars-planets-seminar?field_seminar_series_value=spring18" target="_blank" rel="noopener noreferrer">Stars &amp; Planets Seminar</a> | Center for Astrophysics, Harvard University</td>
+            </tr>
+            <tr>
+              <td>December 2017</td>
+              <td>Invited Colloquium Speaker | Ljubljana University, Slovenia</td>
+            </tr>
+            <tr>
+              <td>April 2015</td>
+              <td>Invited to lead workshop on using PHOEBE | <a href="https://fys.kuleuven.be/ster/meetings/binary-2015" target="_blank" rel="noopener noreferrer">Space-Inn Workshop</a> | KU Leuven, Belgium</td>
             </tr>
           </tbody>
         </table>
@@ -331,7 +339,7 @@ export class CVAwards extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td>2015 - Present</td>
+              <td>2015 - 2018</td>
               <td>NASA Earth and Space Science Graduate Fellowship (<a href="http://nspires.nasaprs.com/external/solicitations/summary.do?method=init&amp;solId=%7BB6CDCEA6-8EDD-A48A-FAF8-E588F66661C3%7D&amp;path=open" target="_blank" rel="noopener noreferrer" >NESSF</a>) Recipient</td>
             </tr>
             <tr>
