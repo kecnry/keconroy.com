@@ -113,6 +113,21 @@ export class Publications extends React.Component {
 // place NEWER entries on TOP of the list
 export var publicationDicts = [
 {
+  title: 'Astrophysics of Stellar Multiple Systems',
+  authors: 'Conroy, Kyle E.',
+  year: 2018,
+  journal: 'PhD Dissertation',
+  volume: '04092018',
+  page: '102518',
+  selected: false,
+  project: ['triples', 'etvs'],
+  projectSelected: ['triples'],
+  type: 'dissertation',
+  nauthor: '1st',
+  publisherLink: 'https://etd.library.vanderbilt.edu//available/etd-04092018-102518/',
+  pdf: '2018Conroy_dissertation.pdf'
+},
+{
   title: 'The Effects of Barycentric and Asymmetric Transverse Velocities on Eclipse and Transit Times',
   authors: 'Conroy, Kyle E., Prsa, A., Horvat, M., Stassun, K.G.',
   year: 2018,
