@@ -113,6 +113,21 @@ export class Publications extends React.Component {
 // place NEWER entries on TOP of the list
 export var publicationDicts = [
 {
+  title: 'COBAIN: generalized 3D radiative transfer code for contact binary atmospheres',
+  authors: 'Kochoska, Angela; Prša, Andrej; Zwitter, Tomaž; Horvat, Martin; Conroy, Kyle E.',
+  year: 2018,
+  journal: 'arXiv',
+  volume: null,
+  page: null,
+  selected: false,
+  project: [],
+  projectSelected: [],
+  type: 'journal',
+  nauthor: 'nth',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2018arXiv180408781K',
+  publisherLink: null
+},
+{
   title: 'Astrophysics of Stellar Multiple Systems',
   authors: 'Conroy, Kyle E.',
   year: 2018,
