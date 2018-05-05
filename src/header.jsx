@@ -122,8 +122,8 @@ export class Header extends React.Component {
       if (scrollPerc < 1.0) {
         // clipBackground
         var clipBackground = `rect(0px, 5000px, ${windowHeight*(0.8-0.2*scrollPerc)}px, 0px)`
-        // yRectangles from -0.6->-0.8 in scrollPerc 0->1
-        var yRectangles = `${windowHeight * (-0.6-0.2*scrollPerc)}px`
+        // yRectangles from -0.45->-0.8 in scrollPerc 0->1
+        var yRectangles = `${windowHeight * (-0.45-0.35*scrollPerc)}`
         // alphaRectangles from 1->0.9 in scrollPerc 0->1
         var alphaRectangles = `${1.0-0.1*scrollPerc}`
 
@@ -152,7 +152,7 @@ export class Header extends React.Component {
         var xQuote = `${windowWidth * (2-1.54*scrollPerc)}px`
         // paddingXText from 0 (centered) -> 35%
         var paddingXText = `${0+25*(scrollPerc)}%`
-        // yLinks from 0.8->0.6 in scrollPerc 0->1
+        // yLinks from 0.85->0.55 in scrollPerc 0->1
         var yLinks = `${windowHeight * (0.85-0.3*scrollPerc)}px`
         // yContent
         var yContent = `${windowHeight * 1.7}px`
@@ -161,7 +161,7 @@ export class Header extends React.Component {
         // clipBackground
         var clipBackground = `rect(0px, 5000px, ${windowHeight*(0.6-2.4*(scrollPerc-1))}px, 0px)`
         // yRectangles from -0.8->-1.35 in scrollPerc 1->1.25
-        var yRectangles = `${windowHeight * (-0.8-2.2*(scrollPerc-1))}px`
+        var yRectangles = `${windowHeight * (-0.8-2.2*(scrollPerc-1))}`
         // alphaRectangles from 0.9->0.65 in scrollPerc 1->0.25
         var alphaRectangles = `${0.9-(scrollPerc-1)}`
 
@@ -186,8 +186,8 @@ export class Header extends React.Component {
         var xQuote = `${windowWidth * 0.46}px`
         // paddingXText fixed at 35%
         var paddingXText = '25%'
-        // yLinks from 0.6->0.05 in scrollPerc 1->1.25
-        var yLinks = `${windowHeight * (0.56-2.2*(scrollPerc-1))}px`
+        // yLinks from 0.55->0.02 in scrollPerc 1->1.25
+        var yLinks = `${windowHeight * (0.55-2.12*(scrollPerc-1))}px`
         // yContent
         var yContent = `${windowHeight * (1.7-1.2*(scrollPerc-1))}px`
 
@@ -195,7 +195,7 @@ export class Header extends React.Component {
         // clipBackground
         var clipBackground = `rect(0px, 5000px, ${windowHeight*(1-scrollPerc)}px, 0px)`
         // yRectangles fixed at -1.35
-        var yRectangles = `${windowHeight * -1.35}px`
+        var yRectangles = `${windowHeight * -1.35}`
         // alphaRectangles
         var alphaRectangles = `${0.65}`
 
@@ -233,11 +233,11 @@ export class Header extends React.Component {
       // let translateXfactor = Math.max(1 - scrollPerc, 0)
       let scaleXRectangles = 1 - 0.25*scrollPercSticky
 
-      let transform1 = `translateY(${yRectangles}) translateX(${windowWidth*(-0.2+0.20*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
-      let transform2 = `translateY(${yRectangles}) translateX(${windowWidth*(0.05+0.15*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
-      let transform3 = `translateY(${yRectangles}) translateX(${windowWidth*(0.30+0.10*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
-      let transform4 = `translateY(${yRectangles}) translateX(${windowWidth*(0.55+0.05*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
-      let transform5 = `translateY(${yRectangles}) translateX(${windowWidth*(0.80+0.00*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+      let transform1 = `translateY(${yRectangles}px) translateX(${windowWidth*(0.10-0.10*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+      let transform2 = `translateY(${yRectangles}px) translateX(${windowWidth*(0.35-0.15*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+      let transform3 = `translateY(${yRectangles}px) translateX(${windowWidth*(0.60-0.20*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+      let transform4 = `translateY(${yRectangles}px) translateX(${windowWidth*(0.85-0.25*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
+      let transform5 = `translateY(${yRectangles}px) translateX(${windowWidth*(1.10-0.30*scrollPercSticky)}px) rotate(${rotateDeg}deg) scaleX(${scaleXRectangles})`
 
       this.headerBackground.style.clip = clipBackground
 
@@ -280,11 +280,11 @@ export class Header extends React.Component {
       this.headerQuote.style.left = xQuote
       this.headerQuote.style.opacity = alphaLogo
 
-      let transformLink1 = `translateY(${yLinks}) translateX(${windowWidth*(-0.05+0.12*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
-      let transformLink2 = `translateY(${yLinks}) translateX(${windowWidth*(-0.04+0.10*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
-      let transformLink3 = `translateY(${yLinks}) translateX(${windowWidth*(-0.0+0.08*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
-      let transformLink4 = `translateY(${yLinks}) translateX(${windowWidth*(0.03+0.04*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
-      let transformLink5 = `translateY(${yLinks}) translateX(${windowWidth*(0.10+0.00*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+      let transformLink1 = `translateY(${yLinks}) translateX(${windowWidth*(-0.10+0.18*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+      let transformLink2 = `translateY(${yLinks}) translateX(${windowWidth*(-0.03+0.11*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+      let transformLink3 = `translateY(${yLinks}) translateX(${windowWidth*(-0.0+0.07*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+      let transformLink4 = `translateY(${yLinks}) translateX(${windowWidth*(0.03+0.03*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
+      let transformLink5 = `translateY(${yLinks}) translateX(${windowWidth*(0.10-0.00*scrollPercSticky)}px) rotate(${rotateDeg}deg)`
 
       this.headerLink1.style.left = xLink1
       // this.headerLink1.child.style.paddingLeft = `${widthLink/2}px`
