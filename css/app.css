@@ -51,10 +51,10 @@ div .content-pane {
   position: fixed;
   stroke-width: 0px;
   /*overflow: none;*/
-  transform-origin: bottom left;
+  /* transform-origin: bottom left;
   -moz-transform-origin: bottom left;
   -ms-transform-origin: bottom left;
-  -webkit-transform-origin: bottom left;
+  -webkit-transform-origin: bottom left; */
 }
 
 .headerRectangle::before {
