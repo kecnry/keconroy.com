@@ -365,7 +365,7 @@ export class Header extends React.Component {
           </div>
 
           <div className="headerText" onClick={this.openNav} style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "10px"}}>
-            <h1 style={{fontSize: '3em', marginTop: '10px'}}>Kyle E Conroy</h1>
+            <h1 style={{fontSize: '3em', marginTop: '10px'}}>Kyle E Conroy, PhD</h1>
           </div>
 
           {/* <div ref={(ref) => this.headerStaticLogoCenter = ref} className="headerLogo">
@@ -376,7 +376,7 @@ export class Header extends React.Component {
             <img src={`${process.env.PUBLIC_URL}/images/self.jpg`} />
           </div> */}
           <div className="headerText" style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "0px"}}>
-            <p>Physics PhD | Vanderbilt University</p>
+            <p>Astronomy Post-Doc | Villanova University</p>
           </div>
 
           <div className="headerIcons" style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "5px", paddingBottom: "20px"}}>
@@ -412,13 +412,13 @@ export class Header extends React.Component {
             <img ref={(ref) => this.headerLogo = ref} src={`${process.env.PUBLIC_URL}/images/kec_logo_w_gh.png`}/>
           </div>
           <div ref={(ref) => this.headerName = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-            <h1>Kyle E Conroy</h1>
+            <h1>Kyle E Conroy, PhD</h1>
           </div>
           <div ref={(ref) => this.headerImageDiv = ref} className="headerImage" style={{right:0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
             <img ref={(ref) => this.headerImage = ref} src={`${process.env.PUBLIC_URL}/images/self.jpg`} />
           </div>
           <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-            <p>Physics PhD | Vanderbilt University</p>
+            <p>Astronomy Post-Doc | Villanova University</p>
           </div>
 
           <div ref={(ref) => this.headerIconsDiv = ref} className="headerIcons" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>

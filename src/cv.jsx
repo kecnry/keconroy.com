@@ -65,7 +65,7 @@ export class CVEducation extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td>Spring 2018</td>
+              <td>May 2018</td>
               <td>PhD in Physics | <b>Vanderbilt University</b>,Nashville, TN<br/>Advisors: Keivan Stassun &amp; Andrej Prša<br/>Disseration: <a href={`${process.env.PUBLIC_URL}/pdf/2018Conroy_dissertation.pdf`} target="_blank" rel="noopener noreferrer">Astrophysics of Stellar Multiple Systems</a></td>
             </tr>
             <tr>
@@ -125,11 +125,15 @@ export class CVResearch extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td>November 2016 - Present</td>
+              <td>June 2018 - Present</td>
+              <td>Post-Doc Researcher | Villanova University</td>
+            </tr>
+            <tr>
+              <td>November 2016 - May 2018</td>
               <td>Research Technician | Villanova University<br/>Dr Andrej Prša</td>
             </tr>
             <tr>
-              <td>June 2012 - Present</td>
+              <td>June 2012 - May 2018</td>
               <td>Graduate Research Assistant | Vanderbilt University<br/>Dr Keivan Stassun</td>
             </tr>
             <tr>
