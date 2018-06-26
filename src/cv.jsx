@@ -261,6 +261,10 @@ export class CVInvitedTalks extends React.Component {
         <table>
           <tbody>
             <tr>
+              <td>June 2018</td>
+              <td>Co-Lead <a href="http://phoebe-project.org/workshop" target="_blank" rel="noopener noreferrer">PHOEBE Workshop</a></td>
+            </tr>
+            <tr>
               <td>March 2018</td>
               <td>Invited Speaker | <a href="https://www.cfa.harvard.edu/events/stars-planets-seminar?field_seminar_series_value=spring18" target="_blank" rel="noopener noreferrer">Stars &amp; Planets Seminar</a> | Center for Astrophysics, Harvard University</td>
             </tr>
