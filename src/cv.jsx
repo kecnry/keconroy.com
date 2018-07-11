@@ -292,16 +292,21 @@ export class CVProfDevelopment extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td>May 2015</td>
-              <td>Arranged world-wide photometric <a href="http://adsabs.harvard.edu/abs/2015IBVS.6138....1C" target="_blank" rel="noopener noreferrer" >follow-up campaign for triple eclipse event of KIC 2835289</a></td>
+              <td><b>Refereed Articles</b></td>
+              <td>
+                Astronomical/Astrophysical Journal (3),
+                Astronomy &amp; Astrophysics (3),
+                Monthly Notices of the Royal Astronomical Society (5),
+                Information Bulletin on Variable Stars (1),
+                Publications of the Astronomical Society of Japan (1),
+                Astrophysics &amp; Space Science (1)
+              </td>
             </tr>
             <tr>
-              <td>Summer 2012</td>
-              <td>Mayall 4-m at KPNO</td>
-            </tr>
-            <tr>
-              <td>Summer 2010</td>
-              <td>SARA 0.9-m at KPNO and remotely at CTIO</td>
+              <td>Summer 2015</td>
+              <td>
+                Started departmental <i>AstroHacks</i> (weekly meetings to work on <a href="http://github.com/vandy-astro-hacks" target="_blank" rel="noopener noreferrer">collaborative code projects</a>) at Vanderbilt University
+              </td>
             </tr>
           </tbody>
         </table>
