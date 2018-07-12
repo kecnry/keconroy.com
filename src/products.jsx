@@ -56,7 +56,7 @@ export class Product extends FilterEntry {
 class ProductsFilter extends MainFilterTab {
   render() {
     let projects = ['all', 'phoebe', 'triples', 'etvs', 'keplerebs', 'other']
-    let types = ['all', 'code', 'website', 'data']
+    let types = ['all', 'code', 'website', 'data', 'docs']
 
     var project = this.props.match.params.project
     var type = this.props.match.params.type
@@ -112,6 +112,26 @@ export class Products extends React.Component {
 
 // place NEWER entries on TOP of the list
 export var productDicts = [
+ {
+   title: "PHOEBE Workshop Tutorials/Talks",
+   sourceLink: "https://github.com/phoebe-project/phoebe2-workshop",
+   liveLink: "https://github.com/phoebe-project/phoebe2-workshop#phoebe-workshop",
+   description: "Jupyter notebook tutorials and links to all talks given at the PHOEBE 2 workshop",
+   selected: false,
+   project: ["phoebe"],
+   projectSelected: ["phoebe"],
+   type: ["docs"]
+ },
+ {
+   title: "PHOEBE Documentation",
+   sourceLink: "https://github.com/phoebe-project/phoebe2-docs",
+   liveLink: "http://phoebe-project.org/docs/2.0/",
+   description: "Jupyter notebook tutorials and example scripts included in the PHOEBE documentation online",
+   selected: false,
+   project: ["phoebe"],
+   projectSelected: ["phoebe"],
+   type: ["docs"]
+ },
  {
    title: "keconroy.com",
    sourceLink: "https://github.com/kecnry/keconroy.com",
