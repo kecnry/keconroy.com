@@ -24,7 +24,7 @@ export class Footer extends React.Component {
       <div style={{backgroundColor: gray3, color: gray1, padding: '30px', paddingTop: '80px', paddingBottom: '40px', textAlign: 'center'}}>
         <LinkIcons />
         <br/>
-        <p>&copy; 2018 Kyle Conroy | Astronomy Post-Doc | Villanova University</p>
+        <p>&copy; 2018 Kyle Conroy | Astronomy Postdoctoral Researcher | Villanova University</p>
       </div>
     )
   }

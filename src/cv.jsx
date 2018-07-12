@@ -66,11 +66,11 @@ export class CVEducation extends React.Component {
           <tbody>
             <tr>
               <td>May 2018</td>
-              <td>PhD in Physics | <b>Vanderbilt University</b>,Nashville, TN<br/>Advisors: Keivan Stassun &amp; Andrej Prša<br/>Disseration: <a href={`${process.env.PUBLIC_URL}/pdf/2018Conroy_dissertation.pdf`} target="_blank" rel="noopener noreferrer">Astrophysics of Stellar Multiple Systems</a></td>
+              <td><b>PhD</b> in Physics | <b>Vanderbilt University</b>, Nashville, TN<br/>Advisors: Keivan Stassun &amp; Andrej Prša | Committee Members: David Weintraub, Andreas Berlind<br/>Dissertation: <a href={`${process.env.PUBLIC_URL}/pdf/2018Conroy_dissertation.pdf`} target="_blank" rel="noopener noreferrer">Astrophysics of Stellar Multiple Systems</a></td>
             </tr>
             <tr>
               <td>May 2011</td>
-              <td>BS in Astronomy and Astrophysics | <b>Villanova University</b> Villanova, PA<br/>Research Advisor: Andrej Prša | Minor: Physics</td>
+              <td><b>BS</b> in Astronomy and Astrophysics | <b>Villanova University</b>, Villanova, PA<br/>Research Advisor: Andrej Prša | Minor: Physics</td>
             </tr>
           </tbody>
         </table>
@@ -90,7 +90,7 @@ export class CVTeaching extends React.Component {
           <tbody>
             <tr>
               <td>Spring 2018, 2012</td>
-              <td>Teaching Assistant | Villanova University<br/>Graded and helped teach the senior-level capstone course: 'Modeling Analysis'</td>
+              <td>Teaching Assistant | Villanova University<br/>Graded and helped teach the senior-level capstone course: <a href="http://aprsa.villanova.edu/?q=modeling" target="_blank" rel="noopener noreferrer">Modeling Analysis</a></td>
             </tr>
             <tr>
               <td>June 2015, Jan 2014</td>
@@ -126,7 +126,7 @@ export class CVResearch extends React.Component {
           <tbody>
             <tr>
               <td>June 2018 - Present</td>
-              <td>Post-Doc Researcher | Villanova University</td>
+              <td>Postdoctoral Researcher | Villanova University<br/>Dr Andrej Prša</td>
             </tr>
             <tr>
               <td>November 2016 - May 2018</td>
@@ -262,7 +262,7 @@ export class CVInvitedTalks extends React.Component {
           <tbody>
             <tr>
               <td>June 2018</td>
-              <td>Co-Lead <a href="http://phoebe-project.org/workshop" target="_blank" rel="noopener noreferrer">PHOEBE Workshop</a></td>
+              <td>Co-Lead workshop including giving multiple talks and tutorials | <a href="http://phoebe-project.org/workshop" target="_blank" rel="noopener noreferrer">PHOEBE Workshop</a> | Villanova University</td>
             </tr>
             <tr>
               <td>March 2018</td>

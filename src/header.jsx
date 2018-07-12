@@ -346,7 +346,7 @@ export class Header extends React.Component {
           {/* <div ref={(ref) => this.headerStaticLogoLeft = ref} className="headerLogo">
             <img src={`${process.env.PUBLIC_URL}/images/kec_logo_w_gh.png`} style={{position: "relative", height: "100px", paddingTop: "100px", paddingLeft: "50px"}}/>
           </div> */}
-          <div className="headerStaticNavbar" onClick={this.openNav} style={{cursor: 'pointer', position: "relative", right: 0, left: 0, height: '40px', marginRight: 'auto', marginLeft: 'auto', marginTop: '50px'}}>
+          <div className="headerStaticNavbar" onClick={this.openNav} style={{cursor: 'pointer', position: "relative", right: 0, left: 0, height: '40px', marginRight: 'auto', marginLeft: 'auto', marginTop: '50px', marginBottom: '-20px'}}>
             {/* <img src={`${process.env.PUBLIC_URL}/images/kec_logo_w_gh.png`} style={{height: "40px"}}/> */}
             <span className="fas fa-bars fa-2x" style={{padding: '10px', color: 'white'}}></span>
           </div>
@@ -366,7 +366,7 @@ export class Header extends React.Component {
           </div>
 
           <div className="headerText" onClick={this.openNav} style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "10px"}}>
-            <h1 style={{fontSize: '3em', marginTop: '10px'}}>Kyle E Conroy, PhD</h1>
+            <h1 style={{fontSize: '3em', marginTop: '10px'}}>Kyle E Conroy<br/>PhD</h1>
           </div>
 
           {/* <div ref={(ref) => this.headerStaticLogoCenter = ref} className="headerLogo">
@@ -377,7 +377,7 @@ export class Header extends React.Component {
             <img src={`${process.env.PUBLIC_URL}/images/self.jpg`} />
           </div> */}
           <div className="headerText" style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "0px"}}>
-            <p>Astronomy Post-Doc | Villanova University</p>
+            <p>Postdoctoral Researcher<br/>Villanova University</p>
           </div>
 
           <div className="headerIcons" style={{position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "5px", paddingBottom: "20px"}}>
@@ -419,7 +419,7 @@ export class Header extends React.Component {
             <img ref={(ref) => this.headerImage = ref} src={`${process.env.PUBLIC_URL}/images/self.jpg`} />
           </div>
           <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-            <p>Astronomy Post-Doc | Villanova University</p>
+            <p>Postdoctoral Researcher | Villanova University</p>
           </div>
 
           <div ref={(ref) => this.headerIconsDiv = ref} className="headerIcons" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
