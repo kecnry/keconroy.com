@@ -6,11 +6,11 @@ import {MainTab, MainFilterTab, FilterEntry, Section} from './common'
 class Publication extends FilterEntry {
   render() {
     if (this.isVisible()) {
-      if (this.props.content && this.props.contentLink) {
-        var expandedLink = <Link to={this.props.contentLink}>read more</Link>
-      } else {
-        var expandedLink = null
-      }
+      // if (this.props.content && this.props.contentLink) {
+      //   var expandedLink = <Link to={this.props.contentLink}>read more</Link>
+      // } else {
+      //   var expandedLink = null
+      // }
 
       if (this.props.adsLink) {
         var adsLink = <a href={this.props.adsLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px'}}><span className="ai ai-ads"></span> ADS</a>
@@ -52,7 +52,7 @@ class PublicationsFilter extends MainFilterTab {
     var project = this.props.match.params.project || 'all'
     var type = this.props.match.params.type || 'all'
     var nauthor = this.props.match.params.nauthor || 'all'
-    var selected = this.props.match.params.selected || false
+    // var selected = this.props.match.params.selected || false
 
     if (!project) {
       project = 'all'

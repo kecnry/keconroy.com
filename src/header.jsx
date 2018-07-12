@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import EventListener, {withOptions} from 'react-event-listener'; // https://www.npmjs.com/package/react-event-listener
 
 import {blue1, blue2, blue3, blue3overlay, gray1, gray2, gray3, gray3overlay, getScrollPerc} from './common'
@@ -88,7 +88,7 @@ export class Header extends React.Component {
     let scrollPerc = getScrollPerc()
     let scrollPercSticky = Math.min(scrollPerc, 1)
 
-    let widthLink = 0.2*windowWidth
+    // let widthLink = 0.2*windowWidth
     let xLink1 = `${0.0 * windowWidth}px`
     let xLink2 = `${0.2 * windowWidth}px`
     let xLink3 = `${0.4 * windowWidth}px`

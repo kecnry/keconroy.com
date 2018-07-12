@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 var smoothScroll = require('smoothscroll'); // https://github.com/alicelieutier/smoothScroll
 
@@ -90,7 +90,7 @@ export class FilterEntry extends React.Component {
         continue
       } else if (v===entryValue) {
         continue
-      } else if (v===true && entryValue != true) {
+      } else if (v===true && entryValue !== true) {
         return false
       } else if (entryValue.indexOf(v) >= 0) {
         continue
@@ -108,8 +108,8 @@ export class Section extends React.Component {
       var color = 'rgb(230,230,230)'
       var contentPane = 'content-pane dark'
     } else {
-      var color = 'black'
-      var contentPane = 'content-pane light'
+      color = 'black'
+      contentPane = 'content-pane light'
     }
     return (
       <div className='section' style={{backgroundColor: this.props.color, color: color}}>
