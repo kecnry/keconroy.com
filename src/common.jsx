@@ -14,6 +14,11 @@ export const gray3 = 'rgb(35,35,35)'
 export const gray3overlay = 'rgba(35,35,35,0.95)'
 export const graybg = 'rgb(216,219,226)';
 
+export const getScrollPerc = () => {
+  var scrollTop = window.document.body.scrollTop || document.documentElement.scrollTop;
+  return scrollTop / window.innerHeight
+};
+
 
 export class MainTab extends React.Component {
   scrollTo = (y) => {
@@ -26,7 +31,9 @@ export class MainTab extends React.Component {
     // console.log("MainTab componentDidMount")
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
-    let scrollPerc = window.document.body.scrollTop / window.innerHeight
+    let scrollPerc = getScrollPerc()
+
+    // console.log("MainTab.componentDidMount "+scrollPerc)
 
     if (this.isHome) {
       this.scrollTo(1)

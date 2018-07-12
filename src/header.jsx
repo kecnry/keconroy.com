@@ -2,7 +2,7 @@ import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import EventListener, {withOptions} from 'react-event-listener'; // https://www.npmjs.com/package/react-event-listener
 
-import {blue1, blue2, blue3, blue3overlay, gray1, gray2, gray3, gray3overlay} from './common'
+import {blue1, blue2, blue3, blue3overlay, gray1, gray2, gray3, gray3overlay, getScrollPerc} from './common'
 
 var smoothScroll = require('smoothscroll'); // https://github.com/alicelieutier/smoothScroll
 
@@ -34,15 +34,12 @@ export class Header extends React.Component {
   }
   componentWillUnmount() {
   }
-  getScrollPerc = () => {
-    var scrollTop = window.document.body.scrollTop || document.documentElement.scrollTop
-    return scrollTop / window.innerHeight
-  }
   scrollHome = () => {
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
-    let scrollPerc = this.getScrollPerc()
+    let scrollPerc = getScrollPerc()
 
+    // console.log("scrollHome "+scrollPerc)
     if (windowWidth < 1024 || windowHeight < 600) {
       // don't scroll on mobile
       return
@@ -57,19 +54,23 @@ export class Header extends React.Component {
   scrollNavbar = () => {
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
-    let scrollPerc = this.getScrollPerc()
+    let scrollPerc = getScrollPerc()
 
     if (windowWidth < 1024 || windowHeight < 600) {
       // don't scroll on mobile
       return
     }
 
+    // console.log("scrollNavbar "+scrollPerc)
     if (scrollPerc < 1.0) {
       smoothScroll(windowHeight * 1.0, 1200)
     } else if (scrollPerc < 1.25){
       smoothScroll(windowHeight * 1.25, 1200)
     } else {
-      window.document.body.scrollTop = windowHeight * 1.25
+      return
+      // then we're scrolled below the header
+      // allow this to be handled by common.MainTab.componentDidMount
+      // window.document.body.scrollTop = windowHeight * 1.25
     }
   }
   openNav = () => {
@@ -84,7 +85,7 @@ export class Header extends React.Component {
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
 
-    let scrollPerc = this.getScrollPerc()
+    let scrollPerc = getScrollPerc()
     let scrollPercSticky = Math.min(scrollPerc, 1)
 
     let widthLink = 0.2*windowWidth
