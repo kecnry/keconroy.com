@@ -12,7 +12,7 @@ a, a:visited {
   text-decoration: none;
 }
 
-.button {
+.button, .button:visited {
   color: blue;
 }
 
