@@ -348,7 +348,7 @@ export class CVAwards extends React.Component {
   render() {
     return (
       <Section color={this.props.color} dark={this.props.dark}>
-        <h2>Fellowsips &amp; Awards</h2>
+        <h2>Fellowships &amp; Awards</h2>
         <table>
           <tbody>
             <tr>
