@@ -14,6 +14,12 @@ export const gray3 = 'rgb(35,35,35)'
 export const gray3overlay = 'rgba(35,35,35,0.95)'
 export const graybg = 'rgb(216,219,226)';
 
+export const urlGitHub = "https://github.com/kecnry";
+export const urlADS = "https://ui.adsabs.harvard.edu/#search/q=orcid%3A0000-0002-5442-8550&sort=citation_count%20desc%2C%20bibcode%20desc";
+export const urlGoogleScholar = "https://scholar.google.com.au/citations?user=RT1pPfYAAAAJ";
+export const urlLinkedIn = "https://www.linkedin.com/in/kyle-conroy-a2b1b337";
+export const urlOrcid = "http://orcid.org/0000-0002-5442-8550";
+
 export const getScrollPerc = () => {
   var scrollTop = window.document.body.scrollTop || document.documentElement.scrollTop;
   return scrollTop / window.innerHeight

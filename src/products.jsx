@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink, Link, Route} from 'react-router-dom'
 
-import {MainTab, MainFilterTab, FilterEntry, FilterButton, Section} from './common'
+import {MainTab, MainFilterTab, FilterEntry, FilterButton, Section, urlGitHub} from './common'
 
 
 export class Product extends FilterEntry {
@@ -73,14 +73,20 @@ class ProductsFilter extends MainFilterTab {
       <div style={{textAlign: 'center'}}>
         <h2>Products</h2>
 
-        <div className="filterRow" style={{paddingBottom: '15px'}}>
-          Project: {projects.map((p) => (<NavLink to={`/products/${p}/${type}`} className='filterButton'>{p}</NavLink>))}
-        </div>
-        <div className="filterRow" style={{paddingBottom: '50px'}}>
-          Type: {types.map((t) => (<NavLink to={`/products/${project}/${t}`} className='filterButton'>{t}</NavLink>))}
+        <div className="urlRow" style={{paddingBottom: '25px'}}>
+          <a href={urlGitHub} target="_blank" rel="noopener noreferrer" title="GitHub">GitHub Profile</a>
         </div>
 
-        {productDicts.map((p, i) => (makeProduct(p, false, this.getFilterFromURL(), '/products')))}
+        <div className="filterRowTitle">Project:</div>
+        <div className="filterRow">{projects.map((p) => (<NavLink to={`/products/${p}/${type}`} className='filterButton'>{p}</NavLink>))}</div>
+
+        <div className="filterRowTitle">Type:</div>
+        <div className="filterRow">{types.map((t) => (<NavLink to={`/products/${project}/${t}`} className='filterButton'>{t}</NavLink>))}</div>
+
+
+        <div className="filterContent">
+          {productDicts.map((p, i) => (makeProduct(p, false, this.getFilterFromURL(), '/products')))}
+        </div>
 
       </div>
     )

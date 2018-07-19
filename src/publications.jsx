@@ -1,7 +1,8 @@
 import React from 'react'
 import {NavLink, Link, Route} from 'react-router-dom'
 
-import {MainTab, MainFilterTab, FilterEntry, Section} from './common'
+import {MainTab, MainFilterTab, FilterEntry, Section, urlADS, urlGoogleScholar, urlOrcid} from './common'
+
 
 class Publication extends FilterEntry {
   render() {
@@ -71,17 +72,27 @@ class PublicationsFilter extends MainFilterTab {
       <div style={{textAlign: 'center'}}>
         <h2>Publications</h2>
 
-        <div className="filterRow" style={{paddingBottom: '15px'}}>
-          Project: {projects.map((p) => (<NavLink to={`/publications/${p}/${type}/${nauthor}`} className='filterButton'>{p}</NavLink>))}
-        </div>
-        <div className="filterRow" style={{paddingBottom: '15px'}}>
-          Type: {types.map((t) => (<NavLink to={`/publications/${project}/${t}/${nauthor}`} className='filterButton'>{t}</NavLink>))}
-        </div>
-        <div className="filterRow" style={{paddingBottom: '50px'}}>
-          Author: {nauthors.map((a) => (<NavLink to={`/publications/${project}/${type}/${a}`} className='filterButton'>{a}</NavLink>))}
+        <div className="urlRow" style={{paddingBottom: '25px'}}>
+          <a href={urlADS} target="_blank" rel="noopener noreferrer" title="ADS">View Publications on ADS</a>
+          <br/>
+          <a href={urlGoogleScholar} target="_blank" rel="noopener noreferrer"  title="Google Scholar">Google Scholar Profile</a>
+          <br/>
+          <a href={urlOrcid} target="_blank" rel="noopener noreferrer"  title="Orcid ID">ORCID Profile</a>
         </div>
 
-        {publicationDicts.map((p, i) => (makePublication(p, false, this.getFilterFromURL(), '/publications')))}
+        <div className="filterRowTitle">Project:</div>
+        <div className="filterRow">{projects.map((p) => (<NavLink to={`/publications/${p}/${type}/${nauthor}`} className='filterButton'>{p}</NavLink>))}</div>
+
+        <div className="filterRowTitle">Type:</div>
+        <div className="filterRow">{types.map((t) => (<NavLink to={`/publications/${project}/${t}/${nauthor}`} className='filterButton'>{t}</NavLink>))}</div>
+
+        <div className="filterRowTitle">Author:</div>
+        <div className="filterRow">{nauthors.map((a) => (<NavLink to={`/publications/${project}/${type}/${a}`} className='filterButton'>{a}</NavLink>))}</div>
+
+        <div className="filterContent">
+          {publicationDicts.map((p, i) => (makePublication(p, false, this.getFilterFromURL(), '/publications')))}
+        </div>
+
 
       </div>
     )
