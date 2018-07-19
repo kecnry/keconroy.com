@@ -134,6 +134,14 @@ a.icon {
     padding: 10px;
 }
 
+.urlRow {
+  padding: 20px;
+}
+
+.filterRowTitle {
+  padding-top: 15px;
+}
+
 .filterRow {
   padding: 10px;
   overflow-x: auto;
@@ -156,6 +164,10 @@ a.filterButton {
 
 a.filterButton.active {
   background-color: rgb(142, 163, 190);
+}
+
+.filterContent {
+  padding: 50px;
 }
 
 a.navButton {
