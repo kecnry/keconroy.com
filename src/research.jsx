@@ -96,7 +96,7 @@ export var researchDicts = {
     'title': 'PHOEBE',
     'overview': <div className="row">
                   <div className="one-third column">
-                    <img src="http://phoebe-project.org/static/images/logo_blue.svg" height="250"/>
+                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/phoebe_light.png`} style={{height: "250px"}}/>
                   </div>
 
                   <div className="two-thirds column">
@@ -111,7 +111,7 @@ export var researchDicts = {
     'content': <div className="container">
                 <div className="row">
                   <div className="one-third column">
-                    <img src="http://phoebe-project.org/static/images/logo_blue.svg" height="250"/>
+                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/phoebe_light.png`} style={{height: "250px"}}/>
                   </div>
 
                   <div className="two-thirds column">
