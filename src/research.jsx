@@ -173,7 +173,6 @@ export var researchDicts = {
                   <p>
                     As soon as we have completed the work on implementing stellar triples within <Link to="/research/phoebe">PHOEBE</Link>, we plan to apply our code to fit several very promising triple systems discovered within the <Link to="/research/keplerebs">Kepler EBs</Link> dataset.  Several of these systems consist of a third star around a tight inner-binary and by modeling the orientation of the orbits within these systems we hope to test the predictions of Kozai Cycles and Tidal Friction as a mechanism for tight binary formation.
                   </p>
-                  <p><b>MORE COMING SOON...</b></p>
                 </div>
 
               </div>
@@ -211,7 +210,11 @@ export var researchDicts = {
                 </div>
 
                 <div className="row">
-                  <p><b>MORE COMING SOON...</b></p>
+                  <p>To detect candidate triple systems, we have measured the timings of all eclipses in the Kepler Eclipsing Binary Catalog.  For the short-period binary sample, this has resulted in approximately 1300 candidate triple systems.</p>
+                </div>
+
+                <div className="row">
+                  <p>The resulting ETVs are then a combination of dynamical (physical change to the orbital elements of the inner-binary caused by interactions with additional bodies in the system) and light time effects (apparent change in the timing of an eclipse due to the finite speed of light).  In addition to the previously known contributions, we have discovered and formulated a new effect caused by the plane-of-sky motion of the inner-binary caused by the orbit around the common center of mass of the entire system.</p>
                 </div>
 
               </div>
@@ -239,14 +242,18 @@ export var researchDicts = {
                   <div className="two-thirds column">
                     <p>
 
-                       The <a href="http://kepler.nasa.gov/" target="_blank" rel="noopener noreferrer">Kepler mission</a> provided a perfect opportunity to get unprecendented precision data for a large number of EBs. We identified, classified, and obtained solution estimates for over <a href="http://keplerebs.villanova.edu" target="_blank" rel="noopener noreferrer">2500 EBs</a> in the Kepler data. As the mission continues and the baseline gets longer, we not only continue to identify more long-period binaries but we also continue to individually study and model the most interesting EBs in the catalog.
+                       The <a href="http://kepler.nasa.gov/" target="_blank" rel="noopener noreferrer">Kepler mission</a> provided a perfect opportunity to get unprecendented precision data for a large number of EBs. We identified, classified, and obtained solution estimates for over <a href="http://keplerebs.villanova.edu" target="_blank" rel="noopener noreferrer">2500 EBs</a> in the Kepler data. We also obtained follow-up spectroscopic information and individually studied a number of particularly interesting EBs in the catalog.
 
                     </p>
                   </div>
                 </div>
 
                 <div className="row">
-                  <p><b>MORE COMING SOON...</b></p>
+                  <p>In addition to detecting EB signals in the extracted light curves, we also identified the true sources of many EBs whose signals were leaking into Kepler light curves.  The actual EBs in these cases do not correspond to a target directly observed by Kepler, but rather a nearby source that contaminates the Kepler source.  We can infer the true source of these EBs and extract a light curve from the surrounding pixels, when available. </p>
+                </div>
+
+                <div className="row">
+                  <p>As Kepler transitioned to the K2 mission, we also cataloged <a href="http://keplerebs.villanova.edu/k2" target="_blank" rel="noopener noreferrer">K2 EBs</a>.  Although a much short time baseline exists for each target, we benefit from the multiple stellar populations that each K2 quarter probes throughout the ecliptic plane.</p>
                 </div>
 
               </div>
