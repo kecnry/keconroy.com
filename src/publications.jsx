@@ -127,16 +127,17 @@ export var publicationDicts = [
   title: 'Physics of Eclipsing Binaries. III. Spin-Orbit Misalignment',
   authors: 'Horvat, Martin; Conroy, Kyle E.; Pablo, Herbert; et al.',
   year: 2018,
-  journal: 'arXiv',
-  volume: null,
-  page: null,
+  journal: 'ApJS',
+  volume: 237,
+  page: 26,
   selected: true,
   project: ['phoebe'],
   projectSelected: ['phoebe'],
   type: 'journal',
   nauthor: 'nth',
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2018arXiv180607680H',
-  publisherLink: null
+  publisherLink: 'https://doi.org/10.3847/1538-4365/aacd0f',
+  pdf: '2018Horvat+.pdf'
 },
 {
   title: 'COBAIN: generalized 3D radiative transfer code for contact binary atmospheres',
