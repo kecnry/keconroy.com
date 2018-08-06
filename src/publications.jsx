@@ -166,7 +166,7 @@ export var publicationDicts = [
   projectSelected: ['triples'],
   type: 'dissertation',
   nauthor: '1st',
-  publisherLink: 'https://etd.library.vanderbilt.edu//available/etd-04092018-102518/',
+  publisherLink: 'https://etd.library.vanderbilt.edu/available/etd-04092018-102518/',
   pdf: '2018Conroy_dissertation.pdf'
 },
 {
@@ -181,7 +181,7 @@ export var publicationDicts = [
   projectSelected: ['etvs'],
   type: 'journal',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2018ApJ...854..163C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2018ApJ...854..163C',
   publisherLink: 'http://doi.org/10.3847/1538-4357/aaa3ea',
   pdf: '2018Conroy+.pdf'
 }, {
@@ -196,7 +196,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2018AAS...23124425C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2018AAS...23124425C',
   pdf: 'aas_2018_jan.pdf'
 }, {
   title: 'Interfacing modeling suite Physics Of Eclipsing Binaries 2.0 with a Virtual Reality Platform',
@@ -210,7 +210,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2018AAS...23124407H'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2018AAS...23124407H'
 }, {
   title: 'Digitizing Villanova University\'s Eclipsing Binary Card Catalogue',
   authors: 'Guzman, Giannina; Dalton, Briana; Conroy, Kyle; Prsa, Andrej',
@@ -223,7 +223,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2018AAS...23115103G'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2018AAS...23115103G'
 }, {
   title: 'A Bright Short Period M-M Eclipsing Binary from the KELT Survey: Magnetic Activity and the Mass-Radius Relationship for M-dwarfs',
   authors: 'Lubin, Jack B., Rodriguez, Joseph E., et al.',
@@ -236,7 +236,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2017ApJ...844..134L',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2017ApJ...844..134L',
   publisherLink: 'http://doi.org/10.3847/1538-4357/aa7947'
 }, {
   title: 'Heat Redistribution and Misaligned Orbit Models in PHOEBE',
@@ -250,7 +250,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2017AAS...22934423H'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2017AAS...22934423H'
 }, {
   title: 'Robust Modeling of Stellar Triples in PHOEBE',
   authors: 'Conroy, K. E., Prsa, A., Horvat, M., Stassun, K. G.',
@@ -263,7 +263,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2017AAS...22934422C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2017AAS...22934422C',
   pdf: 'aas_2017_jan.pdf'
 }, {
   title: 'Physics Of Eclipsing Binaries. II. Toward the Increased Model Fidelity',
@@ -277,7 +277,7 @@ export var publicationDicts = [
   projectSelected: ['phoebe'],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016ApJS..227...29P',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2016ApJS..227...29P',
   publisherLink: 'http://doi.org/10.3847/1538-4365/227/2/29',
   pdf: '2016Prsa+.pdf'
 }, {
@@ -292,7 +292,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'oral',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AAS...22810208S'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2016AAS...22810208S'
 }, {
   title: 'New Pleiades Eclipsing Binaries and a Hyades Transiting System Identified by K2',
   authors: 'David, T. J., Conroy, K. E., Hillenbrand, L. A., et al.',
@@ -305,7 +305,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151..112D',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2016AJ....151..112D',
   publisherLink: 'http://doi.org/10.3847/0004-6256/151/5/112'
 }, {
   title: 'Kepler Eclipsing Binary Stars. VIII. Identification of False Positive Eclipsing Binaries and Re-extraction of New Light Curves',
@@ -319,7 +319,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151..101A',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2016AJ....151..101A',
   publisherLink: 'http://doi.org/10.3847/0004-6256/151/4/101',
   pdf: '2016Abdul-Masih+.pdf',
 }, {
@@ -334,7 +334,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151..123R',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2016AJ....151..123R',
   publisherLink: 'http://doi.org/10.3847/0004-6256/151/5/123'
 }, {
   title: 'Kepler Eclipsing Binary Stars. VII. The Catalog of Eclipsing Binaries Found in the Entire Kepler Data-Set',
@@ -348,7 +348,7 @@ export var publicationDicts = [
   projectSelected: ['keplerebs'],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2016AJ....151...68K',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2016AJ....151...68K',
   publisherLink: 'http://doi.org/10.3847/0004-6256/151/3/68',
   pdf: '2016Kirk+.pdf'
 }, {
@@ -363,7 +363,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015ApJ...814...62D',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015ApJ...814...62D',
   publisherLink: 'http://doi.org/10.1088/0004-637X/814/1/62'
 }, {
   title: 'Kepler Eclipsing Binary Stars. VI. Identification of eclipsing binaries in the K2 Campaign 0 data set',
@@ -377,7 +377,7 @@ export var publicationDicts = [
   projectSelected: ['keplerebs'],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015MNRAS.452.3561L',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015MNRAS.452.3561L',
   publisherLink: 'http://doi.org/10.1093/mnras/stv1475'
 }, {
   title: 'A Detailed Study of the Variable Stars in Five Galactic Globular Clusters: IC4499, NGC4833, NGC6171 (M107), NGC6402 (M14), and NGC6584',
@@ -391,7 +391,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'oral',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015IAUGA..2255998M'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015IAUGA..2255998M'
 }, {
   title: 'A Triple Eclipsing System as a Test Case for Close Binary Formation through Kozai Cycles',
   authors: 'Conroy, K. E., Prsa, A., Stassun, K. G.',
@@ -404,7 +404,7 @@ export var publicationDicts = [
   projectSelected: ['triples'],
   type: 'oral',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015ASPC..496...99C'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015ASPC..496...99C'
 }, {
   title: 'Call for Follow-Up Observations of the Dynamically Changing Triple Star KIC 2835289',
   authors: 'Conroy, K.; Prsa, A., Stassun, K.; Orosz, J.',
@@ -417,7 +417,7 @@ export var publicationDicts = [
   projectSelected: ['triples'],
   type: 'journal',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015IBVS.6138....1C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015IBVS.6138....1C',
   publisherLink: 'http://www.konkoly.hu/cgi-bin/IBVS?6138',
   pdf: '2015Conroy+.pdf'
 }, {
@@ -432,7 +432,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'data',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015yCat..61260914C'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015yCat..61260914C'
 }, {
   title: 'A triple eclipsing system as a test case for close binary formation through Kozai cycles',
   authors: 'Conroy, K. E., Prsa, A., Stassun, K. G., et al.',
@@ -445,7 +445,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'oral',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2015AAS...22541506C'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015AAS...22541506C'
 }, {
   title: 'Kepler Eclipsing Binary Stars. V. Identification of 31 Candidate Eclipsing Binaries in the K2 Engineering Dataset',
   authors: 'Conroy, K. E., Prsa, A., Stassun, K. G., et al.',
@@ -458,7 +458,7 @@ export var publicationDicts = [
   projectSelected: ['keplerebs'],
   type: 'journal',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2014PASP..126..914C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2014PASP..126..914C',
   publisherLink: 'http://doi.org/10.1086/678953',
   pdf: '2014bConroy+.pdf'
 }, {
@@ -473,7 +473,7 @@ export var publicationDicts = [
   projectSelected: ['keplerebs', 'etvs'],
   type: 'journal',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2014AJ....147...45C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2014AJ....147...45C',
   publisherLink: 'http://doi.org/10.1088/0004-6256/147/2/45',
   pdf: '2014aConroy+.pdf'
 }, {
@@ -488,7 +488,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2014AAS...22315520C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2014AAS...22315520C',
   pdf: 'aas_2014_jan.pdf'
 }, {
   title: 'KIC 4544587: an eccentric, short-period binary system with δ Sct pulsations and tidally excited modes',
@@ -502,7 +502,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013MNRAS.434..925H',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2013MNRAS.434..925H',
   publisherLink: 'http://doi.org/10.1093/mnras/stt886'
 }, {
   title: 'Phoebe 2.0 - Triple and multiple systems',
@@ -516,7 +516,7 @@ export var publicationDicts = [
   projectSelected: ['phoebe'],
   type: 'oral',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013EAS....64..295C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2013EAS....64..295C',
   publisherLink: 'http://doi.org/10.1051/eas/1364040',
 }, {
   title: 'Physics of Eclipsing Binaries: Heartbeat Stars and Tidally Induced Pulsations',
@@ -530,7 +530,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'oral',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013EAS....64..285H',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2013EAS....64..285H',
   publisherLink: 'http://doi.org/10.1051/eas/1364039'
 }, {
   title: 'PHOEBE 2.0 - Where no model has gone before',
@@ -544,7 +544,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'oral',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013EAS....64..277D',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2013EAS....64..277D',
   publisherLink: 'http://doi.org/10.1051/eas/1364038'
 }, {
   title: 'Physics of Eclipsing Binaries: Modelling in the new era of ultra-high precision photometry',
@@ -558,7 +558,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'oral',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013EAS....64..269B',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2013EAS....64..269B',
   publisherLink: 'http://doi.org/10.1051/eas/1364037'
 }, {
   title: 'Physics of Eclipsing Binaries: Motivation for the New-Age Modeling Suite',
@@ -572,7 +572,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'oral',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013EAS....64..259P',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2013EAS....64..259P',
   publisherLink: 'http://doi.org/10.1051/eas/1364036'
 }, {
   title: 'Color-Magnitude Diagram for M14',
@@ -586,7 +586,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2013AAS...22125021R',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2013AAS...22125021R',
 }, {
   title: 'The Color-Magnitude Diagram of the Globular Cluster M14',
   authors: 'Reinhart, E. D., McCombs, T., Darragh, A. N., et al.',
@@ -599,7 +599,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2012JSARA...7...56R',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2012JSARA...7...56R',
   publisherLink: 'http://jsara.org/volume07.html'
 }, {
   title: 'Eclipse Timing Variations of Short-Period Binaries in the Kepler Field',
@@ -613,7 +613,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'oral',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2012AAS...22040603C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2012AAS...22040603C',
 }, {
   title: 'Searching for Variable Stars in Southern Globular Clusters',
   authors: 'Murphy, B. W., Darragh, A. N., Conroy, K. E., et al.',
@@ -626,7 +626,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2012AAS...22033301M'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2012AAS...22033301M'
 }, {
   title: 'A Showcase of Unique Binary Systems Discovered by the Kepler Satellite',
   authors: 'Kirk, B., Prsa, A., Conroy, K., et al.',
@@ -639,7 +639,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2012AAS...22032910K'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2012AAS...22032910K'
 }, {
   title: 'Variable Stars in the Globular Cluster M14',
   authors: 'Conroy, Kyle E.; Darrogh, Andrew N.; Liu, Zheyu J.; Murphy, Brian W.',
@@ -652,7 +652,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'journal',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2012JSARA...5...34C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2012JSARA...5...34C',
   publisherLink: 'http://jsara.org/volume05.html',
   pdf: '2012Conroy+.pdf'
 }, {
@@ -667,7 +667,7 @@ export var publicationDicts = [
   projectSelected: ['keplerebs'],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2011AJ....142..160S',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2011AJ....142..160S',
   publisherLink: 'http://doi.org/10.1088/0004-6256/142/5/160',
   pdf: '2011Slawson+.pdf'
 }, {
@@ -682,7 +682,7 @@ export var publicationDicts = [
   projectSelected: ['keplerebs'],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2011AJ....141...83P',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2011AJ....141...83P',
   publisherLink: 'http://doi.org/10.1088/0004-6256/141/3/83',
   pdf: '2011Prsa+.pdf'
 }, {
@@ -697,7 +697,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2011AAS...21715218C'
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2011AAS...21715218C'
 }, {
   title: 'Surface Activity Analysis of the Eclipsing Bianry UV Leonis Based On New Spectroscopic Data',
   authors: 'Conroy, Kyle; Engle, S.; Ballouz, R.; Prsa, A.',
@@ -710,7 +710,7 @@ export var publicationDicts = [
   projectSelected: [],
   type: 'poster',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2010AAS...21541936C',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2010AAS...21541936C',
   pdf: 'aas_2010_jan.pdf'
 }
 ]
