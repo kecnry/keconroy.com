@@ -135,7 +135,7 @@ export var publicationDicts = [
   projectSelected: ['phoebe'],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2018arXiv180607680H',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2018ApJS..237...26H',
   publisherLink: 'https://doi.org/10.3847/1538-4365/aacd0f',
   pdf: '2018Horvat+.pdf'
 },
