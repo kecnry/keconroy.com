@@ -119,6 +119,34 @@ export class Products extends React.Component {
 // place NEWER entries on TOP of the list
 export var productDicts = [
  {
+   title: "Cosmic Clock",
+   sourceLink: "https://github.com/kecnry/cosmic-clock",
+   liveLink: "https://kecnry.github.io/cosmic-clock",
+   description: "ReactJS component showing a clock including moon phase, sunrise/set, equinoxes/solstices, etc",
+   content:
+    <div className='row'>
+      <div className='one-third column'>
+        <img src={`${process.env.PUBLIC_URL}/images/cosmic_clock.png`} style={{maxWidth: "100%"}}/>
+      </div>
+      <div className='two-thirds column'>
+        <p>
+          <a href="https://github.com/kecnry/cosmic-clock" target='_blank' rel="noopener noreferrer">Cosmic Clock</a> is a ReactJS Component/Website displaying the following in a visual, circular form:
+          <ul style={{textAlign: 'left'}}>
+            <li>Current date/time</li>
+            <li>Dates of equinoxes/solstices and perihelion/aphelion relative to date in the current year</li>
+            <li>Dates of quarterly moon phases relative to date in the current month</li>
+            <li>Times of sunrise/sunset relative to the time in the current day</li>
+          </ul>
+          The Component can be used within any ReactJS application, or the entire website can be used as a "new tab page" for a browser (along with <a href="https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna" target="_blank" rel="noopener noreferrer">this chrome extension</a>, for example).
+
+        </p>
+      </div>
+    </div>,
+   selected: false,
+   project: ["other"],
+   projectSelected: [],
+   type: ["website"]
+ },{
    title: "PHOEBE Workshop Tutorials/Talks",
    sourceLink: "https://github.com/phoebe-project/phoebe2-workshop",
    liveLink: "https://github.com/phoebe-project/phoebe2-workshop#phoebe-workshop",
@@ -127,32 +155,21 @@ export var productDicts = [
    project: ["phoebe"],
    projectSelected: ["phoebe"],
    type: ["docs"]
- },
- {
-   title: "PHOEBE Documentation",
-   sourceLink: "https://github.com/phoebe-project/phoebe2-docs",
-   liveLink: "http://phoebe-project.org/docs/2.0/",
-   description: "Jupyter notebook tutorials and example scripts included in the PHOEBE documentation online",
-   selected: false,
-   project: ["phoebe"],
-   projectSelected: ["phoebe"],
-   type: ["docs"]
- },
- {
+ },{
    title: "keconroy.com",
    sourceLink: "https://github.com/kecnry/keconroy.com",
    description: "personal website (this website), written in ReactJS",
    selected: false,
-   project: [],
+   project: ["other"],
    projectSelected: [],
    type: ["website"]
- }, {
+ },{
    title: "spectra sorting interactive webpage",
    sourceLink: "https://github.com/kecnry/spectra_sort_webpage",
    liveLink: "https://kecnry.github.io/spectra_sort_webpage",
    description: "teaching tool for interactive sorting of stellar spectra",
    selected: false,
-   project: [],
+   project: ["other"],
    projectSelected: [],
    type: ["code"],
  },{
@@ -181,7 +198,7 @@ export var productDicts = [
       </div>
     </div>,
    selected: true,
-   project: [],
+   project: ["other"],
    projectSelected: [],
    type: ["code"],
  },{
@@ -200,7 +217,7 @@ export var productDicts = [
        </div>
      </div>,
    selected: true,
-   project: [],
+   project: ["other"],
    projectSelected: [],
    type: ["code"],
  },{
@@ -209,7 +226,7 @@ export var productDicts = [
    description: "Python module which tracks all commands sent through matplotlib and stores the figure to a file that can be reopened in interactive mode",
    // content: <p>More information on mpltracker coming soon...</p>,
    selected: false,
-   project: [],
+   project: ["other"],
    projectSelected: [],
    type: ["code"],
  },{
@@ -217,9 +234,18 @@ export var productDicts = [
    sourceLink: "https://github.com/kecnry/rc-submit",
    description: "Python module (work-in-progress) first started during Vanderbilt's AstroHacks and continued at AAS Hack Day 2015 which aims to help in the creation and management of Amazon AWS virtual clusters",
    selected: false,
-   project: [],
+   project: ["other"],
    projectSelected: [],
    type: ["code"],
+ },{
+     title: "PHOEBE Documentation",
+     sourceLink: "https://github.com/phoebe-project/phoebe2-docs",
+     liveLink: "http://phoebe-project.org/docs/2.0/",
+     description: "Jupyter notebook tutorials and example scripts included in the PHOEBE documentation online",
+     selected: false,
+     project: ["phoebe"],
+     projectSelected: ["phoebe"],
+     type: ["docs"]
  },{
    title: "PHOEBE Website",
    liveLink: "http://phoebe-project.org",
