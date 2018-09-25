@@ -124,6 +124,21 @@ export class Publications extends React.Component {
 // place NEWER entries on TOP of the list
 export var publicationDicts = [
 {
+  title: 'Complete bolometric treatment of irradiation effects: general discussion and application to binary stars',
+  authors: 'Horvat, Martin; Conroy, Kyle E.; Jones, Dave; Prša, Andrej',
+  year: 2018,
+  journal: 'arXiv',
+  volume: null,
+  page: null,
+  selected: false,
+  project: ['phoebe'],
+  projectSelected: [],
+  type: 'journal',
+  nauthor: 'nth',
+  adsLink: 'https://ui.adsabs.harvard.edu/?#abs/2018arXiv180907963H',
+  publisherLink: null,
+},
+{
   title: 'Physics of Eclipsing Binaries. III. Spin-Orbit Misalignment',
   authors: 'Horvat, Martin; Conroy, Kyle E.; Pablo, Herbert; et al.',
   year: 2018,
