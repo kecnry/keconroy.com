@@ -186,7 +186,7 @@ export var publicationDicts = [
 },
 {
   title: 'The Effects of Barycentric and Asymmetric Transverse Velocities on Eclipse and Transit Times',
-  authors: 'Conroy, Kyle E., Prsa, A., Horvat, M., Stassun, K.G.',
+  authors: 'Conroy, Kyle E.; Prsa, A.; Horvat, M.; Stassun, K.G.',
   year: 2018,
   journal: 'ApJ',
   volume: 854,
@@ -241,7 +241,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2018AAS...23115103G'
 }, {
   title: 'A Bright Short Period M-M Eclipsing Binary from the KELT Survey: Magnetic Activity and the Mass-Radius Relationship for M-dwarfs',
-  authors: 'Lubin, Jack B., Rodriguez, Joseph E., et al.',
+  authors: 'Lubin, Jack B.; Rodriguez, Joseph E.; et al.',
   year: 2017,
   journal: 'ApJ',
   volume: 844,
@@ -255,7 +255,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.3847/1538-4357/aa7947'
 }, {
   title: 'Heat Redistribution and Misaligned Orbit Models in PHOEBE',
-  authors: 'Horvat, M., Prsa, A., Conroy, K. E.',
+  authors: 'Horvat, M.; Prsa, A.; Conroy, K. E.',
   year: 2017,
   journal: 'AAS',
   volume: 229,
@@ -268,7 +268,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2017AAS...22934423H'
 }, {
   title: 'Robust Modeling of Stellar Triples in PHOEBE',
-  authors: 'Conroy, K. E., Prsa, A., Horvat, M., Stassun, K. G.',
+  authors: 'Conroy, K. E.; Prsa, A.; Horvat, M.; Stassun, K. G.',
   year: 2017,
   journal: 'AAS',
   volume: 229,
@@ -282,7 +282,7 @@ export var publicationDicts = [
   pdf: 'aas_2017_jan.pdf'
 }, {
   title: 'Physics Of Eclipsing Binaries. II. Toward the Increased Model Fidelity',
-  authors: 'Prsa, A., Conroy, Kyle E., Horvat, Martin, et al.',
+  authors: 'Prsa, A.; Conroy, Kyle E.; Horvat, Martin; et al.',
   year: 2016,
   journal: 'ApJS',
   volume: 227,
@@ -297,7 +297,7 @@ export var publicationDicts = [
   pdf: '2016Prsa+.pdf'
 }, {
   title: 'Discovery and Characterization of Eclipsing Binary Stars and Transiting Planets in Young Benchmark Clusters: The Pleiades and Hyades',
-  authors: 'Stassun, Keivan, David, Trevor J., Conroy, Kyle E., Hillenbrand, Lynne, et al.',
+  authors: 'Stassun, Keivan; David, Trevor J.; Conroy, Kyle E.; Hillenbrand, Lynne; et al.',
   year: 2016,
   journal: 'AAS',
   volume: 228,
@@ -310,7 +310,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2016AAS...22810208S'
 }, {
   title: 'New Pleiades Eclipsing Binaries and a Hyades Transiting System Identified by K2',
-  authors: 'David, T. J., Conroy, K. E., Hillenbrand, L. A., et al.',
+  authors: 'David, T. J.; Conroy, K. E.; Hillenbrand, L. A.; et al.',
   year: 2016,
   journal: 'AJ',
   volume: 151,
@@ -324,7 +324,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.3847/0004-6256/151/5/112'
 }, {
   title: 'Kepler Eclipsing Binary Stars. VIII. Identification of False Positive Eclipsing Binaries and Re-extraction of New Light Curves',
-  authors: 'Abdul-Masih, M., Prsa, A., Conroy, K., et al.',
+  authors: 'Abdul-Masih, M.; Prsa, A., Conroy, K.; et al.',
   year: 2016,
   journal: 'AJ',
   volume: 151,
@@ -339,7 +339,7 @@ export var publicationDicts = [
   pdf: '2016Abdul-Masih+.pdf',
 }, {
   title: 'An Extreme Analogue of \u03B5 Aurigae: An M-giant Eclipsed Every 69 Years by a Large Opaque Disk Surrounding a Small Hot Source',
-  authors: 'Rodriguez, J. E., Stassun, K. G., Lund, M. B., et al.',
+  authors: 'Rodriguez, J. E.; Stassun, K. G.; Lund, M. B.; et al.',
   year: 2016,
   journal: 'AJ',
   volume: 151,
@@ -353,7 +353,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.3847/0004-6256/151/5/123'
 }, {
   title: 'Kepler Eclipsing Binary Stars. VII. The Catalog of Eclipsing Binaries Found in the Entire Kepler Data-Set',
-  authors: 'Kirk, B., Conroy, K., Prsa, A., et al.',
+  authors: 'Kirk, B.; Conroy, K.; Prsa, A.; et al.',
   year: 2015,
   journal: 'AJ',
   volume: 151,
@@ -368,7 +368,7 @@ export var publicationDicts = [
   pdf: '2016Kirk+.pdf'
 }, {
   title: 'HII 2407: An Eclipsing Binary Revealed By K2 Observations of the Pleiades',
-  authors: 'David, T. J., Stauffer, J., Hillenbrand, L. A., et al.',
+  authors: 'David, T. J.; Stauffer, J.; Hillenbrand, L. A.; et al.',
   year: 2015,
   journal: 'ApJ',
   volume: 814,
@@ -382,7 +382,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.1088/0004-637X/814/1/62'
 }, {
   title: 'Kepler Eclipsing Binary Stars. VI. Identification of eclipsing binaries in the K2 Campaign 0 data set',
-  authors: 'LaCourse, D. M., Jek, K. J., Jacobs, T. L., et al.',
+  authors: 'LaCourse, D. M.; Jek, K. J.; Jacobs, T. L.; et al.',
   year: 2015,
   journal: 'MNRAS',
   volume: 452,
@@ -396,7 +396,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.1093/mnras/stv1475'
 }, {
   title: 'A Detailed Study of the Variable Stars in Five Galactic Globular Clusters: IC4499, NGC4833, NGC6171 (M107), NGC6402 (M14), and NGC6584',
-  authors: 'Murphy, B. W., Darragh, A., Hettinger, P., et al.',
+  authors: 'Murphy, B. W.; Darragh, A.; Hettinger, P.; et al.',
   year: 2015,
   journal: 'IAU General Assembly',
   volume: 22,
@@ -409,7 +409,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015IAUGA..2255998M'
 }, {
   title: 'A Triple Eclipsing System as a Test Case for Close Binary Formation through Kozai Cycles',
-  authors: 'Conroy, K. E., Prsa, A., Stassun, K. G.',
+  authors: 'Conroy, K. E.; Prsa, A.; Stassun, K. G.',
   year: 2015,
   journal: 'ASPC',
   volume: 496,
@@ -422,7 +422,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015ASPC..496...99C'
 }, {
   title: 'Call for Follow-Up Observations of the Dynamically Changing Triple Star KIC 2835289',
-  authors: 'Conroy, K.; Prsa, A., Stassun, K.; Orosz, J.',
+  authors: 'Conroy, K.; Prsa, A.; Stassun, K.; Orosz, J.',
   year: 2015,
   journal: 'IBVS',
   volume: 6138,
@@ -437,7 +437,7 @@ export var publicationDicts = [
   pdf: '2015Conroy+.pdf'
 }, {
   title: 'VizieR Online Data Catalog: Kepler eclipsing binary stars. V. (Conroy+, 2014)',
-  authors: 'Conroy, K. E., Prsa, A., Stassun, K. G., et al.',
+  authors: 'Conroy, K. E.; Prsa, A.; Stassun, K. G.; et al.',
   year: 2015,
   journal: 'yCat',
   volume: null,
@@ -450,7 +450,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015yCat..61260914C'
 }, {
   title: 'A triple eclipsing system as a test case for close binary formation through Kozai cycles',
-  authors: 'Conroy, K. E., Prsa, A., Stassun, K. G., et al.',
+  authors: 'Conroy, K. E.; Prsa, A.; Stassun, K. G.; et al.',
   year: 2015,
   journal: 'AAS',
   volume: 225,
@@ -463,7 +463,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2015AAS...22541506C'
 }, {
   title: 'Kepler Eclipsing Binary Stars. V. Identification of 31 Candidate Eclipsing Binaries in the K2 Engineering Dataset',
-  authors: 'Conroy, K. E., Prsa, A., Stassun, K. G., et al.',
+  authors: 'Conroy, K. E.; Prsa, A.; Stassun, K. G.; et al.',
   year: 2014,
   journal: 'PASP',
   volume: 126,
@@ -478,7 +478,7 @@ export var publicationDicts = [
   pdf: '2014bConroy+.pdf'
 }, {
   title: 'Kepler Eclipsing Binary Stars. IV. Precise Eclipse Times for Close Binaries and Identification of Candidate Three-body Systems',
-  authors: 'Conroy, K. E., Prsa, A., Stassun, K. G., et al.',
+  authors: 'Conroy, K. E.; Prsa, A.; Stassun, K. G.; et al.',
   year: 2014,
   journal: 'AJ',
   volume: 147,
@@ -507,7 +507,7 @@ export var publicationDicts = [
   pdf: 'aas_2014_jan.pdf'
 }, {
   title: 'KIC 4544587: an eccentric, short-period binary system with δ Sct pulsations and tidally excited modes',
-  authors: 'Hambleton, K. M., Kurtz, D. W., Prsa, A., et al.',
+  authors: 'Hambleton, K. M.; Kurtz, D. W.; Prsa, A.; et al.',
   year: 2013,
   journal: 'MNRAS',
   volume: 434,
@@ -535,7 +535,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.1051/eas/1364040',
 }, {
   title: 'Physics of Eclipsing Binaries: Heartbeat Stars and Tidally Induced Pulsations',
-  authors: 'Hambleton, K., Degroote, P., Conroy, K., et al.',
+  authors: 'Hambleton, K.; Degroote, P.; Conroy, K.; et al.',
   year: 2013,
   journal: 'EAS',
   volume: 64,
@@ -549,7 +549,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.1051/eas/1364039'
 }, {
   title: 'PHOEBE 2.0 - Where no model has gone before',
-  authors: 'Degroote, P., Conroy, K., Hambleton, K., et al.',
+  authors: 'Degroote, P.; Conroy, K.; Hambleton, K.; et al.',
   year: 2013,
   journal: 'EAS',
   volume: 64,
@@ -563,7 +563,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.1051/eas/1364038'
 }, {
   title: 'Physics of Eclipsing Binaries: Modelling in the new era of ultra-high precision photometry',
-  authors: 'Bloemen, S., Degroote, P., Conroy, K., et al.',
+  authors: 'Bloemen, S.; Degroote, P.; Conroy, K.; et al.',
   year: 2013,
   journal: 'EAS',
   volume: 64,
@@ -577,7 +577,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.1051/eas/1364037'
 }, {
   title: 'Physics of Eclipsing Binaries: Motivation for the New-Age Modeling Suite',
-  authors: 'Prsa, A., Degroote, P., Conroy, K., et al.',
+  authors: 'Prsa, A.; Degroote, P.; Conroy, K.; et al.',
   year: 2013,
   journal: 'EAS',
   volume: 64,
@@ -591,7 +591,7 @@ export var publicationDicts = [
   publisherLink: 'http://doi.org/10.1051/eas/1364036'
 }, {
   title: 'Color-Magnitude Diagram for M14',
-  authors: 'Reinhart, E., McCombs, T., Murphy, B. W., et al.',
+  authors: 'Reinhart, E.; McCombs, T.; Murphy, B. W.; et al.',
   year: 2013,
   journal: 'AAS',
   volume: 221,
@@ -604,7 +604,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2013AAS...22125021R',
 }, {
   title: 'The Color-Magnitude Diagram of the Globular Cluster M14',
-  authors: 'Reinhart, E. D., McCombs, T., Darragh, A. N., et al.',
+  authors: 'Reinhart, E. D.; McCombs, T.; Darragh, A. N.; et al.',
   year: 2012,
   journal: 'JSARA',
   volume: 7,
@@ -631,7 +631,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2012AAS...22040603C',
 }, {
   title: 'Searching for Variable Stars in Southern Globular Clusters',
-  authors: 'Murphy, B. W., Darragh, A. N., Conroy, K. E., et al.',
+  authors: 'Murphy, B. W.; Darragh, A. N.; Conroy, K. E.; et al.',
   year: 2012,
   journal: 'AAS',
   volume: 220,
@@ -644,7 +644,7 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/#abs/2012AAS...22033301M'
 }, {
   title: 'A Showcase of Unique Binary Systems Discovered by the Kepler Satellite',
-  authors: 'Kirk, B., Prsa, A., Conroy, K., et al.',
+  authors: 'Kirk, B.; Prsa, A.; Conroy, K.; et al.',
   year: 2012,
   journal: 'AAS',
   volume: 220,
@@ -672,7 +672,7 @@ export var publicationDicts = [
   pdf: '2012Conroy+.pdf'
 }, {
   title: 'Kepler Eclipsing Binary Stars. II. 2165 Eclipsing Binaries in the Second Data Release',
-  authors: 'Slawson, R. W., Prsa, A., Welsh, W. F., et al.',
+  authors: 'Slawson, R. W.; Prsa, A.; Welsh, W. F.; et al.',
   year: 2011,
   journal: 'AJ',
   volume: 142,
@@ -687,7 +687,7 @@ export var publicationDicts = [
   pdf: '2011Slawson+.pdf'
 }, {
   title: 'Kepler Eclipsing Binary Stars. I. Catalog and Principal Characterization of 1879 Eclipsing Binaries in the First Data Release',
-  authors: 'Prsa, A., Batalha, N., Slawson, R. W., et al.',
+  authors: 'Prsa, A.; Batalha, N.; Slawson, R. W.; et al.',
   year: 2011,
   journal: 'AJ',
   volume: 141,
