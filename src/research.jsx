@@ -104,7 +104,7 @@ export var researchDicts = {
                       <a href="http://phoebe-project.org" target="_blank" rel="noopener noreferrer" >PHOEBE</a> is an eclipsing binary modeling suite that reproduces and fits light curves and radial velocity curves of eclipsing systems.
                     </p>
                     <p>
-                      As a part of the PHOEBE <a href="http://phoebe-project.org/help/devel/" target="_blank" rel="noopener noreferrer" >development team</a>, we have developed and released the completely reimagined PHOEBE 2.0 bringing the ability to model data in the new era of ultra-precise photometry.  We are also in the process of developing several future releases which will include the support for new physics (including support for systems with more than two stars) and new observables.
+                      As a part of the PHOEBE <a href="http://phoebe-project.org/help/devel/" target="_blank" rel="noopener noreferrer" >development team</a>, we have developed and released the completely reimagined PHOEBE 2 bringing the ability to model data in the new era of ultra-precise photometry.  We are also in the process of developing several future releases which will include the support for new physics (including support for systems with more than two stars) and new observables.
                     </p>
                   </div>
                 </div>,
@@ -119,7 +119,7 @@ export var researchDicts = {
                       <a href="http://phoebe-project.org" target="_blank" rel="noopener noreferrer" >PHOEBE</a> is an eclipsing binary modeling suite that reproduces and fits light curves and radial velocity curves of eclipsing systems.
                     </p>
                     <p>
-                      As a part of the PHOEBE <a href="http://phoebe-project.org/help/devel/" target="_blank" rel="noopener noreferrer" >development team</a>, we are developing a completely reimagined version of PHOEBE.  We just released the official 2.0 release and are planning to release subsequent versions as we release new features (heat redistribution, triples, contact binaries, fitting, pulsations, etc).  PHOEBE 2.0 provides a new framework that will allow for implementing new physics on top of a very robust model, bringing the ability to model data in the new era of ultra-precise observations.
+                      As a part of the PHOEBE <a href="http://phoebe-project.org/help/devel/" target="_blank" rel="noopener noreferrer" >development team</a>, we are developing a completely reimagined version of PHOEBE.  We have recently released the official 2.0 and 2.1 versions and are planning to release subsequent versions as we release new features (heat redistribution, triples, contact binaries, fitting, pulsations, etc).  PHOEBE 2 provides a new framework that will allow for implementing new physics on top of a very robust model, bringing the ability to model data in the new era of ultra-precise observations.
                     </p>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export var researchDicts = {
                       PHOEBE is written mostly in C with a Python frontend and is available via our <a href="http://github.com/phoebe-project/phoebe2" target="_blank" rel="noopener noreferrer" >github repository</a>.  We have designed the Python frontend to provide as much flexibility to the user as possible, including automatic unit conversions and allowing for multiple parameterizations of via our <i>constraints</i> framework.
                     </p>
                     <p>
-                      Our goal in building PHOEBE is to build the most robust and accurate model possible, even when at the cost of significant computational time.  However, we have designed the frontend in such a way that PHOEBE's backend is swappable with other existing codes.  The plan here is to allow data to be fitted roughly at first with codes that make more assumptions, and are therefore more efficient.  After the solution begins to converge, it is then trivial to switch to the full, robust model provided by the PHOEBE 2.0 backend.
+                      Our goal in building PHOEBE is to build the most robust and accurate model possible, even when at the cost of significant computational time.  However, we have designed the frontend in such a way that PHOEBE's backend is swappable with other existing codes.  The plan here is to allow data to be fitted roughly at first with codes that make more assumptions, and are therefore more efficient.  After the solution begins to converge, it is then trivial to switch to the full, robust model provided by the PHOEBE 2 backend.
                     </p>
                     <p>
                       In addition to writing the entire frontend, my focus in PHOEBE has been to design and develop a new <i>hybrid method</i> for handling stellar systems with more than two components.  Particularly in the case of <a id="ember577" href="/research/triples" className="ember-view">triple systems</a> with a tight inner-binary, it is important to include both dynamical effects (ie. not simply nested keplerian orbits) as well as stellar distortion (ie. not just spherical or rotating stars).  Our method accounts for both of these effects and allows for precisely modeling both the stellar and orbital parameters of these complex systems.
