@@ -1,6 +1,6 @@
 {
   "name": "keconroy.com",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "http://www.keconroy.com",
   "private": true,
   "dependencies": {
@@ -19,10 +19,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp build/index.html build/200.html && cp build/index.html build/404.html",
+    "build": "react-scripts build && cp build/index.html build/200.html",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "surge"
   }
 }

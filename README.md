@@ -32,24 +32,13 @@ to create a local webserver running the site.
 
 ## Deploying
 
-### GitHub pages
-
-In the root directory, issue:
-
-```
-npm run deploy
-```
-
-will need to provide github username and password (api token) 2-3 times.  This
-will build the website and commit and push to the `gh-pages` branch.  It may take
-a few minutes before those changes then go live.
-
-
-To serve to a separate URL, edit the entry in [CNAME](./public/CNAME), the value of homepage in [package.json](./package.json), and follow the [github instructions](https://help.github.com/articles/using-a-custom-domain-with-github-pages/) to use a custom domain for pointing the DNS to github pages. 
+NOTE: used to deploy on GitHub pages, but causes issues with Google indexing due
+to having to override the 404 response.
 
 ### Surge
 
-(NOTE: surge currently does not serve pdf files)
+NOTE: surge currently does not serve pdf files, so pdf files are still served
+by the GitHub repository itself.
 
 Install surge (may need sudo):
 
@@ -69,7 +58,10 @@ cd build
 surge
 ```
 
-See surge DNS instructions.
+Relevant Surge instructions:
+* [Adding collaborators](https://surge.sh/help/adding-collaborators)
+* [DNS instructions for custom domain](https://surge.sh/help/adding-a-custom-domain).
+
 
 ## React
 
