@@ -20,7 +20,7 @@ class Publication extends FilterEntry {
       }
 
       if (this.props.pdf) {
-        var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/`+this.props.pdf} target="_blank" rel="noopener noreferrer"  style={{padding: '2px'}}><span className="far fa-file-pdf"></span> PDF</a>
+        var pdfLink = <a href={"https://github.com/kecnry/keconroy.com/raw/master/public/pdf/"+this.props.pdf} style={{padding: '2px'}}><span className="far fa-file-pdf"></span> PDF</a>
       } else {
         var pdfLink = null
       }
