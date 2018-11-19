@@ -40,22 +40,33 @@ to having to override the 404 response.
 NOTE: surge currently does not serve pdf files, so pdf files are still served
 by the GitHub repository itself.
 
-Install surge (may need sudo):
+Surge should be installed as an npm dev-dependency by the project itself.  
+
+By calling
+
+```
+npm run deploy
+```
+
+the project will be built, and uploaded to surge following the entry in the
+CNAME file.
+
+
+Alternatively, you can install surge globally (may need sudo):
 
 ```
 npm install -g surge
 ```
 
-In the root directory, build:
+Manually build:
 
 ```
 npm run build
 ```
 
-Upload to surge:
+And manually upload to surge:
 ```
-cd build
-surge
+surge ./build www.keconroy.com
 ```
 
 Relevant Surge instructions:
