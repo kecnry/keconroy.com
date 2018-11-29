@@ -294,11 +294,12 @@ export class CVProfDevelopment extends React.Component {
             <tr>
               <td><b>Refereed Articles</b></td>
               <td>
-                Astronomical/Astrophysical Journal (3),
+                Astronomical/Astrophysical Journal (4),
                 Astronomy &amp; Astrophysics (3),
                 Monthly Notices of the Royal Astronomical Society (5),
                 Information Bulletin on Variable Stars (1),
                 Publications of the Astronomical Society of Japan (1),
+                MDPI Data (1),
                 Astrophysics &amp; Space Science (1)
               </td>
             </tr>
@@ -330,7 +331,7 @@ export class CVMemberships extends React.Component {
             </tr>
             <tr>
               <td>2010 - Present</td>
-              <td>American Astronomical Society | <a href="https://aas.org/directory/member_details?id=36332" target="_blank" rel="noopener noreferrer" >Junior Member</a></td>
+              <td>American Astronomical Society | <a href="https://aas.org/directory/member_details?id=36332" target="_blank" rel="noopener noreferrer" >Full Member</a></td>
             </tr>
             <tr>
               <td>2010 - Present</td>
