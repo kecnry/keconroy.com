@@ -296,9 +296,9 @@ export class CVProfDevelopment extends React.Component {
               <td>
                 Astronomical/Astrophysical Journal (4),
                 Astronomy &amp; Astrophysics (3),
-                Monthly Notices of the Royal Astronomical Society (5),
+                Monthly Notices of the Royal Astronomical Society (6),
                 Information Bulletin on Variable Stars (1),
-                Publications of the Astronomical Society of Japan (1),
+                Publications of the Astronomical Society of Japan (2),
                 MDPI Data (1),
                 Astrophysics &amp; Space Science (1)
               </td>
