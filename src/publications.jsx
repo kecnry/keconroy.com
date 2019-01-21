@@ -124,6 +124,37 @@ export class Publications extends React.Component {
 // place NEWER entries on TOP of the list
 export var publicationDicts = [
 {
+  title: 'Considerations and Design Principles for the 2.1 Release of the PHOEBE Eclipsing Binary Modeling Code',
+  authors: 'Conroy, Kyle; Horvat, Martin; Pablo, Herbert; Hambleton, Kelly; Kochoska, Angela; Giammarco, Joseph; Prša, Andrej',
+  year: 2019,
+  journal: 'AAS',
+  volume: 233,
+  page: 348.27,
+  selected: true,
+  project: ['phoebe'],
+  projectSelected: [],
+  type: 'poster',
+  nauthor: '1st',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2019AAS...23334827C',
+  publisherLink: null,
+  pdf: 'aas_2019_jan.pdf'
+},
+{
+  title: 'The COBAIN code. Basic principles and geometrical considerations',
+  authors: 'Kochoska, Angela; Zwitter, Tomaz; Horvat, Martin; Conroy, Kyle; Prša, Andrej',
+  year: 2019,
+  journal: 'AAS',
+  volume: 233,
+  page: 348.19,
+  selected: false,
+  project: [],
+  projectSelected: [],
+  type: 'poster',
+  nauthor: 'nth',
+  adsLink: 'https://ui.adsabs.harvard.edu/#abs/2019AAS...23334819K',
+  publisherLink: null
+},
+{
   title: 'Complete bolometric treatment of irradiation effects: general discussion and application to binary stars',
   authors: 'Horvat, Martin; Conroy, Kyle E.; Jones, Dave; Prša, Andrej',
   year: 2018,
