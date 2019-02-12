@@ -20,11 +20,12 @@ export class Footer extends React.Component {
   componentWillUnmount() {
   }
   render() {
+    var year = (new Date()).getFullYear()
     return (
       <div style={{backgroundColor: gray3, color: gray1, padding: '30px', paddingTop: '80px', paddingBottom: '40px', textAlign: 'center'}}>
         <LinkIcons />
         <br/>
-        <p>&copy; 2018 Kyle Conroy | Astronomy Postdoctoral Researcher | Villanova University</p>
+        <p>&copy; {year} Kyle Conroy | Astronomy Postdoctoral Researcher | Villanova University</p>
       </div>
     )
   }
