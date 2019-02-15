@@ -20,7 +20,7 @@ export class Product extends FilterEntry {
       }
 
       if (this.props.liveLink) {
-        var liveLink = <a href={this.props.liveLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-link"></span> website</a>
+        var liveLink = <a href={this.props.liveLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-link"></span> {this.props.liveLink.indexOf("readthedocs")===-1 ? "website" : "docs"}</a>
       } else {
         var liveLink = null
       }
@@ -119,6 +119,19 @@ export class Products extends React.Component {
 // place NEWER entries on TOP of the list
 export var productDicts = [
  {
+   title: "npdists",
+   sourceLink: "https://github.com/kecnry/npdists",
+   liveLink: "https://npdists.readthedocs.io",
+   description: "High-level wrappers for Probability Density Functions and Distributions using Numpy",
+   content:
+    <div className='row'>
+      <p>npdists is currently under development and is not yet released.  It aims to provide a high-level interface to defining, sampling from, and doing math on, probability density functions.</p>
+    </div>,
+   selected: true,
+   project: ["other"],
+   projectSelected: [],
+   type: ["code"]
+ },{
    title: "Cosmic Clock",
    sourceLink: "https://github.com/kecnry/cosmic-clock",
    liveLink: "https://kecnry.github.io/cosmic-clock",
