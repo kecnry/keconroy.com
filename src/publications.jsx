@@ -167,7 +167,7 @@ export var publicationDicts = [
   publisherLink: null
 },
 {
-  title: 'Complete bolometric treatment of irradiation effects: general discussion and application to binary stars',
+  title: 'Bolometric Treatment of Irradiation Effects: General Discussion and Application to Binary Stars',
   authors: 'Horvat, Martin; Conroy, Kyle E.; Jones, Dave; Prša, Andrej',
   year: 2019,
   journal: 'ApJS',
