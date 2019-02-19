@@ -188,6 +188,7 @@ export var productDicts = [
  },{
    title: "autofig",
    sourceLink: "https://github.com/kecnry/autofig",
+   liveLink: "https://autofig.readthedocs.io",
    description: "Python module to handle high-level plotting and animating functionality",
    content:
     <div className='row'>
