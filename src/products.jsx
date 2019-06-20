@@ -218,6 +218,7 @@ export var productDicts = [
  },{
    title: "nparray",
    sourceLink: "https://github.com/kecnry/nparray",
+   liveLink: "https://nparray.readthedocs.io",
    description: "Python module to create and manipulate numpy arrays in memory (ie. arange and linspace)",
    content:
      <div className='row'>
