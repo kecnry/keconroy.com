@@ -296,11 +296,17 @@ export class CVProfDevelopment extends React.Component {
               <td>
                 Astronomical/Astrophysical Journal (4),
                 Astronomy &amp; Astrophysics (3),
-                Monthly Notices of the Royal Astronomical Society (6),
+                Monthly Notices of the Royal Astronomical Society (7),
                 Information Bulletin on Variable Stars (1),
                 Publications of the Astronomical Society of Japan (2),
                 MDPI Data (1),
                 Astrophysics &amp; Space Science (1)
+              </td>
+            </tr>
+            <tr>
+              <td><b>Grant Review Panels</b></td>
+              <td>
+                NSF AAG (1)
               </td>
             </tr>
             <tr>
@@ -326,7 +332,7 @@ export class CVMemberships extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td>2011 - Present</td>
+              <td>2011 - 2016</td>
               <td>Kepler Eclipsing Binary Working Group | <a href="http://keplerebs.villanova.edu/members" target="_blank" rel="noopener noreferrer" >Member</a></td>
             </tr>
             <tr>
