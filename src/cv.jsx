@@ -261,8 +261,8 @@ export class CVInvitedTalks extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td>June 2018</td>
-              <td>Co-Lead workshop including giving multiple talks and tutorials | <a href="http://phoebe-project.org/workshop" target="_blank" rel="noopener noreferrer">PHOEBE Workshop</a> | Villanova University</td>
+              <td>June 2018, July 2019</td>
+              <td>Co-Lead workshops including giving multiple talks and tutorials | <a href="http://phoebe-project.org/workshops" target="_blank" rel="noopener noreferrer">PHOEBE Workshop</a> | Villanova University</td>
             </tr>
             <tr>
               <td>March 2018</td>
@@ -307,6 +307,20 @@ export class CVProfDevelopment extends React.Component {
               <td><b>Grant Review Panels</b></td>
               <td>
                 NSF AAG (1)
+              </td>
+            </tr>
+            <tr>
+              <td><b>Scientific Organizing Committees</b></td>
+              <td>
+                <a href="https://binaries.physics.muni.cz/organisers/soc/" target="_blank" rel="noopener norefferer">Universe of Binaries</a> | Telc Czech Republic | September 2019
+              </td>
+            </tr>
+            <tr>
+              <td><b>Local Organizing Committees</b></td>
+              <td>
+                <a href="http://phoebe-project.org/workshops/2018june/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Villanova University | June 2018
+                <br/>
+                <a href="http://phoebe-project.org/workshops/2019july/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Villanova University | July 2019
               </td>
             </tr>
             <tr>
