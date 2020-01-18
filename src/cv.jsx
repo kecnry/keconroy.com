@@ -89,6 +89,10 @@ export class CVTeaching extends React.Component {
         <table>
           <tbody>
             <tr>
+              <td>Fall 2019</td>
+              <td>Adjunct Professor | Villanova University<br/>Taught physics for engineers lab session</td>
+            </tr>
+            <tr>
               <td>Spring 2018, 2012</td>
               <td>Teaching Assistant | Villanova University<br/>Graded and helped teach the senior-level capstone course: <a href="http://aprsa.villanova.edu/?q=modeling" target="_blank" rel="noopener noreferrer">Modeling Analysis</a></td>
             </tr>
@@ -261,6 +265,10 @@ export class CVInvitedTalks extends React.Component {
         <table>
           <tbody>
             <tr>
+              <td>October 2019</td>
+              <td>Invited Speaker | University of Liege, Belgium</td>
+            </tr>
+            <tr>
               <td>June 2018, July 2019</td>
               <td>Co-Lead workshops including giving multiple talks and tutorials | <a href="http://phoebe-project.org/workshops" target="_blank" rel="noopener noreferrer">PHOEBE Workshop</a> | Villanova University</td>
             </tr>
@@ -294,13 +302,14 @@ export class CVProfDevelopment extends React.Component {
             <tr>
               <td><b>Refereed Articles</b></td>
               <td>
-                Astronomical/Astrophysical Journal (4),
+                Astronomical/Astrophysical Journal (6),
                 Astronomy &amp; Astrophysics (3),
-                Monthly Notices of the Royal Astronomical Society (7),
+                Monthly Notices of the Royal Astronomical Society (8),
                 Information Bulletin on Variable Stars (1),
                 Publications of the Astronomical Society of Japan (2),
                 MDPI Data (1),
-                Astrophysics &amp; Space Science (1)
+                Astrophysics &amp; Space Science (1),
+                New Astronomy (1)
               </td>
             </tr>
             <tr>
@@ -318,9 +327,11 @@ export class CVProfDevelopment extends React.Component {
             <tr>
               <td><b>Local Organizing Committees</b></td>
               <td>
-                <a href="http://phoebe-project.org/workshops/2018june/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Villanova University | June 2018
+                <a href="http://phoebe-project.org/workshops/2020june/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Villanova University | June-July 2020
                 <br/>
                 <a href="http://phoebe-project.org/workshops/2019july/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Villanova University | July 2019
+                <br/>
+                <a href="http://phoebe-project.org/workshops/2018june/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Villanova University | June 2018
               </td>
             </tr>
             <tr>
