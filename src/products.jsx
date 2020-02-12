@@ -119,13 +119,20 @@ export class Products extends React.Component {
 // place NEWER entries on TOP of the list
 export var productDicts = [
  {
-   title: "npdists",
-   sourceLink: "https://github.com/kecnry/npdists",
-   liveLink: "https://npdists.readthedocs.io",
-   description: "High-level wrappers for Probability Density Functions and Distributions using Numpy",
+   title: "distl",
+   sourceLink: "https://github.com/kecnry/distl",
+   liveLink: "https://distl.readthedocs.io",
+   description: "Simplified and condensed distributions",
    content:
     <div className='row'>
-      <p>npdists is currently under development and is not yet released.  It aims to provide a high-level interface to defining, sampling from, and doing math on, probability density functions.</p>
+      <p>distl is currently under development and is not yet released.  It aims to provide provides a python object-interface on top of several distribution (random variable) functions in scipy.stats and allows for:</p>
+      <ul style={{textAlign: 'left'}}>
+        <li>serialization of distributions (so they can be saved to disk or pickled and sent to processors within MPI)</li>
+        <li>support for units and wrapping</li>
+        <li>conversion between different types of distributions</li>
+        <li>math between distributions, handling covariances from multivariate distributions wherever possible</li>
+        <li>plotting convenience functions</li>
+      </ul>
     </div>,
    selected: true,
    project: ["other"],
