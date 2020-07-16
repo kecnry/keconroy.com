@@ -416,7 +416,7 @@ export class Header extends React.Component {
             <h1>Kyle E Conroy, PhD</h1>
           </div>
           <div ref={(ref) => this.headerImageDiv = ref} className="headerImage" style={{right:0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
-            <img ref={(ref) => this.headerImage = ref} src={`${process.env.PUBLIC_URL}/images/self.jpg`} />
+            <img ref={(ref) => this.headerImage = ref} src={`${process.env.PUBLIC_URL}/images/self.jpg`} style={{borderRadius: "6px"}}/>
           </div>
           <div ref={(ref) => this.headerTagline = ref} className="headerText" style={{right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto'}}>
             <p>Postdoctoral Researcher | Villanova University</p>
