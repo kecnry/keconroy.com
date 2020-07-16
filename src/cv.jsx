@@ -89,7 +89,7 @@ export class CVTeaching extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td>Fall 2019</td>
+              <td>Fall 2019, 2020</td>
               <td>Adjunct Professor | Villanova University<br/>Taught physics for engineers lab session</td>
             </tr>
             <tr>
@@ -265,6 +265,10 @@ export class CVInvitedTalks extends React.Component {
         <table>
           <tbody>
             <tr>
+              <td>July 2020</td>
+              <td><a href="https://www.ru.nl/astrophysics/news-agenda/colloquia-events/" target="_blank" rel="noopener noreferrer">Invited Colloquium Speaker</a> | Radboud University Nijmegen</td>
+            </tr>
+            <tr>
               <td>October 2019</td>
               <td>Invited Speaker | University of Liege, Belgium</td>
             </tr>
@@ -302,11 +306,12 @@ export class CVProfDevelopment extends React.Component {
             <tr>
               <td><b>Refereed Articles</b></td>
               <td>
-                Astronomical/Astrophysical Journal (6),
+                Astronomical/Astrophysical Journal (8),
                 Astronomy &amp; Astrophysics (3),
                 Monthly Notices of the Royal Astronomical Society (8),
                 Information Bulletin on Variable Stars (1),
-                Publications of the Astronomical Society of Japan (2),
+                Publications of the Astronomical Society of the Pacific (1),
+                Publications of the Astronomical Society of Japan (3),
                 MDPI Data (1),
                 Astrophysics &amp; Space Science (1),
                 New Astronomy (1)

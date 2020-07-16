@@ -167,6 +167,15 @@ export var productDicts = [
    projectSelected: [],
    type: ["website"]
  },{
+   title: 'PHOEBE User Interface',
+   sourceLink: 'https://github.com/phoebe-project/phoebe2-ui',
+   liveLink: 'http://phoebe-project.org/clients',
+   description: 'Desktop and web client for PHOEBE 2',
+   selected: false,
+   project: ["phoebe"],
+   projectSelected: ["phoebe"],
+   type: ["code", "website"]
+ },{
    title: "PHOEBE Workshop Tutorials/Talks",
    sourceLink: "https://github.com/phoebe-project/phoebe2-workshop",
    liveLink: "http://phoebe-project.org/workshops",

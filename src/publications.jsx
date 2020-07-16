@@ -136,6 +136,80 @@ export class Publications extends React.Component {
 // place NEWER entries on TOP of the list
 export var publicationDicts = [
 {
+  title: 'Physics of Eclipsing Binaries. V. General Framework for Solving the Inverse Problem',
+  authors: 'Conroy, Kyle E; Kochoska, Angela; Hey, Daniel; Pablo, Herbert; Hambleton, Kelly M; Jones, David; Giammarco, Joseph; Abdul-Masih, Michael; Prsa, Andrej',
+  year: 2020,
+  journal: 'ApJS',
+  volume: 'submitted',
+  page: null,
+  selected: true,
+  project: ['phoebe'],
+  projectSelected: ['phoebe'],
+  type: 'journal',
+  nauthor: '1st',
+  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020arXiv200616951C'
+},
+{
+  title: 'Spectroscopic patch model for massive stars using PHOEBE II and FASTWIND',
+  authors: 'Abdul-Masih, Michael; Sana, Hugues; Conroy, Kyle E.; Sundqvist, Jon; Prša, Andrej; Kochoska, Angela; Puls, Joachim',
+  year: 2020,
+  journal: 'A&A',
+  volume: 636,
+  page: 'A59',
+  selected: false,
+  project: ['phoebe'],
+  projectSelected: [],
+  type: 'journal',
+  nauthor: 'nth',
+  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020A%26A...636A..59A',
+  publisherLink: 'https://doi.org/10.1051/0004-6361/201937341'
+},
+{
+  title: 'Beyond DC and MCMC: alternative algorithms and approaches to fitting light curves',
+  authors: 'Kochoska, A.; Conroy, K.; Hambleton, K.; Prša, A.',
+  year: 2020,
+  journal: 'Contributions of the Astronomical Observatory Skalnaté Pleso',
+  volume: 50,
+  page: 539,
+  selected: false,
+  project: ['phoebe'],
+  projectSelected: [],
+  type: 'oral',
+  nauthor: 'nth',
+  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020CoSka..50..539K',
+  publisherLink: 'https://doi.org/10.31577/caosp.2020.50.2.539'
+},
+{
+  title: 'Upcoming support for triple stellar systems in PHOEBE',
+  authors: 'Conroy, K. E.',
+  year: 2020,
+  journal: 'Contributions of the Astronomical Observatory Skalnaté Pleso',
+  volume: 50,
+  page: 530,
+  selected: false,
+  project: ['phoebe'],
+  projectSelected: [],
+  type: 'oral',
+  nauthor: 'first',
+  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020CoSka..50..530C',
+  publisherLink: 'https://doi.org/10.31577/caosp.2020.50.2.530'
+},
+{
+  title: 'Apsidal motion in the massive binary HD 152248',
+  authors: 'Rosu, S.; Rauw, G.; Conroy, K. E.; Gosset, E.; Manfroid, J.; Royer, P.',
+  year: 2020,
+  journal: 'A&A',
+  volume: 635,
+  page: 'A145',
+  selected: false,
+  project: [],
+  projectSelected: [],
+  type: 'journal',
+  nauthor: 'nth',
+  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020A%26A...635A.145R',
+  publisherLink: 'https://doi.org/10.1051/0004-6361/201937285 '
+},
+{
   title: 'New Physics and Features in the 2.2 Release of the PHOEBE Eclipsing Binary Modeling Code',
   authors: 'Conroy, K.; Jones, D.; Horvat, M.; Pablo, H.; Kochoska, A.; Giammarco, J.; Prsa, A.',
   year: 2020,
@@ -165,18 +239,20 @@ export var publicationDicts = [
   adsLink: 'https://ui.adsabs.harvard.edu/abs/2020AAS...23511403K'
 },
 {
-  title: 'Physics of Eclipsing Binaries. IV. The impact of interstellar extinction on the light curves of eclipsing binaries',
+  title: 'Physics of Eclipsing Binaries. IV. The Impact of Interstellar Extinction on the Light Curves of Eclipsing Binaries',
   authors: 'Jones, David; Conroy, Kyle E.; Horvat, Martin; Giammarco, Joseph; Kochoska, Angela; Pablo, Herbert; Brown, Alex J.; Sowicka, Paulina; Prsa, Andrej',
   year: 2020,
   journal: 'ApJS',
-  volume: 'submitted',
-  page: null,
+  volume: 247,
+  page: 63,
   selected: false,
   project: ['phoebe'],
   projectSelected: ['phoebe'],
   type: 'journal',
   nauthor: 'nth',
-  adsLink: 'https://ui.adsabs.harvard.edu/abs/2019arXiv191209474J'
+  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020ApJS..247...63J',
+  publisherLink: 'https://doi.org/10.3847/1538-4365/ab7927',
+  pdf: '2020Jones+.pdf'
 },
 {
   title: 'The SDSS-HET Survey of Kepler Eclipsing Binaries. Description of the Survey and First Results',
@@ -191,7 +267,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: 'nth',
   adsLink: 'https://ui.adsabs.harvard.edu/abs/2019ApJ...884..126M',
-  publisherLink: 'https://iopscience.iop.org/article/10.3847/1538-4357/ab3793'
+  publisherLink: 'https://doi.org/10.3847/1538-4357/ab3793'
 },
 {
   title: 'Considerations and Design Principles for the 2.1 Release of the PHOEBE Eclipsing Binary Modeling Code',
@@ -247,7 +323,7 @@ export var publicationDicts = [
   journal: 'ApJS',
   volume: 237,
   page: 26,
-  selected: true,
+  selected: false,
   project: ['phoebe'],
   projectSelected: ['phoebe'],
   type: 'journal',
@@ -630,7 +706,7 @@ export var publicationDicts = [
   page: '295C',
   selected: true,
   project: ['phoebe'],
-  projectSelected: ['phoebe'],
+  projectSelected: [],
   type: 'oral',
   nauthor: '1st',
   adsLink: 'https://ui.adsabs.harvard.edu/abs/2013EAS....64..295C',
@@ -816,7 +892,7 @@ export var publicationDicts = [
   nauthor: '1st',
   adsLink: 'https://ui.adsabs.harvard.edu/abs/2011AAS...21715218C'
 }, {
-  title: 'Surface Activity Analysis of the Eclipsing Bianry UV Leonis Based On New Spectroscopic Data',
+  title: 'Surface Activity Analysis of the Eclipsing Binary UV Leonis Based On New Spectroscopic Data',
   authors: 'Conroy, Kyle; Engle, S.; Ballouz, R.; Prsa, A.',
   year: 2010,
   journal: 'AAS',
