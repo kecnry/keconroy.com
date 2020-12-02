@@ -31,16 +31,17 @@ class Publication extends FilterEntry {
         var publisherLink = null
       }
 
-      if (this.props.publisherLink && this.props.publisherLink.indexOf("doi.org") !== -1) {
-        var doi = this.props.publisherLink.slice(this.props.publisherLink.indexOf("doi.org")+8)
-        var badges = <div className="row">
-                        <div style={{float: "left", padding: "15px", marginLeft: "calc(50% - 90px)"}} className="col-sm-8" data-badge-popover="left" data-badge-type="donut" data-doi={doi} data-condensed="true" data-hide-no-mentions="false" class="altmetric-embed"></div>
-
-                        <div style={{float: "left", padding: "15px", mixBlendMode: "multiply"}} className="col-sm-8 __dimensions_badge_embed__" data-doi={doi} data-legend="hover-right" data-style="small_circle"></div>
-                      </div>
-      } else {
-        var badges = null
-      }
+      var badges = null
+      // if (this.props.publisherLink && this.props.publisherLink.indexOf("doi.org") !== -1) {
+      //   var doi = this.props.publisherLink.slice(this.props.publisherLink.indexOf("doi.org")+8)
+      //   var badges = <div className="row">
+      //                   <div style={{float: "left", padding: "15px", marginLeft: "calc(50% - 90px)"}} className="col-sm-8" data-badge-popover="left" data-badge-type="donut" data-doi={doi} data-condensed="true" data-hide-no-mentions="false" class="altmetric-embed"></div>
+      //
+      //                   <div style={{float: "left", padding: "15px", mixBlendMode: "multiply"}} className="col-sm-8 __dimensions_badge_embed__" data-doi={doi} data-legend="hover-right" data-style="small_circle"></div>
+      //                 </div>
+      // } else {
+      //   var badges = null
+      // }
 
       return (
         <div style={{paddingBottom: '15px'}}>
