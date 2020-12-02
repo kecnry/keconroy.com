@@ -137,18 +137,48 @@ export class Publications extends React.Component {
 // place NEWER entries on TOP of the list
 export var publicationDicts = [
 {
+  title: 'Consequences of parameterization choice on eclipsing binary light curve solutions',
+  authors: 'Korth, J.; Moharana, A.; Pešta, M.; Czavalinga, D. R.; Conroy, K. E.',
+  year: 2020,
+  journal: 'arXiv',
+  volume: null,
+  page: null,
+  selected: false,
+  project: ['phoebe'],
+  projectSelected: [],
+  type: 'journal',
+  nauthor: 'nth',
+  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020arXiv201200426K'
+},
+{
+  title: 'PHOEBE binary star modelling in the era of Kepler and TESS',
+  authors: 'Jones, D.; Conroy, K.; Horvat, M.; Kochoska, A.; Giammarco, J.; Pablo, H.; Hambleton, K.; Prša, A.',
+  year: 2020,
+  journal: 'SEA Conf',
+  volume: 'July',
+  page: 150,
+  selected: false,
+  project: ['phoebe'],
+  projectSelected: [],
+  type: 'oral',
+  nauthor: 'nth',
+  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020sea..confE.150J',
+},
+{
   title: 'Physics of Eclipsing Binaries. V. General Framework for Solving the Inverse Problem',
   authors: 'Conroy, Kyle E; Kochoska, Angela; Hey, Daniel; Pablo, Herbert; Hambleton, Kelly M; Jones, David; Giammarco, Joseph; Abdul-Masih, Michael; Prsa, Andrej',
   year: 2020,
   journal: 'ApJS',
-  volume: 'submitted',
-  page: null,
+  volume: 250,
+  page: 2,
   selected: true,
   project: ['phoebe'],
   projectSelected: ['phoebe'],
   type: 'journal',
   nauthor: '1st',
-  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020arXiv200616951C'
+  adsLink: 'https://ui.adsabs.harvard.edu/abs/2020ApJS..250...34C',
+  publisherLink: 'https://doi.org/10.3847/1538-4365/abb4e2',
+  pdf: '2020Conroy+.pdf'
 },
 {
   title: 'Spectroscopic patch model for massive stars using PHOEBE II and FASTWIND',

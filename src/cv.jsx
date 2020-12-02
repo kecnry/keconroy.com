@@ -265,6 +265,10 @@ export class CVInvitedTalks extends React.Component {
         <table>
           <tbody>
             <tr>
+              <td>August 2020</td>
+              <td>Invited Summer School Tutor | <a href="https://gate.physics.muni.cz/" target="_blank" rel="noopener noreferrer">ERASMUS GATE Summer School</a></td>
+            </tr>
+            <tr>
               <td>July 2020</td>
               <td><a href="https://www.ru.nl/astrophysics/news-agenda/colloquia-events/" target="_blank" rel="noopener noreferrer">Invited Colloquium Speaker</a> | Radboud University Nijmegen</td>
             </tr>
@@ -306,15 +310,17 @@ export class CVProfDevelopment extends React.Component {
             <tr>
               <td><b>Refereed Articles</b></td>
               <td>
-                Astronomical/Astrophysical Journal (8),
+                Astronomical/Astrophysical Journal (9),
                 Astronomy &amp; Astrophysics (3),
                 Monthly Notices of the Royal Astronomical Society (8),
                 Information Bulletin on Variable Stars (1),
                 Publications of the Astronomical Society of the Pacific (1),
                 Publications of the Astronomical Society of Japan (3),
                 MDPI Data (1),
+                MDPI Galaxies (1),
                 Astrophysics &amp; Space Science (1),
-                New Astronomy (1)
+                New Astronomy (1),
+                Serbian Astronomical Journal (1)
               </td>
             </tr>
             <tr>
