@@ -326,7 +326,8 @@ export class CVProfDevelopment extends React.Component {
             <tr>
               <td><b>Grant Review Panels</b></td>
               <td>
-                NSF AAG (1)
+                NSF AAG (1),
+                NASA ROSES FINESST (1)
               </td>
             </tr>
             <tr>
