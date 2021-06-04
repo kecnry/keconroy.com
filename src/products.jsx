@@ -226,6 +226,7 @@ export var productDicts = [
    title: "autofig",
    sourceLink: "https://github.com/kecnry/autofig",
    liveLink: "https://autofig.readthedocs.io",
+   logo: "https://raw.githubusercontent.com/kecnry/autofig/master/docs/images/autofig.png",
    description: "Python module to handle high-level plotting and animating functionality",
    content:
     <div className='row'>
@@ -256,6 +257,7 @@ export var productDicts = [
    title: "nparray",
    sourceLink: "https://github.com/kecnry/nparray",
    liveLink: "https://nparray.readthedocs.io",
+   logo: "https://raw.githubusercontent.com/kecnry/nparray/master/docs/images/nparray.png",
    description: "Python module to create and manipulate numpy arrays in memory (ie. arange and linspace)",
    content:
      <div className='row'>

@@ -21,8 +21,8 @@ export class CV extends MainTab {
         <CVSelectPubs color={blue2} dark={true}/>
         <CVOralPubs/>
         <CVPosterPubs color={blue2} dark={true}/>
-        <CVInvitedTalks/>
-        <CVProducts color={blue2} dark={true}/>
+        <CVProducts/>
+        <CVInvitedTalks color={blue2} dark={true}/>
 
         <CVProfDevelopment/>
         <CVMemberships color={blue2} dark={true}/>
