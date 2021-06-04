@@ -40,6 +40,11 @@ export class Product extends FilterEntry {
       return (
         <div style={{paddingBottom: '15px'}}>
           <p><b>{this.props.title}</b></p>
+          {this.props.logo ?
+            <p align="center"><img src={this.props.logo} alt="logo" style={{maxWidth: "300px", maxHeight: "125px", width: "auto", height: "auto"}} align="center"/></p>
+            :
+            null
+          }
           <p>{this.props.description}</p>
           <p>{expandedLink} {sourceLink} {liveLink} {dataLink}</p>
           {content}
@@ -119,9 +124,24 @@ export class Products extends React.Component {
 // place NEWER entries on TOP of the list
 export var productDicts = [
  {
+   title: "crimpl",
+   sourceLink: "https://github.com/kecnry/crimpl",
+   liveLink: "https://crimpl.readthedocs.io",
+   logo: "https://raw.githubusercontent.com/kecnry/crimpl/main/docs/images/crimpl.png",
+   description: "Connecting to Compute Resources made Simple(r)",
+   content:
+    <div className='row'>
+      <p>crimpl is currently under development and is not yet released.  It aims to provide provides high-level python object-oriented interfaces to manage running scripts on remote compute resources.</p>
+    </div>,
+   selected: true,
+   project: ["other"],
+   projectSelected: [],
+   type: ["code"]
+ },{
    title: "distl",
    sourceLink: "https://github.com/kecnry/distl",
    liveLink: "https://distl.readthedocs.io",
+   logo: "https://raw.githubusercontent.com/kecnry/distl/master/docs/images/distl.png",
    description: "Simplified and condensed distributions",
    content:
     <div className='row'>
@@ -170,6 +190,7 @@ export var productDicts = [
    title: 'PHOEBE User Interface',
    sourceLink: 'https://github.com/phoebe-project/phoebe2-ui',
    liveLink: 'http://phoebe-project.org/clients',
+   logo: "https://raw.githubusercontent.com/phoebe-project/phoebe2-ui/master/public/favicon.png",
    description: 'Desktop and web client for PHOEBE 2',
    selected: false,
    project: ["phoebe"],
@@ -261,17 +282,18 @@ export var productDicts = [
    projectSelected: [],
    type: ["code"],
  },{
-   title: "rc-submit",
-   sourceLink: "https://github.com/kecnry/rc-submit",
-   description: "Python module (work-in-progress) first started during Vanderbilt's AstroHacks and continued at AAS Hack Day 2015 which aims to help in the creation and management of Amazon AWS virtual clusters",
-   selected: false,
-   project: ["other"],
-   projectSelected: [],
-   type: ["code"],
- },{
+ //   title: "rc-submit",
+ //   sourceLink: "https://github.com/kecnry/rc-submit",
+ //   description: "Python module (work-in-progress) first started during Vanderbilt's AstroHacks and continued at AAS Hack Day 2015 which aims to help in the creation and management of Amazon AWS virtual clusters",
+ //   selected: false,
+ //   project: ["other"],
+ //   projectSelected: [],
+ //   type: ["code"],
+ // },{
    title: "PHOEBE Documentation",
    sourceLink: "https://github.com/phoebe-project/phoebe2-docs",
    liveLink: "http://phoebe-project.org/docs/",
+   // logo: "https://raw.githubusercontent.com/phoebe-project/phoebe2/master/images/logo_blue.svg",
    description: "Jupyter notebook tutorials and example scripts included in the PHOEBE documentation online",
    selected: false,
    project: ["phoebe"],
@@ -281,6 +303,7 @@ export var productDicts = [
    title: "PHOEBE Website",
    sourceLink: "https://github.com/phoebe-project/phoebe-project.org",
    liveLink: "http://phoebe-project.org",
+   // logo: "https://raw.githubusercontent.com/phoebe-project/phoebe2/master/images/logo_blue.svg",
    description: "The PHOEBE website hosts documentation, tutorials, news, and other information about PHOEBE.  Originally written in Django, the website is now written in ReactJS and is open-source.",
    selected: false,
    project: ["phoebe"],
@@ -290,6 +313,7 @@ export var productDicts = [
    title: "PHOEBE 2",
    sourceLink: "https://github.com/phoebe-project/phoebe2",
    liveLink: "http://phoebe-project.org",
+   logo: "https://raw.githubusercontent.com/phoebe-project/phoebe2/master/images/logo_blue.svg",
    description: "PHOEBE 2 is a complete rewrite of the popular eclipsing binary modeling suite (PHOEBE 1.0), now including support for much higher-precision, new physics, new observable types, and a Python module interface.",
    selected: true,
    project: ["phoebe"],
@@ -324,6 +348,7 @@ export function makeProduct(dict, expanded, filter, url) {
                    liveLink={dict.liveLink}
                    dataLink={dict.dataLink}
                    contentLink={`${url}/${dict.title}`}
+                   logo={dict.logo}
                    description={dict.description}
                    content={dict.content}
                    selected={dict.selected}
