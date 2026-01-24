@@ -1,6 +1,64 @@
+/* CSS Custom Properties */
+:root {
+  /* Colors */
+  --color-bg: rgb(216, 219, 226);
+  --color-blue-1: rgb(64, 78, 104);
+  --color-blue-2: rgb(92, 107, 134);
+  --color-blue-3: rgb(58, 70, 92);
+  --color-blue-3-overlay: rgba(58, 70, 92, 0.7);
+  --color-gray-3-overlay: rgba(24, 25, 19, 0.9);
+  --color-text: rgb(0, 0, 0);
+  --color-text-light: rgb(230, 230, 230);
+  --color-link: blue;
+  --color-link-dark: rgb(138, 138, 255);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Typography */
+  --font-family: 'Raleway', sans-serif;
+  --font-size-base: clamp(0.875rem, 0.8rem + 0.4vw, 1rem);
+  --font-size-lg: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
+  --font-size-xl: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+  --font-size-2xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  --font-size-3xl: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  
+  /* Layout */
+  --max-content-width: 960px;
+  --header-height-mobile: clamp(250px, 40vh, 350px);
+  --touch-target-min: 44px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0s;
+    --transition-medium: 0s;
+    --transition-slow: 0s;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 html {
-  background-color: rgb(216,219,226);
+  background-color: var(--color-bg);
+  font-size: 16px;
 }
 
 a:hover {
@@ -8,21 +66,21 @@ a:hover {
 }
 
 a, a:visited {
-  color: blue;
+  color: var(--color-link);
   text-decoration: none;
 }
 
 .button, .button:visited {
-  color: blue;
+  color: var(--color-link);
 }
 
 .dark a, .dark a:visited {
-  color: rgb(138,138,255);
+  color: var(--color-link-dark);
   text-decoration: none;
 }
 
 div #main {
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--font-family);
 }
 
 div #content {
@@ -31,7 +89,7 @@ div #content {
 }
 
 div .section {
-  background-color: rgb(216,219,226);
+  background-color: var(--color-bg);
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -39,22 +97,28 @@ div .section {
 div .content-pane {
   text-align: center;
   padding: 0;
-  padding-bottom: 50px;
-  padding-top: 25px;
-  width: 80%;
+  padding-bottom: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+  width: 90%;
   margin: 0 auto;
-  /*position: relative;*/
-  max-width: 960px;
+  max-width: var(--max-content-width);
+}
+
+@media (min-width: 768px) {
+  div .content-pane {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  div .content-pane {
+    width: 80%;
+  }
 }
 
 .headerRectangle {
   position: fixed;
   stroke-width: 0px;
-  /*overflow: none;*/
-  /* transform-origin: bottom left;
-  -moz-transform-origin: bottom left;
-  -ms-transform-origin: bottom left;
-  -webkit-transform-origin: bottom left; */
 }
 
 .headerRectangle::before {
@@ -72,14 +136,14 @@ div .content-pane {
 .headerText h1 {
   display: block;
   text-align: center;
-  font-size: 4.5em;
+  font-size: var(--font-size-3xl);
   font-weight: 400;
   margin-bottom: 0px;
   margin-left: 0px;
 }
 
 .headerText p {
-  font-size: 1.3em;
+  font-size: var(--font-size-lg);
   text-align: center;
   font-variant: small-caps;
 }
@@ -105,24 +169,29 @@ div .content-pane {
   position: fixed;
   margin: 0 auto;
   padding: 5px;
-  /*left: 0;*/
-  /*right: 0;*/
   text-align: center;
-  width: 600px;
+  width: min(600px, 90vw);
   line-height: 1.6;
-  font-size: 1.5em;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
   font-weight: 400;
-  letter-spacing: -.1rem;
+  letter-spacing: -0.05rem;
   overflow-x: hidden;
 }
 
 .headerLinks > a {
   color: white;
   text-decoration: none;
-  /*padding-left: 50px;*/
-  /*padding-right: 50px;*/
   padding-top: 10px;
   padding-bottom: 10px;
+  min-height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+}
+
+.headerLinks {
+  text-align: center;
+  white-space: nowrap;
+  transform-origin: center center;
 }
 
 .headerLinks > a.active {
@@ -132,88 +201,102 @@ div .content-pane {
 a.icon {
     color: #fff;
     padding: 10px;
+    min-width: var(--touch-target-min);
+    min-height: var(--touch-target-min);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .urlRow {
-  padding: 20px;
+  padding: var(--spacing-md);
 }
 
 .filterRowTitle {
-  padding-top: 15px;
+  padding-top: var(--spacing-sm);
 }
 
 .filterRow {
-  padding: 10px;
+  padding: var(--spacing-sm);
   overflow-x: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-xs);
 }
 
 a.filterButton {
   text-decoration: none;
-  padding-right: 30px;
-  padding-left: 30px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-right: 5px;
+  padding: var(--spacing-xs) var(--spacing-md);
   color: #fff;
-  background-color: rgb(64, 78, 104);
-  border-color: rgb(64, 78, 104);
-  height: 35px;
+  background-color: var(--color-blue-1);
+  border-color: var(--color-blue-1);
+  min-height: var(--touch-target-min);
   text-transform: uppercase;
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
 }
 
 a.filterButton.active {
   background-color: rgb(142, 163, 190);
 }
 
+a.filterButton:hover {
+  background-color: var(--color-blue-2);
+}
+
 .filterContent {
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: var(--spacing-xl) 0;
 }
 
 a.navButton {
   text-decoration: none;
-  padding-right: 30px;
-  padding-left: 30px;
-  margin-right: 5px;
-  border-color: black;
-  border: 1px solid;
-  height: 80px;
+  padding: 0 var(--spacing-md);
+  border: 1px solid black;
+  min-height: var(--touch-target-min);
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */
     height: 0;
     width: 100%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    background-color: rgb(0,0,0);
+    overflow-x: hidden;
+    transition: var(--transition-slow);
 }
 
 /* Position the content inside the overlay */
 .overlay-content {
     position: relative;
-    top: 20%; /* 20% from the top */
-    width: 100%; /* 100% width */
-    text-align: center; /* Centered text/links */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: 0 var(--spacing-md);
 }
 
 /* The navigation links inside the overlay */
 .overlay a {
-    padding: 8px;
+    padding: var(--spacing-sm);
     text-decoration: none;
-    font-size: 36px;
+    font-size: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
     color: #818181;
-    display: block; /* Display block instead of inline */
-    transition: 0.3s; /* Transition effects on hover (color) */
+    display: block;
+    transition: color var(--transition-medium);
+    min-height: var(--touch-target-min);
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -225,15 +308,96 @@ a.navButton {
 .overlay .closebtn {
     position: absolute;
     top: 0px;
-    right: 20px;
-    font-size: 60px;
+    right: var(--spacing-md);
+    font-size: clamp(2.5rem, 2rem + 2vw, 3.75rem);
+    min-width: var(--touch-target-min);
+    min-height: var(--touch-target-min);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/*@media all and (max-width: 1024px) {
-  .headerRectangle, .headerLinks {
-    transform: none !important;
+/* Static header styles for mobile/tablet */
+.headerStatic {
+  background-size: cover;
+  background-position: center;
+  min-height: var(--header-height-mobile);
+  margin-top: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.headerStatic-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-blue-3-overlay);
+}
+
+.headerStaticNavbar {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.headerStatic .headerText {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.headerStatic .headerText h1 {
+  font-size: var(--font-size-2xl);
+  margin: var(--spacing-xs) 0;
+  line-height: 1.2;
+}
+
+.headerStatic .headerText p {
+  font-size: var(--font-size-base);
+  margin: var(--spacing-xs) 0;
+}
+
+.headerStatic .headerIcons {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-sm) 0;
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .headerStatic {
+    min-height: 350px;
   }
-}*/
+  
+  .headerStatic .headerText h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .headerStatic .headerText p {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Reduced motion for overlay */
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    transition: none;
+  }
+  
+  .overlay a {
+    transition: none;
+  }
+}
 
 table {
   border-collapse: collapse;
