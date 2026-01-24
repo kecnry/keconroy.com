@@ -296,7 +296,7 @@ export function Header({ contentRef }) {
           <a href="#" className="closebtn" onClick={(e) => { e.preventDefault(); closeNav(); }}>&times;</a>
           <div className="overlay-content">
             <NavLink to="/" onClick={closeNav}>Home</NavLink>
-            <NavLink to="/research" onClick={closeNav}>Research</NavLink>
+            <NavLink to="/projects" onClick={closeNav}>Projects</NavLink>
             <NavLink to="/publications" onClick={closeNav}>Publications</NavLink>
             <NavLink to="/products" onClick={closeNav}>Code &amp; Products</NavLink>
             <NavLink to="/cv" onClick={closeNav}>Vita</NavLink>
@@ -353,7 +353,7 @@ export function Header({ contentRef }) {
           <NavLink to="/" onClick={scrollHome}>Home</NavLink>
         </div>
         <div ref={headerLink2} className="headerLinks">
-          <NavLink to="/research" onClick={scrollNavbar}>Research</NavLink>
+          <NavLink to="/projects" onClick={scrollNavbar}>Projects</NavLink>
         </div>
         <div ref={headerLink3} className="headerLinks">
           <NavLink to="/products" onClick={scrollNavbar}>Code &amp; Products</NavLink>

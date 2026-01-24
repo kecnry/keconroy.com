@@ -2,7 +2,8 @@ import React, { useRef } from 'react'
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Navigate
 } from 'react-router-dom'
 
 import HttpsRedirect from './protocal-redirect'
@@ -29,7 +30,9 @@ function App() {
           <div ref={contentRef} id='content'>
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/research/*' element={<Research />} />
+              <Route path='/projects/*' element={<Research />} />
+              <Route path='/research' element={<Navigate to="/projects" replace />} />
+              <Route path='/research/:project' element={<ResearchRedirect />} />
               <Route path='/publications/*' element={<Publications />} />
               <Route path='/products/*' element={<Products />} />
               <Route path='/cv' element={<CV />} />
@@ -42,6 +45,11 @@ function App() {
       </Router>
     </HttpsRedirect>
   )
+}
+
+function ResearchRedirect() {
+  const params = window.location.pathname.replace('/research', '/projects')
+  return <Navigate to={params} replace />
 }
 
 export default App

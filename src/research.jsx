@@ -17,7 +17,7 @@ export function ResearchOverview({ project, color, dark }) {
 
       <div className="row" style={{ paddingTop: "20px" }}>
         <div className="one-third column">
-          <Link to={`/research/${project}`} className='button'>Read More</Link>
+          <Link to={`/projects/${project}`} className='button'>Read More</Link>
         </div>
         <div className="one-third column">
           <Link to={`/publications/${project}/all/all`} className='button'>Publications</Link>
@@ -129,7 +129,7 @@ export var researchDicts = {
                       Our goal in building PHOEBE is to build the most robust and accurate model possible, even when at the cost of significant computational time.  However, we have designed the frontend in such a way that PHOEBE's backend is swappable with other existing codes.  The plan here is to allow data to be fitted roughly at first with codes that make more assumptions, and are therefore more efficient.  After the solution begins to converge, it is then trivial to switch to the full, robust model provided by the PHOEBE 2 backend.
                     </p>
                     <p>
-                      In addition to writing the entire frontend, my focus in PHOEBE has been to design and develop a new <i>hybrid method</i> for handling stellar systems with more than two components.  Particularly in the case of <a id="ember577" href="/research/triples" className="ember-view">triple systems</a> with a tight inner-binary, it is important to include both dynamical effects (ie. not simply nested keplerian orbits) as well as stellar distortion (ie. not just spherical or rotating stars).  Our method accounts for both of these effects and allows for precisely modeling both the stellar and orbital parameters of these complex systems.
+                      In addition to writing the entire frontend, my focus in PHOEBE has been to design and develop a new <i>hybrid method</i> for handling stellar systems with more than two components.  Particularly in the case of <a id="ember577" href="/projects/triples" className="ember-view">triple systems</a> with a tight inner-binary, it is important to include both dynamical effects (ie. not simply nested keplerian orbits) as well as stellar distortion (ie. not just spherical or rotating stars).  Our method accounts for both of these effects and allows for precisely modeling both the stellar and orbital parameters of these complex systems.
                     </p>
                 </div>
               </div>
