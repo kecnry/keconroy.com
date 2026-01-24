@@ -1,135 +1,150 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-import {MainTab, Section} from './common'
-import {blue1, blue2, blue3, blue3overlay, gray1, gray2, gray3, gray3overlay} from './common'
-import {publicationDicts, makePublication} from './publications'
-import {productDicts, makeProduct} from './products'
+import { Section, useMainTabScroll } from './common'
+import { publicationDicts, makePublication } from './publications'
+import { productDicts, makeProduct } from './products'
 
-export class CV extends MainTab {
-  render() {
-    return (
-      <div style={{textAlign: 'center'}}>
-        <h2>Curriculum Vitae</h2>
+export function CV() {
+  useMainTabScroll(false)
+  
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <h2>Curriculum Vitae</h2>
 
-        <CVInfo includePDF={true}/>
-        <CVEducation color={blue2} dark={true}/>
-        <CVTeaching/>
-        <CVResearch color={blue2} dark={true}/>
-        <CVObserving/>
+      <CVInfo includePDF={true} index={0} />
+      <CVEducation index={0} />
+      <CVPositions index={1} />
+      <CVProducts index={2} />
 
-        <CVSelectPubs color={blue2} dark={true}/>
-        <CVOralPubs/>
-        <CVPosterPubs color={blue2} dark={true}/>
-        <CVProducts/>
-        <CVInvitedTalks color={blue2} dark={true}/>
+      <CVTeaching index={3} />
+      <CVResearch index={4} />
+      <CVObserving index={5} />
 
-        <CVProfDevelopment/>
-        <CVMemberships color={blue2} dark={true}/>
-        <CVAwards/>
-      </div>
-    )
-  }
+      <CVSelectPubs index={6} />
+      <CVOralPubs index={7} />
+      <CVPosterPubs index={8} />
+      <CVInvitedTalks index={9} />
+
+      <CVProfDevelopment index={10} />
+      <CVMemberships index={11} />
+      <CVAwards index={12} />
+    </div>
+  )
 }
 
-export class CVInfo extends React.Component {
-  render() {
-    if (this.props.includePDF) {
-      var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/KyleConroy_CV.pdf`} target="_blank" rel="noopener noreferrer"  style={{padding: '2px'}}><span className="far fa-file-pdf"></span> PDF version</a>
-    } else {
-      var pdfLink = null
-    }
+export function CVInfo({ includePDF, index }) {
+  const pdfLink = includePDF ? (
+    <a href="/pdf/KyleConroy_CV.pdf" target="_blank" rel="noopener noreferrer" style={{ padding: '2px' }}>
+      <span className="far fa-file-pdf"></span> PDF version
+    </a>
+  ) : null
 
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
-        {/* <h1>Kyle Conroy</h1> */}
-        <p>
-          Department of Astrophysics &amp; Planetary Sciences<br/>
-          Villanova University<br/>
-          800 E Lancaster Ave, Villanova PA 19085<br/>
-          <a href='mailto:kyle.conroy@villanova.edu'>kyle.conroy [at] villanova.edu</a>
-        </p>
+  return (
+    <Section index={index}>
+      <p>
+        Space Telescope Science Institute<br />
+        3700 San Martin Dr<br />
+        Baltimore, MD 21218<br />
+        <a href='mailto:kconroy@stsci.edu'>kconroy [at] stsci.edu</a>
+      </p>
 
-        {pdfLink}
+      {pdfLink}
 
-      </Section>
-    )
-  }
+    </Section>
+  )
 }
 
-export class CVEducation extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
-        <h2>Education</h2>
-        <table>
-          <tbody>
-            <tr>
-              <td>May 2018</td>
-              <td><b>PhD</b> in Physics | <b>Vanderbilt University</b>, Nashville, TN<br/>Advisors: Keivan Stassun &amp; Andrej Prša | Committee Members: David Weintraub, Andreas Berlind<br/>Dissertation: <a href={`${process.env.PUBLIC_URL}/pdf/2018Conroy_dissertation.pdf`} target="_blank" rel="noopener noreferrer">Astrophysics of Stellar Multiple Systems</a></td>
-            </tr>
-            <tr>
-              <td>May 2011</td>
-              <td><b>BS</b> in Astronomy and Astrophysics | <b>Villanova University</b>, Villanova, PA<br/>Research Advisor: Andrej Prša | Minor: Physics</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </Section>
-    )
-  }
+export function CVEducation({ index }) {
+  return (
+    <Section index={index}>
+      <h2>Education</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>May 2018</td>
+            <td><b>PhD</b> in Physics | <b>Vanderbilt University</b>, Nashville, TN<br />Advisors: Keivan Stassun &amp; Andrej Prša | Committee Members: David Weintraub, Andreas Berlind<br />Dissertation: <a href="/pdf/2018Conroy_dissertation.pdf" target="_blank" rel="noopener noreferrer">Astrophysics of Stellar Multiple Systems</a></td>
+          </tr>
+          <tr>
+            <td>May 2011</td>
+            <td><b>BS</b> in Astronomy and Astrophysics | <b>Villanova University</b>, Villanova, PA<br />Research Advisor: Andrej Prša | Minor: Physics</td>
+          </tr>
+        </tbody>
+      </table>
+    </Section>
+  )
 }
 
-export class CVTeaching extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
-        <h2>Teaching Positions</h2>
-
-        <table>
-          <tbody>
-            <tr>
-              <td>Fall 2019, 2020</td>
-              <td>Adjunct Professor | Villanova University<br/>Taught physics for engineers lab session</td>
-            </tr>
-            <tr>
-              <td>Spring 2018, 2012</td>
-              <td>Teaching Assistant | Villanova University<br/>Graded and helped teach the senior-level capstone course: <a href="http://aprsa.villanova.edu/?q=modeling" target="_blank" rel="noopener noreferrer">Modeling Analysis</a></td>
-            </tr>
-            <tr>
-              <td>June 2015, Jan 2014</td>
-              <td>Internship Sponsor | Vanderbilt University<br/>Hosted high-school students for 6-week internships</td>
-            </tr>
-            <tr>
-              <td>Spring 2015</td>
-              <td>Contributing Lecturer | Vanderbilt University<br/>Planned and taught two class-sessions in a freshman seminar on exoplanets</td>
-            </tr>
-            <tr>
-              <td>Aug 2013 - June 2014</td>
-              <td>Graduate Teaching Assistant | Vanderbilt University<br/>Intro Nighttime Astronomy Lab - helped create labs and taught a lab-section</td>
-            </tr>
-            <tr>
-              <td>Fall 2008 - 2010</td>
-              <td>Undergraduate Teaching Assistant | Villanova University<br/>Co-taught and graded labs for AST 1073 Stellar Lab for arts majors</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </Section>
-    )
-  }
+export function CVPositions({ index }) {
+  return (
+    <Section index={index}>
+      <h2>Positions</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>September 2021 - Present</td>
+            <td>Senior Software Engineer | Space Telescope Science Institute<br />Data Analysis and Tools Branch</td>
+          </tr>
+          <tr>
+            <td>August 2019 - June 2021</td>
+            <td>Adjunct Professor | Villanova University<br />Physics Labs for Engineers and Astronomy Labs for A&amp;S Students</td>
+          </tr>
+          <tr>
+            <td>June 2018 - September 2021</td>
+            <td>Postdoctoral Researcher | Villanova University<br />Dr Andrej Prša</td>
+          </tr>
+        </tbody>
+      </table>
+    </Section>
+  )
 }
 
-export class CVResearch extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVTeaching({ index }) {
+  return (
+    <Section index={index}>
+      <h2>Teaching Positions</h2>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>Fall 2019, 2020</td>
+            <td>Adjunct Professor | Villanova University<br />Taught physics for engineers lab session</td>
+          </tr>
+          <tr>
+            <td>Spring 2018, 2012</td>
+            <td>Teaching Assistant | Villanova University<br />Graded and helped teach the senior-level capstone course: <a href="http://aprsa.villanova.edu/?q=modeling" target="_blank" rel="noopener noreferrer">Modeling Analysis</a></td>
+          </tr>
+          <tr>
+            <td>June 2015, Jan 2014</td>
+            <td>Internship Sponsor | Vanderbilt University<br />Hosted high-school students for 6-week internships</td>
+          </tr>
+          <tr>
+            <td>Spring 2015</td>
+            <td>Contributing Lecturer | Vanderbilt University<br />Planned and taught two class-sessions in a freshman seminar on exoplanets</td>
+          </tr>
+          <tr>
+            <td>Aug 2013 - June 2014</td>
+            <td>Graduate Teaching Assistant | Vanderbilt University<br />Intro Nighttime Astronomy Lab - helped create labs and taught a lab-section</td>
+          </tr>
+          <tr>
+            <td>Fall 2008 - 2010</td>
+            <td>Undergraduate Teaching Assistant | Villanova University<br />Co-taught and graded labs for AST 1073 Stellar Lab for arts majors</td>
+          </tr>
+        </tbody>
+      </table>
+    </Section>
+  )
+}
+
+export function CVResearch({ index }) {
+  return (
+    <Section index={index}>
         <h2>Research Positions</h2>
 
         <table>
           <tbody>
             <tr>
-              <td>June 2018 - Present</td>
+              <td>June 2018 - September 2021</td>
               <td>Postdoctoral Researcher | Villanova University<br/>Dr Andrej Prša</td>
             </tr>
             <tr>
@@ -160,14 +175,12 @@ export class CVResearch extends React.Component {
         </table>
 
       </Section>
-    )
-  }
+  )
 }
 
-export class CVObserving extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVObserving({ index }) {
+  return (
+    <Section index={index}>
         <h2>Observing Experience</h2>
 
         <table>
@@ -188,14 +201,12 @@ export class CVObserving extends React.Component {
         </table>
 
       </Section>
-    )
-  }
+  )
 }
 
-export class CVSelectPubs extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVSelectPubs({ index }) {
+  return (
+    <Section index={index}>
         <h2>Selected Publications</h2>
         <div style={{paddingBottom: '40px'}}>
           <p>see all <Link to="/publications/all/journal/all">Journal Publications</Link></p>
@@ -204,14 +215,12 @@ export class CVSelectPubs extends React.Component {
         {publicationDicts.map((p, i) => (makePublication(p, false, {type: 'journal', selected: true}, '/publications')))}
 
       </Section>
-    )
-  }
+  )
 }
 
-export class CVOralPubs extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVOralPubs({ index }) {
+  return (
+    <Section index={index}>
         <h2>Selected Oral Presentations</h2>
         <div style={{paddingBottom: '40px'}}>
           <p>see all <Link to="/publications/all/oral/all">Oral Publications</Link></p>
@@ -220,14 +229,12 @@ export class CVOralPubs extends React.Component {
         {publicationDicts.map((p, i) => (makePublication(p, false, {type: 'oral', selected: true}, '/publications')))}
 
       </Section>
-    )
-  }
+  )
 }
 
-export class CVPosterPubs extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVPosterPubs({ index }) {
+  return (
+    <Section index={index}>
         <h2>Selected Poster Presentations</h2>
         <div style={{paddingBottom: '40px'}}>
           <p>see all <Link to="/publications/all/poster/all">Poster Publications</Link></p>
@@ -236,14 +243,12 @@ export class CVPosterPubs extends React.Component {
         {publicationDicts.map((p, i) => (makePublication(p, false, {type: 'poster', selected: true}, '/publications')))}
 
       </Section>
-    )
-  }
+  )
 }
 
-export class CVProducts extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVProducts({ index }) {
+  return (
+    <Section index={index}>
         <h2>Code &amp; Products</h2>
         <div style={{paddingBottom: '40px'}}>
           <p>see all <Link to="/products">Code &amp; Products</Link></p>
@@ -252,14 +257,12 @@ export class CVProducts extends React.Component {
         {productDicts.map((p, i) => (makeProduct(p, false, {selected: true}, '/products')))}
 
       </Section>
-    )
-  }
+  )
 }
 
-export class CVInvitedTalks extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVInvitedTalks({ index }) {
+  return (
+    <Section index={index}>
         <h2>Invited Talks</h2>
 
         <table>
@@ -295,14 +298,12 @@ export class CVInvitedTalks extends React.Component {
           </tbody>
         </table>
       </Section>
-    )
-  }
+  )
 }
 
-export class CVProfDevelopment extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVProfDevelopment({ index }) {
+  return (
+    <Section index={index}>
         <h2>Professional Development</h2>
 
         <table>
@@ -356,18 +357,20 @@ export class CVProfDevelopment extends React.Component {
         </table>
 
       </Section>
-    )
-  }
+  )
 }
 
-export class CVMemberships extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVMemberships({ index }) {
+  return (
+    <Section index={index}>
         <h2>Memberships</h2>
 
         <table>
           <tbody>
+            <tr>
+              <td>2025 - Present</td>
+              <td>Astropy Voting Member</td>
+            </tr>
             <tr>
               <td>2011 - 2016</td>
               <td>Kepler Eclipsing Binary Working Group | <a href="http://keplerebs.villanova.edu/members" target="_blank" rel="noopener noreferrer" >Member</a></td>
@@ -377,21 +380,19 @@ export class CVMemberships extends React.Component {
               <td>American Astronomical Society | <a href="https://aas.org/directory/member_details?id=36332" target="_blank" rel="noopener noreferrer" >Full Member</a></td>
             </tr>
             <tr>
-              <td>2010 - Present</td>
+              <td>2010 - 2018</td>
               <td>Society of Physics Students | Member</td>
             </tr>
           </tbody>
         </table>
 
       </Section>
-    )
-  }
+  )
 }
 
-export class CVAwards extends React.Component {
-  render() {
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function CVAwards({ index }) {
+  return (
+    <Section index={index}>
         <h2>Fellowships &amp; Awards</h2>
         <table>
           <tbody>
@@ -419,6 +420,5 @@ export class CVAwards extends React.Component {
         </table>
 
       </Section>
-    )
-  }
+  )
 }

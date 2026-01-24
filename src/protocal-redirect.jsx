@@ -8,7 +8,7 @@ const isLocalHost = hostname => !!(
   hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
 );
 
-const HttpsRedirect = ({ children }) => {
+function HttpsRedirect({ children }) {
   if (
     typeof window !== 'undefined' &&
     window.location &&
@@ -23,7 +23,7 @@ const HttpsRedirect = ({ children }) => {
   }
 
   return children;
-};
+}
 
 HttpsRedirect.propTypes = {
   children: PropTypes.node,

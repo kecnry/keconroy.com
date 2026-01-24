@@ -1,8 +1,5 @@
-import React from 'react'
-// import {Link} from 'react-router-dom'
-
-var smoothScroll = require('smoothscroll'); // https://github.com/alicelieutier/smoothScroll
-
+import React, { useEffect, createContext, useContext, Children, cloneElement } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export const blue1 = 'rgb(76,95,119)'
 export const blue2 = 'rgb(59,75,103)'
@@ -25,21 +22,60 @@ export const getScrollPerc = () => {
   return scrollTop / window.innerHeight
 };
 
+// Helper function for smooth scrolling (replaces smoothscroll library)
+export const smoothScrollTo = (target, duration = 1200) => {
+  window.scrollTo({ top: target, behavior: 'smooth' })
+}
 
+// Helper function for scroll-to behavior on page navigation
+export const scrollTo = (y) => {
+  window.document.body.scrollTop = y
+  window.document.documentElement.scrollTop = y
+  window.pageYOffset = y
+  window.scrollY = y
+}
+
+// Hook for MainTab behavior (scroll on mount)
+export function useMainTabScroll(isHome = false) {
+  useEffect(() => {
+    const windowHeight = window.innerHeight
+    const windowWidth = window.innerWidth
+    const scrollPerc = getScrollPerc()
+
+    if (isHome) {
+      scrollTo(1)
+      scrollTo(0)
+      return
+    }
+
+    if (windowWidth < 1024 || windowHeight < 600) {
+      // don't scroll on mobile
+      scrollTo(0)
+      return
+    }
+
+    if (scrollPerc < 1.0) {
+      smoothScrollTo(windowHeight * 1.0, 1200)
+    } else if (scrollPerc < 1.25) {
+      smoothScrollTo(windowHeight * 1.25, 1200)
+    } else {
+      scrollTo(windowHeight * 1.25)
+    }
+  }, [isHome])
+}
+
+// Legacy class component for MainTab - kept for compatibility
 export class MainTab extends React.Component {
   scrollTo = (y) => {
     window.document.body.scrollTop = y
     window.document.documentElement.scrollTop = y
-    window.pagYOffset = y
+    window.pageYOffset = y
     window.scrollY = y
   }
   componentDidMount = () => {
-    // console.log("MainTab componentDidMount")
     let windowHeight = window.innerHeight
     let windowWidth = window.innerWidth
     let scrollPerc = getScrollPerc()
-
-    // console.log("MainTab.componentDidMount "+scrollPerc)
 
     if (this.isHome) {
       this.scrollTo(1)
@@ -54,9 +90,9 @@ export class MainTab extends React.Component {
     }
 
     if (scrollPerc < 1.0) {
-      smoothScroll(windowHeight * 1.0, 1200)
-    } else if (scrollPerc < 1.25){
-      smoothScroll(windowHeight * 1.25, 1200)
+      smoothScrollTo(windowHeight * 1.0, 1200)
+    } else if (scrollPerc < 1.25) {
+      smoothScrollTo(windowHeight * 1.25, 1200)
     } else {
       this.scrollTo(windowHeight * 1.25)
     }
@@ -72,8 +108,9 @@ export class MainFilterTab extends MainTab {
       }
     };
   }
+  // Note: In React Router v7, match.params is passed via props from a wrapper
   getFilterFromURL = () => {
-    return this.props.match.params
+    return this.props.params || {}
   }
 
 }
@@ -90,15 +127,13 @@ export class FilterEntry extends React.Component {
 
     for (let [k,v] of Object.entries(filter)) {
       let entryValue = this.props[k]
-      // console.log("*** filter: "+k+"="+v+" entryValue="+entryValue+" entryTitle="+this.props['title'])
-      // console.log(this.props)
       if (v===null || v==='all') {
         continue
       } else if (v===entryValue) {
         continue
       } else if (v===true && entryValue !== true) {
         return false
-      } else if (entryValue.indexOf(v) >= 0) {
+      } else if (entryValue && entryValue.indexOf && entryValue.indexOf(v) >= 0) {
         continue
       } else {
         return false
@@ -108,21 +143,84 @@ export class FilterEntry extends React.Component {
   }
 }
 
-export class Section extends React.Component {
-  render() {
-    if (this.props.dark) {
-      var color = 'rgb(230,230,230)'
-      var contentPane = 'content-pane dark'
-    } else {
-      color = 'black'
-      contentPane = 'content-pane light'
-    }
-    return (
-      <div className='section' style={{backgroundColor: this.props.color, color: color}}>
-        <div className={contentPane}>
-          {this.props.children}
-        </div>
-      </div>
-    )
-  }
+// FilterTab: clicking an active tab reverts to 'all'
+export function FilterTab({ value, currentValue, to, toAll, children }) {
+  const isActive = value === currentValue
+  const targetTo = isActive && value !== 'all' ? toAll : to
+  
+  return (
+    <NavLink 
+      to={targetTo} 
+      className={({ isActive: navActive }) => 
+        `filterButton${isActive ? ' active' : ''}`
+      }
+    >
+      {children}
+    </NavLink>
+  )
 }
+
+// Context for alternating section colors
+const SectionIndexContext = createContext(null)
+
+// Wrapper that provides automatic alternating indices to children
+export function AlternatingSections({ children, startIndex = 0 }) {
+  let currentIndex = startIndex
+  
+  const childrenWithIndex = Children.map(children, (child) => {
+    if (!child) return null
+    
+    // If child accepts an 'index' prop, pass it
+    if (child.type && (child.type.acceptsAlternatingIndex || 
+        child.type === Section || 
+        child.type.displayName === 'Section')) {
+      const indexedChild = cloneElement(child, { index: currentIndex })
+      currentIndex++
+      return indexedChild
+    }
+    
+    // For other elements (like ProjectOverviewList), wrap in context
+    return (
+      <SectionIndexContext.Provider value={{ getNextIndex: () => currentIndex++ }}>
+        {child}
+      </SectionIndexContext.Provider>
+    )
+  })
+  
+  return <>{childrenWithIndex}</>
+}
+
+// Hook to get next alternating index
+export function useAlternatingIndex() {
+  const context = useContext(SectionIndexContext)
+  if (context) {
+    return context.getNextIndex()
+  }
+  return 0
+}
+
+export function Section({ color, dark, index, children }) {
+  // If index is provided, automatically determine color/dark
+  let effectiveColor = color
+  let effectiveDark = dark
+  
+  if (index !== undefined && color === undefined && dark === undefined) {
+    const isOdd = index % 2 === 1
+    effectiveColor = isOdd ? blue2 : undefined
+    effectiveDark = isOdd
+  }
+  
+  const textColor = effectiveDark ? 'rgb(230,230,230)' : 'black'
+  const contentPane = effectiveDark ? 'content-pane dark' : 'content-pane light'
+  
+  return (
+    <div className='section' style={{ backgroundColor: effectiveColor, color: textColor }}>
+      <div className={contentPane}>
+        {children}
+      </div>
+    </div>
+  )
+}
+
+// Mark Section as accepting alternating index
+Section.acceptsAlternatingIndex = true
