@@ -1,94 +1,91 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
+import { Routes, Route, Link, useParams } from 'react-router-dom'
 
-import {MainTab, Section} from './common'
-import {blue1, blue2, blue3, blue3overlay, gray1, gray2, gray3, gray3overlay} from './common'
-import {publicationDicts, makePublication} from './publications'
-import {productDicts, makeProduct} from './products'
+import { MainTab, Section, useMainTabScroll } from './common'
+import { blue2 } from './common'
+import { publicationDicts, makePublication } from './publications'
+import { productDicts, makeProduct } from './products'
 
-export class ResearchOverview extends React.Component {
-  render() {
-    var project = this.props.project
-    var title = researchDicts[project]['title']
-    var overview = researchDicts[project]['overview']
-    return (
-      <Section color={this.props.color} dark={this.props.dark}>
+export function ResearchOverview({ project, color, dark }) {
+  const title = researchDicts[project]['title']
+  const overview = researchDicts[project]['overview']
+  return (
+    <Section color={color} dark={dark}>
+      <h1>{title}</h1>
+
+      {overview}
+
+      <div className="row" style={{ paddingTop: "20px" }}>
+        <div className="one-third column">
+          <Link to={`/research/${project}`} className='button'>Read More</Link>
+        </div>
+        <div className="one-third column">
+          <Link to={`/publications/${project}/all/all`} className='button'>Publications</Link>
+        </div>
+        <div className="one-third column">
+          <Link to={`/products/${project}/all`} className='button'>Products</Link>
+        </div>
+      </div>
+    </Section>
+  )
+}
+
+function ResearchTopic() {
+  const { project } = useParams()
+  useMainTabScroll(false)
+  
+  const title = researchDicts[project]['title']
+  const content = researchDicts[project]['content']
+  return (
+    <div>
+      <Section>
         <h1>{title}</h1>
 
-        {overview}
+        {content}
 
-        <div className="row" style={{paddingTop: "20px"}}>
-          <div className="one-third column">
-            <Link to={`/research/${project}`} className='button'>Read More</Link>
-          </div>
-          <div className="one-third column">
-            <Link to={`/publications/${project}/all/all`} className='button'>Publications</Link>
-          </div>
-          <div className="one-third column">
-            <Link to={`/products/${project}/all`} className='button'>Products</Link>
-          </div>
-        </div>
       </Section>
-    )
-  }
+
+      <Section color={blue2} dark={true}>
+        <h2>{title} Publications</h2>
+        <div style={{ paddingBottom: '40px' }}>
+          <Link to={`/publications/${project}/all/all`}>see all {title} publications</Link>
+        </div>
+        {publicationDicts.map((p, i) => (makePublication(p, false, { projectSelected: project }, '/publications')))}
+      </Section>
+
+      <Section>
+        <h2>{title} Products</h2>
+        <div style={{ paddingBottom: '40px' }}>
+          <Link to={`/products/${project}/all`}>see all {title} products</Link>
+        </div>
+        {productDicts.map((p, i) => (makeProduct(p, false, { projectSelected: project }, '/products')))}
+      </Section>
+    </div>
+  )
 }
 
-export class ResearchTopic extends MainTab {
-  render() {
-    var project = this.props.match.params.project
-    var title = researchDicts[project]['title']
-    var content = researchDicts[project]['content']
-    return (
-      <div>
-        <Section>
-          <h1>{title}</h1>
-
-          {content}
-
-        </Section>
-
-        <Section color={blue2} dark={true}>
-          <h2>{title} Publications</h2>
-          <div style={{paddingBottom: '40px'}}>
-            <Link to={`/publications/${project}/all/all`}>see all {title} publications</Link>
-          </div>
-          {publicationDicts.map((p, i) => (makePublication(p, false, {projectSelected: project}, '/publications')))}
-        </Section>
-
-        <Section>
-          <h2>{this.props.title} Products</h2>
-          <div style={{paddingBottom: '40px'}}>
-            <Link to={`/products/${project}/all`}>see all {title} products</Link>
-          </div>
-          {productDicts.map((p, i) => (makeProduct(p, false, {projectSelected: project}, '/products')))}
-        </Section>
-      </div>
-    )
-  }
+function ResearchOverviews() {
+  useMainTabScroll(false)
+  
+  return (
+    <div>
+      <ResearchOverview project='phoebe' />
+      <ResearchOverview project='triples' color={blue2} dark={true} />
+      <ResearchOverview project='etvs' />
+      <ResearchOverview project='keplerebs' color={blue2} dark={true} />
+    </div>
+  )
 }
 
-export class ResearchOverviews extends MainTab {
-  render() {
-    return (
-      <div>
-          <ResearchOverview project='phoebe'/>
-          <ResearchOverview project='triples' color={blue2} dark={true}/>
-          <ResearchOverview project='etvs'/>
-          <ResearchOverview project='keplerebs' color={blue2} dark={true}/>
-      </div>
-    )
-  }
-}
-
-export class Research extends React.Component {
-  render() {
-    return (
-      <div>
-        <Route exact path={`${this.props.match.url}`} component={ResearchOverviews}/>
-        <Route exact path={`${this.props.match.url}/:project`} component={ResearchTopic}/>
-      </div>
-    )
-  }
+export function Research() {
+  return (
+    <div>
+      <Routes>
+        <Route index element={<ResearchOverviews />} />
+        <Route path=":project" element={<ResearchTopic />} />
+      </Routes>
+    </div>
+  )
 }
 
 export var researchDicts = {
@@ -96,7 +93,7 @@ export var researchDicts = {
     'title': 'PHOEBE',
     'overview': <div className="row">
                   <div className="one-third column">
-                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/phoebe_light.png`} style={{height: "250px"}}/>
+                    <img className="u-max-full-width" src="/images/phoebe_light.png" style={{height: "250px"}} alt="PHOEBE"/>
                   </div>
 
                   <div className="two-thirds column">
@@ -111,7 +108,7 @@ export var researchDicts = {
     'content': <div className="container">
                 <div className="row">
                   <div className="one-third column">
-                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/phoebe_light.png`} style={{height: "250px"}}/>
+                    <img className="u-max-full-width" src="/images/phoebe_light.png" style={{height: "250px"}} alt="PHOEBE"/>
                   </div>
 
                   <div className="two-thirds column">
@@ -150,7 +147,7 @@ export var researchDicts = {
                   </div>
 
                   <div className="one-third column">
-                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/triples_splash.jpg`} style={{maxWidth: "100%"}}/>
+                    <img className="u-max-full-width" src="/images/triples_splash.jpg" alt="Triples" style={{maxWidth: "100%"}}/>
                   </div>
                 </div>,
     'content': <div className="container">
@@ -165,7 +162,7 @@ export var researchDicts = {
                   </div>
 
                   <div className="one-third column">
-                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/triples_splash.jpg`} style={{maxWidth: "100%"}}/>
+                    <img className="u-max-full-width" src="/images/triples_splash.jpg" alt="Triples" style={{maxWidth: "100%"}}/>
                   </div>
                 </div>
 
@@ -190,7 +187,7 @@ export var researchDicts = {
                 </div>
 
                 <div className="one-third column">
-                  <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/etv_splash.png`} style={{maxWidth: "100%"}}/>
+                  <img className="u-max-full-width" src="/images/etv_splash.png" alt="ETV" style={{maxWidth: "100%"}}/>
                 </div>
               </div>,
     'content': <div className="container">
@@ -205,7 +202,7 @@ export var researchDicts = {
                   </div>
 
                   <div className="one-third column">
-                    <img className="u-max-full-width" src={`${process.env.PUBLIC_URL}/images/etv_splash.png`} style={{maxWidth: "100%"}}/>
+                    <img className="u-max-full-width" src="/images/etv_splash.png" alt="ETV" style={{maxWidth: "100%"}}/>
                   </div>
                 </div>
 
@@ -224,7 +221,7 @@ export var researchDicts = {
     'title': 'Kepler EBs',
     'overview': <div className="row">
                   <div className="one-third column">
-                    <img src={`${process.env.PUBLIC_URL}/images/kepler.png`} style={{maxWidth: "100%", maxHeight: "200px"}}/>
+                    <img src="/images/kepler.png" alt="Kepler" style={{maxWidth: "100%", maxHeight: "200px"}}/>
                   </div>
 
                   <div className="two-thirds column">
@@ -236,7 +233,7 @@ export var researchDicts = {
     'content': <div className="container">
                 <div className="row">
                   <div className="one-third column">
-                    <img src={`${process.env.PUBLIC_URL}/images/kepler.png`} style={{maxWidth: "100%", maxHeight: "200px"}}/>
+                    <img src="/images/kepler.png" alt="Kepler" style={{maxWidth: "100%", maxHeight: "200px"}}/>
                   </div>
 
                   <div className="two-thirds column">

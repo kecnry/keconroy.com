@@ -1,47 +1,45 @@
 import React from 'react'
-import {NavLink, Link, Route} from 'react-router-dom'
+import { NavLink, Link, Routes, Route, useParams } from 'react-router-dom'
 
-import {MainTab, MainFilterTab, FilterEntry, FilterButton, Section, urlGitHub} from './common'
+import { FilterEntry, Section, urlGitHub, useMainTabScroll } from './common'
 
 
 export class Product extends FilterEntry {
   render() {
     if (this.isVisible()) {
-      if (this.props.content && !this.props.expanded) {
-        var expandedLink = <Link to={this.props.contentLink} style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-ellipsis-h"></span> read more</Link>
-      } else {
-        var expandedLink = null
-      }
+      const expandedLink = (this.props.content && !this.props.expanded) ? (
+        <Link to={this.props.contentLink} style={{ padding: '2px', textDecoration: 'none' }}>
+          <span className="fas fa-ellipsis-h"></span> read more
+        </Link>
+      ) : null
 
-      if (this.props.sourceLink) {
-        var sourceLink = <a href={this.props.sourceLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-code"></span> source-code</a>
-      } else {
-        var sourceLink = null
-      }
+      const sourceLink = this.props.sourceLink ? (
+        <a href={this.props.sourceLink} target="_blank" rel="noopener noreferrer" style={{ padding: '2px', textDecoration: 'none' }}>
+          <span className="fas fa-code"></span> source-code
+        </a>
+      ) : null
 
-      if (this.props.liveLink) {
-        var liveLink = <a href={this.props.liveLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-link"></span> {this.props.liveLink.indexOf("readthedocs")===-1 ? "website" : "docs"}</a>
-      } else {
-        var liveLink = null
-      }
+      const liveLink = this.props.liveLink ? (
+        <a href={this.props.liveLink} target="_blank" rel="noopener noreferrer" style={{ padding: '2px', textDecoration: 'none' }}>
+          <span className="fas fa-link"></span> {this.props.liveLink.indexOf("readthedocs") === -1 ? "website" : "docs"}
+        </a>
+      ) : null
 
-      if (this.props.dataLink) {
-        var dataLink = <a href={this.props.dataLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px', textDecoration: 'none'}}><span className="fas fa-database"></span> data</a>
-      } else {
-        var dataLink = null
-      }
+      const dataLink = this.props.dataLink ? (
+        <a href={this.props.dataLink} target="_blank" rel="noopener noreferrer" style={{ padding: '2px', textDecoration: 'none' }}>
+          <span className="fas fa-database"></span> data
+        </a>
+      ) : null
 
-      if (this.props.expanded) {
-        var content = <div style={{paddingTop: '50px'}}>{this.props.content}</div>
-      } else {
-        var content = null
-      }
+      const content = this.props.expanded ? (
+        <div style={{ paddingTop: '50px' }}>{this.props.content}</div>
+      ) : null
 
       return (
-        <div style={{paddingBottom: '15px'}}>
+        <div style={{ paddingBottom: '15px' }}>
           <p><b>{this.props.title}</b></p>
           {this.props.logo ?
-            <p align="center"><img src={this.props.logo} alt="logo" style={{maxWidth: "300px", maxHeight: "125px", width: "auto", height: "auto"}} align="center"/></p>
+            <p align="center"><img src={this.props.logo} alt="logo" style={{ maxWidth: "300px", maxHeight: "125px", width: "auto", height: "auto" }} /></p>
             :
             null
           }
@@ -57,68 +55,61 @@ export class Product extends FilterEntry {
 }
 
 
+function ProductsFilter() {
+  const params = useParams()
+  useMainTabScroll(false)
+  
+  const projects = ['all', 'phoebe', 'triples', 'etvs', 'keplerebs', 'other']
+  const types = ['all', 'code', 'website', 'data', 'docs']
 
-class ProductsFilter extends MainFilterTab {
-  render() {
-    let projects = ['all', 'phoebe', 'triples', 'etvs', 'keplerebs', 'other']
-    let types = ['all', 'code', 'website', 'data', 'docs']
+  const project = params.project || 'all'
+  const type = params.type || 'all'
 
-    var project = this.props.match.params.project
-    var type = this.props.match.params.type
+  const getFilterFromURL = () => ({ project, type })
 
-    if (!project) {
-      project = 'all'
-    }
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <h2>Products</h2>
 
-    if (!type) {
-      type = 'all'
-    }
-
-    return (
-      <div style={{textAlign: 'center'}}>
-        <h2>Products</h2>
-
-        <div className="urlRow" style={{paddingBottom: '25px'}}>
-          <a href={urlGitHub} target="_blank" rel="noopener noreferrer" title="GitHub">GitHub Profile</a>
-        </div>
-
-        <div className="filterRowTitle">Project:</div>
-        <div className="filterRow">{projects.map((p) => (<NavLink to={`/products/${p}/${type}`} className='filterButton'>{p}</NavLink>))}</div>
-
-        <div className="filterRowTitle">Type:</div>
-        <div className="filterRow">{types.map((t) => (<NavLink to={`/products/${project}/${t}`} className='filterButton'>{t}</NavLink>))}</div>
-
-
-        <div className="filterContent">
-          {productDicts.map((p, i) => (makeProduct(p, false, this.getFilterFromURL(), '/products')))}
-        </div>
-
+      <div className="urlRow" style={{ paddingBottom: '25px' }}>
+        <a href={urlGitHub} target="_blank" rel="noopener noreferrer" title="GitHub">GitHub Profile</a>
       </div>
-    )
-  }
+
+      <div className="filterRowTitle">Project:</div>
+      <div className="filterRow">{projects.map((p, i) => (<NavLink key={i} to={`/products/${p}/${type}`} className='filterButton'>{p}</NavLink>))}</div>
+
+      <div className="filterRowTitle">Type:</div>
+      <div className="filterRow">{types.map((t, i) => (<NavLink key={i} to={`/products/${project}/${t}`} className='filterButton'>{t}</NavLink>))}</div>
+
+      <div className="filterContent">
+        {productDicts.map((p, i) => (makeProduct(p, false, getFilterFromURL(), '/products')))}
+      </div>
+    </div>
+  )
 }
 
-class ProductsEntry extends MainTab {
-  render() {
-    return (
-      <div>
-        {productDicts.map((p, i) => (makeProduct(p, true, {title: this.props.match.params.title}, '/products')))}
-      </div>
-    )
-  }
+function ProductsEntry() {
+  const params = useParams()
+  useMainTabScroll(false)
+  
+  return (
+    <div>
+      {productDicts.map((p, i) => (makeProduct(p, true, { title: params.title }, '/products')))}
+    </div>
+  )
 }
 
 
-export class Products extends React.Component {
-  render() {
-    return (
-      <Section>
-        <Route exact path={`${this.props.match.url}`} component={ProductsFilter}/>
-        <Route exact path={`${this.props.match.url}/:project/:type`} component={ProductsFilter}/>
-        <Route exact path={`${this.props.match.url}/:title`} component={ProductsEntry}/>
-      </Section>
-    )
-  }
+export function Products() {
+  return (
+    <Section>
+      <Routes>
+        <Route index element={<ProductsFilter />} />
+        <Route path=":project/:type" element={<ProductsFilter />} />
+        <Route path=":title" element={<ProductsEntry />} />
+      </Routes>
+    </Section>
+  )
 }
 
 // place NEWER entries on TOP of the list
@@ -166,7 +157,7 @@ export var productDicts = [
    content:
     <div className='row'>
       <div className='one-third column'>
-        <img src={`${process.env.PUBLIC_URL}/images/cosmic_clock.png`} style={{maxWidth: "100%"}}/>
+        <img src="/images/cosmic_clock.png" alt="Cosmic Clock" style={{maxWidth: "100%"}}/>
       </div>
       <div className='two-thirds column'>
         <p>
@@ -231,7 +222,7 @@ export var productDicts = [
    content:
     <div className='row'>
       <div className='one-third column'>
-        <img src={`${process.env.PUBLIC_URL}/images/autofig.gif`} style={{maxWidth: "100%"}}/>
+        <img src="/images/autofig.gif" alt="autofig" style={{maxWidth: "100%"}}/>
       </div>
       <div className='two-thirds column'>
         <p>

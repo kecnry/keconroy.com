@@ -1,53 +1,34 @@
 import React from 'react'
-import {NavLink, Link, Route} from 'react-router-dom'
+import { NavLink, Routes, Route, useParams } from 'react-router-dom'
 
-import {MainTab, MainFilterTab, FilterEntry, Section, urlADS, urlGoogleScholar, urlOrcid} from './common'
+import { MainTab, MainFilterTab, FilterEntry, Section, urlADS, urlGoogleScholar, urlOrcid, useMainTabScroll } from './common'
 
 
 class Publication extends FilterEntry {
   render() {
     if (this.isVisible()) {
-      // if (this.props.content && this.props.contentLink) {
-      //   var expandedLink = <Link to={this.props.contentLink}>read more</Link>
-      // } else {
-      //   var expandedLink = null
-      // }
+      const adsLink = this.props.adsLink ? (
+        <a href={this.props.adsLink} target="_blank" rel="noopener noreferrer" style={{ padding: '2px' }}>
+          <span className="ai ai-ads"></span> ADS
+        </a>
+      ) : null
 
-      if (this.props.adsLink) {
-        var adsLink = <a href={this.props.adsLink} target="_blank" rel="noopener noreferrer"  style={{padding: '2px'}}><span className="ai ai-ads"></span> ADS</a>
-      } else {
-        var adsLink = null
-      }
+      const pdfLink = this.props.pdf ? (
+        <a href={`/pdf/${this.props.pdf}`} style={{ padding: '2px' }}>
+          <span className="far fa-file-pdf"></span> PDF
+        </a>
+      ) : null
 
-      if (this.props.pdf) {
-        var pdfLink = <a href={`${process.env.PUBLIC_URL}/pdf/`+this.props.pdf} style={{padding: '2px'}}><span className="far fa-file-pdf"></span> PDF</a>
-      } else {
-        var pdfLink = null
-      }
-
-      if (this.props.publisherLink) {
-        var publisherLink = <a href={this.props.publisherLink} target='_blank' style={{padding: '2px'}}><span className="ai ai-doi"></span> publisher</a>
-      } else {
-        var publisherLink = null
-      }
-
-      var badges = null
-      // if (this.props.publisherLink && this.props.publisherLink.indexOf("doi.org") !== -1) {
-      //   var doi = this.props.publisherLink.slice(this.props.publisherLink.indexOf("doi.org")+8)
-      //   var badges = <div className="row">
-      //                   <div style={{float: "left", padding: "15px", marginLeft: "calc(50% - 90px)"}} className="col-sm-8" data-badge-popover="left" data-badge-type="donut" data-doi={doi} data-condensed="true" data-hide-no-mentions="false" class="altmetric-embed"></div>
-      //
-      //                   <div style={{float: "left", padding: "15px", mixBlendMode: "multiply"}} className="col-sm-8 __dimensions_badge_embed__" data-doi={doi} data-legend="hover-right" data-style="small_circle"></div>
-      //                 </div>
-      // } else {
-      //   var badges = null
-      // }
+      const publisherLink = this.props.publisherLink ? (
+        <a href={this.props.publisherLink} target='_blank' rel="noopener noreferrer" style={{ padding: '2px' }}>
+          <span className="ai ai-doi"></span> publisher
+        </a>
+      ) : null
 
       return (
-        <div style={{paddingBottom: '15px'}}>
+        <div style={{ paddingBottom: '15px' }}>
           <p><b>{this.props.title}</b></p>
           <p>{this.props.authors} {this.props.year}, <b>{this.props.journal}</b>, {this.props.volume}, {this.props.page}</p>
-          {badges}
           <p>{adsLink} {publisherLink} {pdfLink}</p>
         </div>
       )
@@ -57,81 +38,57 @@ class Publication extends FilterEntry {
   }
 }
 
-class PublicationsFilter extends MainFilterTab {
-  render() {
-    let projects = ['all', 'phoebe', 'triples', 'etvs', 'keplerebs', 'other']
-    let types = ['all', 'journal', 'oral', 'poster']
-    let nauthors = ['all', '1st', 'nth']
+function PublicationsFilter() {
+  const params = useParams()
+  useMainTabScroll(false)
+  
+  const projects = ['all', 'phoebe', 'triples', 'etvs', 'keplerebs', 'other']
+  const types = ['all', 'journal', 'oral', 'poster']
+  const nauthors = ['all', '1st', 'nth']
 
-    var project = this.props.match.params.project || 'all'
-    var type = this.props.match.params.type || 'all'
-    var nauthor = this.props.match.params.nauthor || 'all'
-    // var selected = this.props.match.params.selected || false
+  const project = params.project || 'all'
+  const type = params.type || 'all'
+  const nauthor = params.nauthor || 'all'
 
-    if (!project) {
-      project = 'all'
-    }
+  const getFilterFromURL = () => ({ project, type, nauthor })
 
-    if (!type) {
-      type = 'all'
-    }
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <h2>Publications</h2>
 
-    if (!nauthor) {
-      nauthor = 'all'
-    }
-
-
-    return (
-      <div style={{textAlign: 'center'}}>
-        <h2>Publications</h2>
-
-        <div className="urlRow" style={{paddingBottom: '25px'}}>
-          <a href={urlADS} target="_blank" rel="noopener noreferrer" title="ADS">View Publications on ADS</a>
-          <br/>
-          <a href={urlGoogleScholar} target="_blank" rel="noopener noreferrer"  title="Google Scholar">Google Scholar Profile</a>
-          <br/>
-          <a href={urlOrcid} target="_blank" rel="noopener noreferrer"  title="Orcid ID">ORCID Profile</a>
-        </div>
-
-        <div className="filterRowTitle">Project:</div>
-        <div className="filterRow">{projects.map((p) => (<NavLink to={`/publications/${p}/${type}/${nauthor}`} className='filterButton'>{p}</NavLink>))}</div>
-
-        <div className="filterRowTitle">Type:</div>
-        <div className="filterRow">{types.map((t) => (<NavLink to={`/publications/${project}/${t}/${nauthor}`} className='filterButton'>{t}</NavLink>))}</div>
-
-        <div className="filterRowTitle">Author:</div>
-        <div className="filterRow">{nauthors.map((a) => (<NavLink to={`/publications/${project}/${type}/${a}`} className='filterButton'>{a}</NavLink>))}</div>
-
-        <div className="filterContent">
-          {publicationDicts.map((p, i) => (makePublication(p, false, this.getFilterFromURL(), '/publications')))}
-        </div>
-
-
+      <div className="urlRow" style={{ paddingBottom: '25px' }}>
+        <a href={urlADS} target="_blank" rel="noopener noreferrer" title="ADS">View Publications on ADS</a>
+        <br />
+        <a href={urlGoogleScholar} target="_blank" rel="noopener noreferrer" title="Google Scholar">Google Scholar Profile</a>
+        <br />
+        <a href={urlOrcid} target="_blank" rel="noopener noreferrer" title="Orcid ID">ORCID Profile</a>
       </div>
-    )
-  }
+
+      <div className="filterRowTitle">Project:</div>
+      <div className="filterRow">{projects.map((p, i) => (<NavLink key={i} to={`/publications/${p}/${type}/${nauthor}`} className='filterButton'>{p}</NavLink>))}</div>
+
+      <div className="filterRowTitle">Type:</div>
+      <div className="filterRow">{types.map((t, i) => (<NavLink key={i} to={`/publications/${project}/${t}/${nauthor}`} className='filterButton'>{t}</NavLink>))}</div>
+
+      <div className="filterRowTitle">Author:</div>
+      <div className="filterRow">{nauthors.map((a, i) => (<NavLink key={i} to={`/publications/${project}/${type}/${a}`} className='filterButton'>{a}</NavLink>))}</div>
+
+      <div className="filterContent">
+        {publicationDicts.map((p, i) => (makePublication(p, false, getFilterFromURL(), '/publications')))}
+      </div>
+    </div>
+  )
 }
 
-class PublicationsEntry extends MainTab {
-  render() {
-    return (
-      <div>
-        {publicationDicts.map((p, i) => (makePublication(p, true, {name: this.props.name}, '/publications')))}
-      </div>
-    )
-  }
-}
-
-export class Publications extends React.Component {
-  render() {
-    return (
-      <Section>
-        <Route exact path={`${this.props.match.url}`} component={PublicationsFilter}/>
-        <Route exact path={`${this.props.match.url}/:project/:type/:nauthor`} component={PublicationsFilter}/>
-        {/* <Route exact path={`${this.props.match.url}/:title`} component={PublicationsEntry}/> */}
-      </Section>
-    )
-  }
+export function Publications() {
+  return (
+    <Section>
+      <Routes>
+        <Route index element={<PublicationsFilter />} />
+        <Route path=":project/:type/:nauthor" element={<PublicationsFilter />} />
+      </Routes>
+    </Section>
+  )
 }
 
 // place NEWER entries on TOP of the list
