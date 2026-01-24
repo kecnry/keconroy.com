@@ -336,7 +336,8 @@ export function makeProduct(dict, expanded, filter, url) {
   // object by taking the filter and base URL
 
   // TODO: slugify dict.title for contentLink
-  return (<Product title={dict.title}
+  return (<Product key={dict.title}
+                   title={dict.title}
                    sourceLink={dict.sourceLink}
                    liveLink={dict.liveLink}
                    dataLink={dict.dataLink}

@@ -899,7 +899,8 @@ export var publicationDicts = [
 export function makePublication(dict, expanded, filter, url) {
   // function to convert dictionary from above (publicationDicts) into a Publication
   // object by taking the filter and base URL
-  return (<Publication title={dict.title}
+  return (<Publication key={dict.title}
+                       title={dict.title}
                        adsLink={dict.adsLink}
                        publisherLink={dict.publisherLink}
                        pdf={dict.pdf}

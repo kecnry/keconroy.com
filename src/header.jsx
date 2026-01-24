@@ -330,6 +330,17 @@ export function Header({ contentRef }) {
 
   return (
     <div>
+      <div ref={navigationOverlay} className="overlay" style={{ backgroundColor: gray3overlay }}>
+        <button className="closebtn" onClick={closeNav} aria-label="Close navigation menu">&times;</button>
+        <nav className="overlay-content" role="navigation">
+          <NavLink to="/" onClick={closeNav}>Home</NavLink>
+          <NavLink to="/projects" onClick={closeNav}>Projects</NavLink>
+          <NavLink to="/publications" onClick={closeNav}>Publications</NavLink>
+          <NavLink to="/products" onClick={closeNav}>Code &amp; Products</NavLink>
+          <NavLink to="/cv" onClick={closeNav}>Vita</NavLink>
+        </nav>
+      </div>
+
       <div ref={headerStatic} className="headerStatic" style={{ backgroundImage: `url(/images/smc.jpg)`, display: 'none' }}>
         <div className="headerStatic-overlay"></div>
 
@@ -341,17 +352,6 @@ export function Header({ contentRef }) {
         >
           <span className="fas fa-bars fa-2x" style={{ color: 'white' }} aria-hidden="true"></span>
         </button>
-
-        <div ref={navigationOverlay} className="overlay" style={{ backgroundColor: gray3overlay }}>
-          <button className="closebtn" onClick={closeNav} aria-label="Close navigation menu">&times;</button>
-          <nav className="overlay-content" role="navigation">
-            <NavLink to="/" onClick={closeNav}>Home</NavLink>
-            <NavLink to="/projects" onClick={closeNav}>Projects</NavLink>
-            <NavLink to="/publications" onClick={closeNav}>Publications</NavLink>
-            <NavLink to="/products" onClick={closeNav}>Code &amp; Products</NavLink>
-            <NavLink to="/cv" onClick={closeNav}>Vita</NavLink>
-          </nav>
-        </div>
 
         <div className="headerText">
           <h1>Kyle E Conroy<br />PhD</h1>

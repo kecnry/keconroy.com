@@ -267,7 +267,7 @@ a.navButton {
     height: 0;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     left: 0;
     top: 0;
     background-color: rgb(0,0,0);
@@ -284,8 +284,22 @@ a.navButton {
     margin-top: var(--spacing-md);
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--spacing-sm);
     padding: 0 var(--spacing-md);
+    box-sizing: border-box;
+    /* Override nav styles from navbar.css */
+    background-color: transparent !important;
+    height: auto !important;
+}
+
+/* Override nav element styles when inside overlay */
+.overlay nav,
+nav.overlay-content {
+    position: relative;
+    background-color: transparent;
+    height: auto;
+    z-index: auto;
 }
 
 /* The navigation links inside the overlay */
@@ -297,6 +311,13 @@ a.navButton {
     display: block;
     transition: color var(--transition-medium);
     min-height: var(--touch-target-min);
+    border: none;
+}
+
+/* Active link in overlay - no underline bar */
+.overlay a.active {
+    color: #f1f1f1;
+    border: none;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -304,17 +325,27 @@ a.navButton {
     color: #f1f1f1;
 }
 
-/* Position the close button (top right corner) */
+/* Position the close button - same position as hamburger button */
 .overlay .closebtn {
     position: absolute;
-    top: 0px;
+    top: var(--spacing-md);
     right: var(--spacing-md);
-    font-size: clamp(2.5rem, 2rem + 2vw, 3.75rem);
+    font-size: clamp(2rem, 1.5rem + 2vw, 2.5rem);
     min-width: var(--touch-target-min);
     min-height: var(--touch-target-min);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #818181;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition-medium);
+    padding: var(--spacing-sm);
+}
+
+.overlay .closebtn:hover, .overlay .closebtn:focus {
+    color: #f1f1f1;
 }
 
 /* Static header styles for mobile/tablet */
@@ -339,15 +370,18 @@ a.navButton {
 
 .headerStaticNavbar {
   cursor: pointer;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: 2;
   min-width: var(--touch-target-min);
   min-height: var(--touch-target-min);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+  background: transparent;
+  border: none;
 }
 
 .headerStatic .headerText {
