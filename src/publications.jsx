@@ -1,7 +1,7 @@
 import React from 'react'
-import { NavLink, Routes, Route, useParams } from 'react-router-dom'
+import { Routes, Route, useParams } from 'react-router-dom'
 
-import { MainTab, MainFilterTab, FilterEntry, Section, urlADS, urlGoogleScholar, urlOrcid, useMainTabScroll } from './common'
+import { MainTab, MainFilterTab, FilterEntry, FilterTab, Section, urlADS, urlGoogleScholar, urlOrcid, useMainTabScroll } from './common'
 
 
 class Publication extends FilterEntry {
@@ -65,13 +65,37 @@ function PublicationsFilter() {
       </div>
 
       <div className="filterRowTitle">Project:</div>
-      <div className="filterRow">{projects.map((p, i) => (<NavLink key={i} to={`/publications/${p}/${type}/${nauthor}`} className='filterButton'>{p}</NavLink>))}</div>
+      <div className="filterRow">{projects.map((p, i) => (
+        <FilterTab 
+          key={i} 
+          value={p} 
+          currentValue={project} 
+          to={`/publications/${p}/${type}/${nauthor}`} 
+          toAll={`/publications/all/${type}/${nauthor}`}
+        >{p}</FilterTab>
+      ))}</div>
 
       <div className="filterRowTitle">Type:</div>
-      <div className="filterRow">{types.map((t, i) => (<NavLink key={i} to={`/publications/${project}/${t}/${nauthor}`} className='filterButton'>{t}</NavLink>))}</div>
+      <div className="filterRow">{types.map((t, i) => (
+        <FilterTab 
+          key={i} 
+          value={t} 
+          currentValue={type} 
+          to={`/publications/${project}/${t}/${nauthor}`} 
+          toAll={`/publications/${project}/all/${nauthor}`}
+        >{t}</FilterTab>
+      ))}</div>
 
       <div className="filterRowTitle">Author:</div>
-      <div className="filterRow">{nauthors.map((a, i) => (<NavLink key={i} to={`/publications/${project}/${type}/${a}`} className='filterButton'>{a}</NavLink>))}</div>
+      <div className="filterRow">{nauthors.map((a, i) => (
+        <FilterTab 
+          key={i} 
+          value={a} 
+          currentValue={nauthor} 
+          to={`/publications/${project}/${type}/${a}`} 
+          toAll={`/publications/${project}/${type}/all`}
+        >{a}</FilterTab>
+      ))}</div>
 
       <div className="filterContent">
         {publicationDicts.map((p, i) => (makePublication(p, false, getFilterFromURL(), '/publications')))}

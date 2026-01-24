@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export const blue1 = 'rgb(76,95,119)'
 export const blue2 = 'rgb(59,75,103)'
@@ -140,6 +141,23 @@ export class FilterEntry extends React.Component {
     }
     return true
   }
+}
+
+// FilterTab: clicking an active tab reverts to 'all'
+export function FilterTab({ value, currentValue, to, toAll, children }) {
+  const isActive = value === currentValue
+  const targetTo = isActive && value !== 'all' ? toAll : to
+  
+  return (
+    <NavLink 
+      to={targetTo} 
+      className={({ isActive: navActive }) => 
+        `filterButton${isActive ? ' active' : ''}`
+      }
+    >
+      {children}
+    </NavLink>
+  )
 }
 
 export function Section({ color, dark, children }) {

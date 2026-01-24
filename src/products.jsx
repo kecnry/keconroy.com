@@ -1,7 +1,7 @@
 import React from 'react'
-import { NavLink, Link, Routes, Route, useParams } from 'react-router-dom'
+import { Link, Routes, Route, useParams } from 'react-router-dom'
 
-import { FilterEntry, Section, urlGitHub, useMainTabScroll } from './common'
+import { FilterEntry, FilterTab, Section, urlGitHub, useMainTabScroll } from './common'
 
 
 export class Product extends FilterEntry {
@@ -76,10 +76,26 @@ function ProductsFilter() {
       </div>
 
       <div className="filterRowTitle">Project:</div>
-      <div className="filterRow">{projects.map((p, i) => (<NavLink key={i} to={`/products/${p}/${type}`} className='filterButton'>{p}</NavLink>))}</div>
+      <div className="filterRow">{projects.map((p, i) => (
+        <FilterTab 
+          key={i} 
+          value={p} 
+          currentValue={project} 
+          to={`/products/${p}/${type}`} 
+          toAll={`/products/all/${type}`}
+        >{p}</FilterTab>
+      ))}</div>
 
       <div className="filterRowTitle">Type:</div>
-      <div className="filterRow">{types.map((t, i) => (<NavLink key={i} to={`/products/${project}/${t}`} className='filterButton'>{t}</NavLink>))}</div>
+      <div className="filterRow">{types.map((t, i) => (
+        <FilterTab 
+          key={i} 
+          value={t} 
+          currentValue={type} 
+          to={`/products/${project}/${t}`} 
+          toAll={`/products/${project}/all`}
+        >{t}</FilterTab>
+      ))}</div>
 
       <div className="filterContent">
         {productDicts.map((p, i) => (makeProduct(p, false, getFilterFromURL(), '/products')))}
