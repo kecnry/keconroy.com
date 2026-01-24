@@ -6,8 +6,6 @@ import {
   Navigate
 } from 'react-router-dom'
 
-import HttpsRedirect from './protocal-redirect'
-
 import { Header } from './header'
 import { Footer } from './footer'
 import { Home } from './home'
@@ -21,29 +19,27 @@ function App() {
   const contentRef = useRef(null)
 
   return (
-    <HttpsRedirect>
-      <Router>
-        <div id='main'>
+    <Router>
+      <div id='main'>
 
-          <Header contentRef={contentRef} />
+        <Header contentRef={contentRef} />
 
-          <div ref={contentRef} id='content'>
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/projects/*' element={<Projects />} />
-              <Route path='/research' element={<Navigate to="/projects" replace />} />
-              <Route path='/research/:project' element={<ResearchRedirect />} />
-              <Route path='/publications/*' element={<Publications />} />
-              <Route path='/products/*' element={<Products />} />
-              <Route path='/cv' element={<CV />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-
-          <Footer />
+        <div ref={contentRef} id='content'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/projects/*' element={<Projects />} />
+            <Route path='/research' element={<Navigate to="/projects" replace />} />
+            <Route path='/research/:project' element={<ResearchRedirect />} />
+            <Route path='/publications/*' element={<Publications />} />
+            <Route path='/products/*' element={<Products />} />
+            <Route path='/cv' element={<CV />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
-      </Router>
-    </HttpsRedirect>
+
+        <Footer />
+      </div>
+    </Router>
   )
 }
 
