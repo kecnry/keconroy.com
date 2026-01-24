@@ -13,15 +13,17 @@ export function CV() {
       <h2>Curriculum Vitae</h2>
 
       <CVInfo includePDF={true} />
-      <CVEducation color={blue2} dark={true} />
-      <CVTeaching />
-      <CVResearch color={blue2} dark={true} />
-      <CVObserving />
-
-      <CVSelectPubs color={blue2} dark={true} />
-      <CVOralPubs />
-      <CVPosterPubs color={blue2} dark={true} />
+      <CVEducation/>
+      <CVPositions color={blue2} dark={true} />
       <CVProducts />
+
+      <CVTeaching color={blue2} dark={true} />
+      <CVResearch />
+      <CVObserving color={blue2} dark={true} />
+
+      <CVSelectPubs/>
+      <CVOralPubs color={blue2} dark={true}  />
+      <CVPosterPubs />
       <CVInvitedTalks color={blue2} dark={true} />
 
       <CVProfDevelopment />
@@ -41,10 +43,10 @@ export function CVInfo({ includePDF, color, dark }) {
   return (
     <Section color={color} dark={dark}>
       <p>
-        Department of Astrophysics &amp; Planetary Sciences<br />
-        Villanova University<br />
-        800 E Lancaster Ave, Villanova PA 19085<br />
-        <a href='mailto:kyle.conroy@villanova.edu'>kyle.conroy [at] villanova.edu</a>
+        Space Telescope Science Institute<br />
+        3700 San Martin Dr<br />
+        Baltimore, MD 21218<br />
+        <a href='mailto:kconroy@stsci.edu'>kconroy [at] stsci.edu</a>
       </p>
 
       {pdfLink}
@@ -66,6 +68,30 @@ export function CVEducation({ color, dark }) {
           <tr>
             <td>May 2011</td>
             <td><b>BS</b> in Astronomy and Astrophysics | <b>Villanova University</b>, Villanova, PA<br />Research Advisor: Andrej Prša | Minor: Physics</td>
+          </tr>
+        </tbody>
+      </table>
+    </Section>
+  )
+}
+
+export function CVPositions({ color, dark }) {
+  return (
+    <Section color={color} dark={dark}>
+      <h2>Positions</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>September 2021 - Present</td>
+            <td>Senior Software Engineer | Space Telescope Science Institute<br />Data Analysis and Tools Branch</td>
+          </tr>
+          <tr>
+            <td>August 2019 - June 2021</td>
+            <td>Adjunct Professor | Villanova University<br />Physics Labs for Engineers and Astronomy Labs for A&amp;S Students</td>
+          </tr>
+          <tr>
+            <td>June 2018 - September 2021</td>
+            <td>Postdoctoral Researcher | Villanova University<br />Dr Andrej Prša</td>
           </tr>
         </tbody>
       </table>

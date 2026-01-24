@@ -308,7 +308,7 @@ export function Header({ contentRef }) {
         </div>
 
         <div className="headerText" style={{ position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "0px" }}>
-          <p>Postdoctoral Researcher<br />Villanova University</p>
+          <p>Senior Software Engineer<br />Space Telescope Science Institute (STScI)</p>
         </div>
 
         <div className="headerIcons" style={{ position: "relative", right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto', paddingTop: "5px", paddingBottom: "20px" }}>
@@ -338,7 +338,7 @@ export function Header({ contentRef }) {
           <img ref={headerImage} src="/images/self.jpg" style={{ borderRadius: "6px" }} alt="self" />
         </div>
         <div ref={headerTagline} className="headerText" style={{ right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto' }}>
-          <p>Postdoctoral Researcher | Villanova University</p>
+          <p>Senior Software Engineer | Space Telescope Science Institute</p>
         </div>
 
         <div ref={headerIconsDiv} className="headerIcons" style={{ right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto' }}>
@@ -356,10 +356,10 @@ export function Header({ contentRef }) {
           <NavLink to="/research" onClick={scrollNavbar}>Research</NavLink>
         </div>
         <div ref={headerLink3} className="headerLinks">
-          <NavLink to="/publications" onClick={scrollNavbar}>Publications</NavLink>
+          <NavLink to="/products" onClick={scrollNavbar}>Code &amp; Products</NavLink>
         </div>
         <div ref={headerLink4} className="headerLinks">
-          <NavLink to="/products" onClick={scrollNavbar}>Code &amp; Products</NavLink>
+          <NavLink to="/publications" onClick={scrollNavbar}>Publications</NavLink>
         </div>
         <div ref={headerLink5} className="headerLinks">
           <NavLink to="/cv" onClick={scrollNavbar}>Vita</NavLink>
