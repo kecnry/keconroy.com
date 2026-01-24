@@ -11,7 +11,7 @@ import HttpsRedirect from './protocal-redirect'
 import { Header } from './header'
 import { Footer } from './footer'
 import { Home } from './home'
-import { Research } from './research'
+import { Projects } from './projects'
 import { Publications } from './publications'
 import { Products } from './products'
 import { NotFound } from './errors'
@@ -30,7 +30,7 @@ function App() {
           <div ref={contentRef} id='content'>
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/projects/*' element={<Research />} />
+              <Route path='/projects/*' element={<Projects />} />
               <Route path='/research' element={<Navigate to="/projects" replace />} />
               <Route path='/research/:project' element={<ResearchRedirect />} />
               <Route path='/publications/*' element={<Publications />} />

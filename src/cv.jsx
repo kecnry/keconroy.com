@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { Section, useMainTabScroll, blue2 } from './common'
+import { Section, useMainTabScroll } from './common'
 import { publicationDicts, makePublication } from './publications'
 import { productDicts, makeProduct } from './products'
 
@@ -12,28 +12,28 @@ export function CV() {
     <div style={{ textAlign: 'center' }}>
       <h2>Curriculum Vitae</h2>
 
-      <CVInfo includePDF={true} />
-      <CVEducation/>
-      <CVPositions color={blue2} dark={true} />
-      <CVProducts />
+      <CVInfo includePDF={true} index={0} />
+      <CVEducation index={0} />
+      <CVPositions index={1} />
+      <CVProducts index={2} />
 
-      <CVTeaching color={blue2} dark={true} />
-      <CVResearch />
-      <CVObserving color={blue2} dark={true} />
+      <CVTeaching index={3} />
+      <CVResearch index={4} />
+      <CVObserving index={5} />
 
-      <CVSelectPubs/>
-      <CVOralPubs color={blue2} dark={true}  />
-      <CVPosterPubs />
-      <CVInvitedTalks color={blue2} dark={true} />
+      <CVSelectPubs index={6} />
+      <CVOralPubs index={7} />
+      <CVPosterPubs index={8} />
+      <CVInvitedTalks index={9} />
 
-      <CVProfDevelopment />
-      <CVMemberships color={blue2} dark={true} />
-      <CVAwards />
+      <CVProfDevelopment index={10} />
+      <CVMemberships index={11} />
+      <CVAwards index={12} />
     </div>
   )
 }
 
-export function CVInfo({ includePDF, color, dark }) {
+export function CVInfo({ includePDF, index }) {
   const pdfLink = includePDF ? (
     <a href="/pdf/KyleConroy_CV.pdf" target="_blank" rel="noopener noreferrer" style={{ padding: '2px' }}>
       <span className="far fa-file-pdf"></span> PDF version
@@ -41,7 +41,7 @@ export function CVInfo({ includePDF, color, dark }) {
   ) : null
 
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
       <p>
         Space Telescope Science Institute<br />
         3700 San Martin Dr<br />
@@ -55,9 +55,9 @@ export function CVInfo({ includePDF, color, dark }) {
   )
 }
 
-export function CVEducation({ color, dark }) {
+export function CVEducation({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
       <h2>Education</h2>
       <table>
         <tbody>
@@ -75,9 +75,9 @@ export function CVEducation({ color, dark }) {
   )
 }
 
-export function CVPositions({ color, dark }) {
+export function CVPositions({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
       <h2>Positions</h2>
       <table>
         <tbody>
@@ -99,9 +99,9 @@ export function CVPositions({ color, dark }) {
   )
 }
 
-export function CVTeaching({ color, dark }) {
+export function CVTeaching({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
       <h2>Teaching Positions</h2>
 
       <table>
@@ -136,15 +136,15 @@ export function CVTeaching({ color, dark }) {
   )
 }
 
-export function CVResearch({ color, dark }) {
+export function CVResearch({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Research Positions</h2>
 
         <table>
           <tbody>
             <tr>
-              <td>June 2018 - Present</td>
+              <td>June 2018 - September 2021</td>
               <td>Postdoctoral Researcher | Villanova University<br/>Dr Andrej Prša</td>
             </tr>
             <tr>
@@ -178,9 +178,9 @@ export function CVResearch({ color, dark }) {
   )
 }
 
-export function CVObserving({ color, dark }) {
+export function CVObserving({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Observing Experience</h2>
 
         <table>
@@ -204,9 +204,9 @@ export function CVObserving({ color, dark }) {
   )
 }
 
-export function CVSelectPubs({ color, dark }) {
+export function CVSelectPubs({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Selected Publications</h2>
         <div style={{paddingBottom: '40px'}}>
           <p>see all <Link to="/publications/all/journal/all">Journal Publications</Link></p>
@@ -218,9 +218,9 @@ export function CVSelectPubs({ color, dark }) {
   )
 }
 
-export function CVOralPubs({ color, dark }) {
+export function CVOralPubs({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Selected Oral Presentations</h2>
         <div style={{paddingBottom: '40px'}}>
           <p>see all <Link to="/publications/all/oral/all">Oral Publications</Link></p>
@@ -232,9 +232,9 @@ export function CVOralPubs({ color, dark }) {
   )
 }
 
-export function CVPosterPubs({ color, dark }) {
+export function CVPosterPubs({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Selected Poster Presentations</h2>
         <div style={{paddingBottom: '40px'}}>
           <p>see all <Link to="/publications/all/poster/all">Poster Publications</Link></p>
@@ -246,9 +246,9 @@ export function CVPosterPubs({ color, dark }) {
   )
 }
 
-export function CVProducts({ color, dark }) {
+export function CVProducts({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Code &amp; Products</h2>
         <div style={{paddingBottom: '40px'}}>
           <p>see all <Link to="/products">Code &amp; Products</Link></p>
@@ -260,9 +260,9 @@ export function CVProducts({ color, dark }) {
   )
 }
 
-export function CVInvitedTalks({ color, dark }) {
+export function CVInvitedTalks({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Invited Talks</h2>
 
         <table>
@@ -301,9 +301,9 @@ export function CVInvitedTalks({ color, dark }) {
   )
 }
 
-export function CVProfDevelopment({ color, dark }) {
+export function CVProfDevelopment({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Professional Development</h2>
 
         <table>
@@ -360,13 +360,17 @@ export function CVProfDevelopment({ color, dark }) {
   )
 }
 
-export function CVMemberships({ color, dark }) {
+export function CVMemberships({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Memberships</h2>
 
         <table>
           <tbody>
+            <tr>
+              <td>2025 - Present</td>
+              <td>Astropy Voting Member</td>
+            </tr>
             <tr>
               <td>2011 - 2016</td>
               <td>Kepler Eclipsing Binary Working Group | <a href="http://keplerebs.villanova.edu/members" target="_blank" rel="noopener noreferrer" >Member</a></td>
@@ -376,7 +380,7 @@ export function CVMemberships({ color, dark }) {
               <td>American Astronomical Society | <a href="https://aas.org/directory/member_details?id=36332" target="_blank" rel="noopener noreferrer" >Full Member</a></td>
             </tr>
             <tr>
-              <td>2010 - Present</td>
+              <td>2010 - 2018</td>
               <td>Society of Physics Students | Member</td>
             </tr>
           </tbody>
@@ -386,9 +390,9 @@ export function CVMemberships({ color, dark }) {
   )
 }
 
-export function CVAwards({ color, dark }) {
+export function CVAwards({ index }) {
   return (
-    <Section color={color} dark={dark}>
+    <Section index={index}>
         <h2>Fellowships &amp; Awards</h2>
         <table>
           <tbody>

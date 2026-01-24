@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, createContext, useContext, Children, cloneElement } from 'react'
 import { NavLink } from 'react-router-dom'
 
 export const blue1 = 'rgb(76,95,119)'
@@ -160,15 +160,67 @@ export function FilterTab({ value, currentValue, to, toAll, children }) {
   )
 }
 
-export function Section({ color, dark, children }) {
-  const textColor = dark ? 'rgb(230,230,230)' : 'black'
-  const contentPane = dark ? 'content-pane dark' : 'content-pane light'
+// Context for alternating section colors
+const SectionIndexContext = createContext(null)
+
+// Wrapper that provides automatic alternating indices to children
+export function AlternatingSections({ children, startIndex = 0 }) {
+  let currentIndex = startIndex
+  
+  const childrenWithIndex = Children.map(children, (child) => {
+    if (!child) return null
+    
+    // If child accepts an 'index' prop, pass it
+    if (child.type && (child.type.acceptsAlternatingIndex || 
+        child.type === Section || 
+        child.type.displayName === 'Section')) {
+      const indexedChild = cloneElement(child, { index: currentIndex })
+      currentIndex++
+      return indexedChild
+    }
+    
+    // For other elements (like ProjectOverviewList), wrap in context
+    return (
+      <SectionIndexContext.Provider value={{ getNextIndex: () => currentIndex++ }}>
+        {child}
+      </SectionIndexContext.Provider>
+    )
+  })
+  
+  return <>{childrenWithIndex}</>
+}
+
+// Hook to get next alternating index
+export function useAlternatingIndex() {
+  const context = useContext(SectionIndexContext)
+  if (context) {
+    return context.getNextIndex()
+  }
+  return 0
+}
+
+export function Section({ color, dark, index, children }) {
+  // If index is provided, automatically determine color/dark
+  let effectiveColor = color
+  let effectiveDark = dark
+  
+  if (index !== undefined && color === undefined && dark === undefined) {
+    const isOdd = index % 2 === 1
+    effectiveColor = isOdd ? blue2 : undefined
+    effectiveDark = isOdd
+  }
+  
+  const textColor = effectiveDark ? 'rgb(230,230,230)' : 'black'
+  const contentPane = effectiveDark ? 'content-pane dark' : 'content-pane light'
   
   return (
-    <div className='section' style={{ backgroundColor: color, color: textColor }}>
+    <div className='section' style={{ backgroundColor: effectiveColor, color: textColor }}>
       <div className={contentPane}>
         {children}
       </div>
     </div>
   )
 }
+
+// Mark Section as accepting alternating index
+Section.acceptsAlternatingIndex = true

@@ -73,8 +73,7 @@ a, a:visited {
 /* Modern Button Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,
-a.button,
-button {
+a.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -100,8 +99,7 @@ button {
 }
 
 .button:hover,
-a.button:hover,
-button:hover {
+a.button:hover {
   color: #fff;
   background-color: var(--color-blue-2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -109,15 +107,13 @@ button:hover {
 }
 
 .button:focus,
-a.button:focus,
-button:focus {
+a.button:focus {
   outline: 2px solid var(--color-blue-2);
   outline-offset: 2px;
 }
 
 .button:active,
-a.button:active,
-button:active {
+a.button:active {
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -273,6 +269,28 @@ div .content-pane {
   min-height: var(--touch-target-min);
   display: inline-flex;
   align-items: center;
+  position: relative;
+}
+
+.headerLinks > a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: rgb(33 44 64);
+  transition: width var(--transition-fast);
+}
+
+.headerLinks > a.active::after,
+.headerLinks > a[aria-current="page"]::after {
+  width: 80%;
+}
+
+.headerLinks > a:hover::after {
+  width: 60%;
 }
 
 .headerLinks {
@@ -281,18 +299,14 @@ div .content-pane {
   transform-origin: center center;
 }
 
-.headerLinks > a.active {
-  font-weight: bold;
-}
-
 a.icon {
     color: #fff;
     padding: 10px;
     min-width: var(--touch-target-min);
     min-height: var(--touch-target-min);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .urlRow {
@@ -441,10 +455,12 @@ nav.overlay-content {
     border: none;
 }
 
-/* Active link in overlay - no underline bar */
-.overlay a.active {
+/* Active link in overlay - underline bar */
+.overlay a.active,
+.overlay a[aria-current="page"] {
     color: #f1f1f1;
     border: none;
+    border-bottom: 2px solid rgb(33 44 64);
 }
 
 /* When you mouse over the navigation links, change their color */

@@ -35,11 +35,20 @@ export class Product extends FilterEntry {
         <div style={{ paddingTop: '50px' }}>{this.props.content}</div>
       ) : null
 
+      // Only apply filter when in dark context
+      const shouldApplyFilter = this.props.dark && this.props.logoFilter === 'grayscale-white'
+      
       return (
         <div style={{ paddingBottom: '15px' }}>
           <p><b>{this.props.title}</b></p>
           {this.props.logo ?
-            <p align="center"><img src={this.props.logo} alt="logo" style={{ maxWidth: "300px", maxHeight: "125px", width: "auto", height: "auto" }} /></p>
+            <p align="center"><img src={this.props.logo} alt="logo" style={{ 
+              maxWidth: "300px", 
+              maxHeight: "125px", 
+              width: "auto", 
+              height: "auto",
+              ...(shouldApplyFilter ? { filter: 'grayscale(100%) brightness(2)' } : {})
+            }} /></p>
             :
             null
           }
@@ -59,7 +68,7 @@ function ProductsFilter() {
   const params = useParams()
   useMainTabScroll(false)
   
-  const projects = ['all', 'phoebe', 'triples', 'etvs', 'keplerebs', 'other']
+  const projects = ['all', 'jdaviz', 'phoebe', 'triples', 'EBs', 'curling', 'other']
   const types = ['all', 'code', 'website', 'data', 'docs']
 
   const project = params.project || 'all'
@@ -131,10 +140,61 @@ export function Products() {
 // place NEWER entries on TOP of the list
 export var productDicts = [
  {
+    title: "logicurl",
+    sourceLink: null,
+    liveLink: "https://logicurl.ing",
+    logo: "https://logicurl.ing/icons/logicurl.svg",
+    description: "Live analysis of live-video feeds of curling games to track and calculate shot statistics.",
+    content: <div></div>,
+    selected: false,
+    project: ["curling"],
+    projectSelected: ["curling"],
+    type: ["website"]
+ },
+ {
+    title: "jdaviz",
+    sourceLink: "https://github.com/spacetelescope/jdaviz",
+    liveLink: "https://jdaviz.readthedocs.io",
+    logo: "/images/jdaviz.svg",
+    description: "A Jupyter-based visualization tool for astronomical data",
+    content:
+     <div></div>,
+    selected: true,
+    project: ["jdaviz"],
+    projectSelected: ["jdaviz"],
+    type: ["code"]
+ },
+ {
+    title: "lcviz",
+    sourceLink: "https:github.com/spacetelescope/lcviz",
+    liveLink: "https://lcviz.readthedocs.io",
+    logo: "/images/lcviz.svg",
+    description: "An extension to jdaviz, introducing support for visualizing and analyzing periodic photometric data",
+    content:
+     <div></div>,
+    selected: true,
+    project: ["jdaviz"],
+    projectSelected: ["jdaviz"],
+    type: ["code"]
+ },
+ {
+    title: "jdaviz documentation",
+    sourceLink: "https://github.com/spacetelescope/jdaviz",
+    liveLink: "https://jdaviz.readthedocs.io",
+    description: "User guides, API reference, and tutorials for jdaviz visualization tools",
+    content:
+     <div></div>,
+    selected: true,
+    project: ["jdaviz"],
+    projectSelected: [],
+    type: ["docs"]
+ },
+ {
    title: "crimpl",
    sourceLink: "https://github.com/kecnry/crimpl",
    liveLink: "https://crimpl.readthedocs.io",
    logo: "https://raw.githubusercontent.com/kecnry/crimpl/main/docs/images/crimpl.png",
+   logoFilter: "grayscale-white",
    description: "Connecting to Compute Resources made Simple(r)",
    content:
     <div className='row'>
@@ -149,6 +209,7 @@ export var productDicts = [
    sourceLink: "https://github.com/kecnry/distl",
    liveLink: "https://distl.readthedocs.io",
    logo: "https://raw.githubusercontent.com/kecnry/distl/master/docs/images/distl.png",
+   logoFilter: "grayscale-white",
    description: "Simplified and condensed distributions",
    content:
     <div className='row'>
@@ -169,6 +230,7 @@ export var productDicts = [
    title: "Cosmic Clock",
    sourceLink: "https://github.com/kecnry/cosmic-clock",
    liveLink: "https://kecnry.github.io/cosmic-clock",
+   logo: "/images/cosmic_clock.png",
    description: "ReactJS component showing a clock including moon phase, sunrise/set, equinoxes/solstices, etc",
    content:
     <div className='row'>
@@ -224,6 +286,7 @@ export var productDicts = [
    title: "spectra sorting interactive webpage",
    sourceLink: "https://github.com/kecnry/spectra_sort_webpage",
    liveLink: "https://kecnry.github.io/spectra_sort_webpage",
+   logo: "/images/spectra_sorting.png",
    description: "teaching tool for interactive sorting of stellar spectra",
    selected: false,
    project: ["other"],
@@ -234,6 +297,7 @@ export var productDicts = [
    sourceLink: "https://github.com/kecnry/autofig",
    liveLink: "https://autofig.readthedocs.io",
    logo: "https://raw.githubusercontent.com/kecnry/autofig/master/docs/images/autofig.png",
+   logoFilter: "grayscale-white",
    description: "Python module to handle high-level plotting and animating functionality",
    content:
     <div className='row'>
@@ -265,6 +329,7 @@ export var productDicts = [
    sourceLink: "https://github.com/kecnry/nparray",
    liveLink: "https://nparray.readthedocs.io",
    logo: "https://raw.githubusercontent.com/kecnry/nparray/master/docs/images/nparray.png",
+   logoFilter: "grayscale-white",
    description: "Python module to create and manipulate numpy arrays in memory (ie. arange and linspace)",
    content:
      <div className='row'>
@@ -323,6 +388,7 @@ export var productDicts = [
    sourceLink: "https://github.com/phoebe-project/phoebe2",
    liveLink: "http://phoebe-project.org",
    logo: "https://raw.githubusercontent.com/phoebe-project/phoebe2/master/images/logo_blue.svg",
+   logoFilter: "grayscale-white",
    description: "PHOEBE 2 is a complete rewrite of the popular eclipsing binary modeling suite (PHOEBE 1.0), now including support for much higher-precision, new physics, new observable types, and a Python module interface.",
    selected: true,
    project: ["phoebe"],
@@ -333,21 +399,21 @@ export var productDicts = [
    dataLink: "http://vizier.cfa.harvard.edu/viz-bin/VizieR?-source=J/PASP/126/914",
    description: "Vizier release of the timing of every eclipse for every short-period binary in the Kepler data-set",
    selected: false,
-   project: ["keplerebs", "etvs"],
-   projectSelected: ['keplerebs', 'etvs'],
+   project: ["EBs", "triples"],
+   projectSelected: ['EBs', 'triples'],
    type: ["data"],
  },{
    title: "Kepler EBs Website",
    liveLink: "http://keplerebs.villanova.edu",
    description: "The Kepler EBs website hosts a searchable catalog of all EBs in the Kepler field and all computed parameters and plots. Also includes a member section which allows members of the working group to make changes to entries and leave both public and private comments.",
    selected: true,
-   project: ["keplerebs"],
-   projectSelected: ['keplerEBs'],
+   project: ["EBs"],
+   projectSelected: ['EBs'],
    type: ["website"],
  }
 ]
 
-export function makeProduct(dict, expanded, filter, url) {
+export function makeProduct(dict, expanded, filter, url, dark = false) {
   // function to convert dictionary from above (productDicts) into a Product
   // object by taking the filter and base URL
 
@@ -359,6 +425,8 @@ export function makeProduct(dict, expanded, filter, url) {
                    dataLink={dict.dataLink}
                    contentLink={`${url}/${dict.title}`}
                    logo={dict.logo}
+                   logoFilter={dict.logoFilter}
+                   dark={dark}
                    description={dict.description}
                    content={dict.content}
                    selected={dict.selected}
