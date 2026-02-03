@@ -1,1 +1,6 @@
+# Server-side redirects (301) for SEO - Google will index the destination URLs
+/research      /projects      301
+/research/*    /projects/:splat   301
+
+# SPA fallback - serve index.html for all other routes
 /*    /index.html   200
