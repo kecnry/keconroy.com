@@ -358,7 +358,7 @@ export function Header({ contentRef }) {
         </div>
 
         <div className="headerText">
-          <p>Senior Software Engineer<br />Space Telescope Science Institute (STScI)</p>
+          <p>Principal Software Engineer<br />Space Telescope Science Institute (STScI)</p>
         </div>
 
         <div className="headerIcons">
@@ -388,7 +388,7 @@ export function Header({ contentRef }) {
           <img ref={headerImage} src="/images/self.jpg" style={{ borderRadius: "6px" }} alt="self" />
         </div>
         <div ref={headerTagline} className="headerText" style={{ right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto' }}>
-          <p>Senior Software Engineer | Space Telescope Science Institute</p>
+          <p>Principal Software Engineer | Space Telescope Science Institute</p>
         </div>
 
         <div ref={headerIconsDiv} className="headerIcons" style={{ right: 0, left: 0, marginRight: 'auto', marginLeft: 'auto' }}>

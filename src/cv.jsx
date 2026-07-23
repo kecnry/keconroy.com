@@ -82,7 +82,11 @@ export function CVPositions({ index }) {
       <table>
         <tbody>
           <tr>
-            <td>September 2021 - Present</td>
+            <td>April 2026 - Present</td>
+            <td>Principal Software Engineer | Space Telescope Science Institute<br />Data Analysis and Tools Branch</td>
+          </tr>
+          <tr>
+            <td>September 2021 - April 2026</td>
             <td>Senior Software Engineer | Space Telescope Science Institute<br />Data Analysis and Tools Branch</td>
           </tr>
           <tr>
@@ -280,7 +284,7 @@ export function CVInvitedTalks({ index }) {
               <td>Invited Speaker | University of Liege, Belgium</td>
             </tr>
             <tr>
-              <td>June 2018, July 2019</td>
+              <td>Summers 2018 - Present</td>
               <td>Co-Lead workshops including giving multiple talks and tutorials | <a href="http://phoebe-project.org/workshops" target="_blank" rel="noopener noreferrer">PHOEBE Workshop</a> | Villanova University</td>
             </tr>
             <tr>
@@ -340,7 +344,17 @@ export function CVProfDevelopment({ index }) {
             <tr>
               <td><b>Local Organizing Committees</b></td>
               <td>
-                <a href="http://phoebe-project.org/workshops/2020june/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Villanova University | June-July 2020
+                <a href="http://phoebe-project.org/workshops/2026aug/organizing_committee" target="_blank" rel="noopener norefferer">Advanced PHOEBE Workshop</a> | Villanova University | August 2026
+                <br/>
+                <a href="http://phoebe-project.org/workshops/2025aug/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Yunnan University Astronomical Observatory in Kunming, China | August 2025
+                <br/>
+                <a href="http://phoebe-project.org/workshops/2024june/organizing_committee" target="_blank" rel="noopener norefferer">Advanced PHOEBE Workshop</a> | University of Ljubljana, Slovenia | June 2024
+                <br/>
+                <a href="http://phoebe-project.org/workshops/2023june/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | University of Ljubljana, Slovenia | June 2023
+                <br/>
+                <a href="http://phoebe-project.org/workshops/2022june/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Villanova University | June-July 2022
+                <br/>
+                <a href="http://phoebe-project.org/workshops/2021june/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Virtual | June 2021
                 <br/>
                 <a href="http://phoebe-project.org/workshops/2019july/organizing_committee" target="_blank" rel="noopener norefferer">PHOEBE Workshop</a> | Villanova University | July 2019
                 <br/>
@@ -369,7 +383,7 @@ export function CVMemberships({ index }) {
           <tbody>
             <tr>
               <td>2025 - Present</td>
-              <td>Astropy Voting Member</td>
+              <td>Astropy | <a href="https://www.astropy.org/team.html#voting-members" target="_blank" rel="noopener noreferrer">Voting Member</a></td>
             </tr>
             <tr>
               <td>2011 - 2016</td>
