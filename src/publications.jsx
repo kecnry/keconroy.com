@@ -130,7 +130,7 @@ export var publicationDicts = [
   type: 'journal',
   nauthor: 'nth',
   adsLink: 'https://ui.adsabs.harvard.edu/abs/2026ApJS..285...49J',
-  publisherLink: 'https://iopscience.iop.org/article/10.3847/1538-4365/ae844a/pdf',
+  publisherLink: 'https://doi.org/10.3847/1538-4365/ae844a',
   pdf: '2026Jones+.pdf'
 },
 {
