@@ -285,7 +285,7 @@ export function CVInvitedTalks({ index }) {
             </tr>
             <tr>
               <td>Summers 2018 - Present</td>
-              <td>Co-Lead workshops including giving multiple talks and tutorials | <a href="http://phoebe-project.org/workshops" target="_blank" rel="noopener noreferrer">PHOEBE Workshop</a> | Villanova University</td>
+              <td>Co-Lead workshops including giving multiple talks and tutorials | <a href="http://phoebe-project.org/workshops" target="_blank" rel="noopener noreferrer">PHOEBE Workshop</a> | Villanova University, University of Ljubljana (Slovenia), Yunnan University Astronomical Observatory (Kunming, China)</td>
             </tr>
             <tr>
               <td>March 2018</td>

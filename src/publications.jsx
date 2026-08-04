@@ -124,7 +124,7 @@ export var publicationDicts = [
   journal: 'ApJS',
   volume: 285,
   page: 49,
-  selected: false,
+  selected: true,
   project: ['phoebe'],
   projectSelected: ['phoebe'],
   type: 'journal',

@@ -140,12 +140,26 @@ export function Products() {
 // place NEWER entries on TOP of the list
 export var productDicts = [
  {
+    title: "Guidestar",
+    sourceLink: "https://github.com/spacetelescope/guidestar",
+    liveLink: "https://guidestar.readthedocs.io",
+    logo: "/images/guidestar.svg",
+    description: "A reusable infrastructure for embedding interactive wireframe demos in Sphinx documentation and standalone HTML pages.",
+    content:
+      <div></div>,
+    selected: true,
+    project: ["jdaviz"],
+    projectSelected: [],
+    type: ["code"]
+ },
+ {
     title: "logicurl",
     sourceLink: null,
     liveLink: "https://logicurl.ing",
     logo: "https://logicurl.ing/icons/logicurl.svg",
     description: "Live analysis of live-video feeds of curling games to track and calculate shot statistics.",
-    content: <div></div>,
+    content: 
+      <div></div>,
     selected: false,
     project: ["curling"],
     projectSelected: ["curling"],
@@ -184,7 +198,7 @@ export var productDicts = [
     description: "User guides, API reference, and tutorials for jdaviz visualization tools",
     content:
      <div></div>,
-    selected: true,
+    selected: false,
     project: ["jdaviz"],
     projectSelected: [],
     type: ["docs"]
